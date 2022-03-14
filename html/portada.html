@@ -1,0 +1,131 @@
+<head>
+    <style>
+        body{
+            background-image: url("Space\ Background\ \(3\).png");
+            background-size: 100% 100%;
+            
+        }
+
+        @font-face{
+                font-family: letrapixel;
+                src:url(pixel.ttf);
+            }
+
+        .divajustes{
+            margin: 10;
+            padding: 0 40px;
+        }
+        .ajustes{
+            background-color: transparent;
+            border: transparent;
+            display: block;
+            cursor: pointer;
+            margin-left: 95%;
+            margin-top: 2%;
+            
+        }
+
+        .divlogo{
+            background-position:center;
+            margin: 10;
+            padding: 0 40px;
+            margin-top: 2%;
+
+        }
+        
+        .logo_principal{
+            background-repeat:no-repeat;
+            background-position:center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            background-size: 5vh;
+        }
+        .divplay{
+            background-position:center;
+            margin: 10;
+            padding: 0 40px;
+            margin-top: 165;
+        }
+        .play{
+       
+            background-repeat:no-repeat;
+            background-color: transparent;
+            background-size: 90px 45px;
+            background-position:center;
+            border: 5px solid rgba(255,193,7,255);
+            cursor: pointer;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            bottom: 70%;
+            margin-top: -150;
+        }
+        
+        .play:hover {
+            box-shadow: 0 0px 20px 0 rgba(255,193,7,255), 0 0px 20px 0 rgba(255,193,7,255);
+            
+        }
+
+        .divcontroles{
+            text-align: center;
+            margin: 10;
+            padding: 0 40px;
+            margin-top: 150;
+        }
+
+        .boton{
+            font-family: letrapixel;
+            color: rgba(255,193,7,255);
+            background-repeat:no-repeat;
+            background-color: transparent;
+            cursor: pointer;
+            bottom: 100%;
+            margin-left: 30;
+            margin-right: 30;
+            margin: 20;
+            border: 3px solid rgba(255,193,7,255);
+            display: inline-block; 
+            text-align: center;
+            padding: 14px 16px;
+            font-size: 17px;
+            transition-duration: 0.4s;
+
+        }
+
+        .boton:hover {
+            background-color: rgba(255,193,7,255);
+            color: black;
+        }
+        
+  
+    </style>
+ </head>
+ <body>
+   
+    <div class="divajustes">
+        <button class="ajustes"><img src="ajustes.png" width="100px"></button> 
+    </div>
+    
+    <div class="divlogo">
+        <img class="logo_principal" src="ss.png" width="700px">
+    </div>
+
+    <div class="divplay">
+        <button class="play"><img src="play.png" width="150px"></button>
+    </div>
+    
+    <div class="divcontroles">
+        <nav>
+            <button class="boton">Descripción</button>
+            <button class="boton">Autores</button>
+            <button class="boton">Multimedia</button>
+            <button class="boton">Desarrollo</button>
+            <button class="boton">Referencias</button>
+        </nav>
+    </div>
+   
+   
+   
+  
+ </body>
