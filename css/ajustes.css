@@ -42,8 +42,15 @@ table{
 #personalizacion{
     width:1000 ;
     height:400;
-    border:10px;
-    border-color: #FFC107;
+    padding-right:0;
+    padding-left: 0 ;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-bottom: 10px solid #FFC107 ;
+    border-right: 10px solid #FFC107;
+    border-top: 10px solid #FFC107;
+    border-left:10px solid #FFC107;
 }
 
 
