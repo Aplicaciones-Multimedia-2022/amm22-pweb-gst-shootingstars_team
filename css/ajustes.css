@@ -28,16 +28,15 @@ table{
 #ajustes_audio{
     width:400 ;
     height:150;
-    border-color: #FFC107;
     padding-right:0;
     padding-left: 0 ;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    border-bottom: 10px solid ;
-    border-right: 10px solid ;
-    border-top: 10px solid ;
-    border-left:10px solid;
+    border-bottom: 10px solid #FFC107 ;
+    border-right: 10px solid #FFC107;
+    border-top: 10px solid #FFC107;
+    border-left:10px solid #FFC107;
 
 }
 #personalizacion{
