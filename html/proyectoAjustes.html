@@ -1,0 +1,91 @@
+<html>
+    
+    <head>
+       
+        <style>
+            body{
+                background-image: url("Space\ Background\ \(3\).png");
+            }
+            body{
+                text-align: center;
+                color: white;
+                font-size:40px;
+                font-family: letrapixel;
+            }
+            @font-face{
+                font-family: letrajedi;
+                src:url(star-jedi_[allfont.net].ttf);
+            }
+            @font-face{
+                font-family: letrapixel;
+                src:url(Retro\ Gaming.ttf);
+            }
+            .titulo {
+             text-align: center;
+             color: #FFC107;
+             font-size: 70px;
+             font-family: letrajedi;
+            }
+
+            .navbar {
+             overflow: hidden;
+             background-color: #FFC107;
+             position: fixed;
+             bottom: 0;
+             left:0;
+             width: 100%;
+            }
+
+            .navbar button {
+             border:0px;
+             font-family: letrapixel;
+             display: inline-block;
+             background-color: #FFC107;
+             color: black;
+             text-align: center;
+             padding: 14px 16px;
+             font-size: 17px;
+            }
+
+            .navbar button:hover {
+             background:black;
+             color:#FFC107 ;
+            }
+            
+
+            
+
+        </style>
+    </head>
+
+    <body>
+        <div class="titulo">AJuSTES</div>
+
+        <div class="ajustes_audio">
+            <p>Ajustes audio</p>
+        </div>
+
+        <canvas id="ajustes_audio" width="400" height="150" style="border:1px solid grey"></canvas>
+        <!--La idea es poner un icono de volumen en el canvas y 2 botones par aubir y bajar
+        el volumen, y que hubiese mas o menos rayitas-->
+
+        <div class="personalizacion">
+            <p> Personalizacion </p>
+        </div>
+
+        <canvas id="personalizacion" width="1000" height="400" style="border:1px solid grey"></canvas>
+        <!--La idea es poner a la izquierda la eleccion actual en grande, y a la izda
+        unas imagenes mas pqueñas de las naves-->
+
+        <div class="navbar">
+            <button class="home">Home</a>
+            <button class="juego">Juego</a>
+            <button class="comoJugar">Como Jugar</a>
+            <button class="autores">Autores</a>
+            <button class="desarrollo">Desarrollo</a>
+            <button class="multimedia">Multimedia</a>
+            <button class="referencias">Referencias</a>
+        </div>
+
+    </body>
+</html>
