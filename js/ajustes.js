@@ -4,15 +4,18 @@ var ctx = canvas1.getContext("2d");
 var ctx = canvas2.getContext("2d");
 var pressed= true;
 
+var image1=document.querySelector()
+
 window.onload=init;
 
 function init(){     
-    
+    var img = document.getElementById("nave1");
+    ctx.drawImage(img, 10, 10);
 }
 function aumentarVolumen(){
 
 }
 
 function elegirNave(){
-    
+
 }
