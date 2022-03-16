@@ -1,117 +1,96 @@
-var mycanvas = document.getElementById("nave");
+var mycanvas = document.getElementById('game');
 var ctx = mycanvas.getContext("2d");
-var x, y;
-var w, h;
-var posN;
-var downPressed;
-var upPressed;
-var posEnemigoY;
-var posEnemigoX;
-var dx;
-var Nave = new Image();
-var Enemigo = new Image();
-var disparo = new Array();
-var i;
-var ruta;
+var naveX = 0;
+var naveY = 0;
+var nave_dispara = false;
+var nave_UP = false;
+var nave_DOWN = false;
+const borde = 10;
+var dy = 2; // movimiento y direccion de la nave
+var alturanave = 70;
+var bol_disparoX = 20;
+var bol_disparoY = naveY+(alturanave/2);
+var dx = 3; 
+var disparar = false;
 window.onload = init;
-var dispaux = new Image();
-//document.body.style.overflow = 'hidden';
-function init() {
-    w = mycanvas.width;
-    h = mycanvas.height;
-    x = 10;
-    y = h / 2;
-    posN = h / 2;
-    downPressed = false;
-    upPressed = false;
-    posEnemigoY = h / 2;
-    posEnemigoX = w;
-    dx = 0;
-    Nave.src = "../Ship1.png";
-    i = 0;
+const final_nave = game.height - borde - alturanave;
 
-
-    pintarNave();
-    pintarEnemigo();
+function init() {  
+    
+    pintarBola();
+   pintarNave(); //llamamos a la funcion pintarNave
+   setInterval(draw,10);
 }
 
 function pintarNave() {
-    ctx.drawImage(Nave, 10, posN);
-
-
-
+    ctx.beginPath();
+    ctx.rect(naveX, naveY, 20, alturanave);
+    ctx.fillStyle = "yellow";
+    ctx.fill();
+    ctx.closePath();
 }
 
-function pintarEnemigo() {
-
-    Enemigo.src = "../Ship2.png";
-    ctx.drawImage(Enemigo, posEnemigoX, posEnemigoY);
-
-
+function pintarBola(){   
+    ctx.beginPath();
+    ctx.arc(bol_disparoX, bol_disparoY, borde, 0, 2*Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath();    
 }
 
-function draw() {
-    ctx.clearRect(0, 0, w, h);
-    pintarNave();
-    pintarEnemigo();
 
+function draw(){
+    ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
+    pintarNave(); //llamamos a la funcion pintarNave
+    pintarBola();
 
-    if (downPressed && posN < mycanvas.height - 40) {
-        posN += 5;
-
-    } else if (upPressed && posN > 0) {
-        posN -= 5;
+    if(nave_UP){
+        naveY -= dy;
     }
-    if (posEnemigoX < 0) {
-        posEnemigoY = Math.random() * w + 0;
-        posEnemigoX = mycanvas.width;
+    if(nave_DOWN){
+        naveY += dy;
+    }
 
-    } else{
+    if(naveY<borde){
+        naveY = borde;
+    }
+    else if(naveY>final_nave){
+        naveY = final_nave;
+    }
 
-        posEnemigoX -= 5;
+    if(disparar){
         
-
+        bol_disparoX += dx;
+        
     }
+   
+
 
 }
 
+document.addEventListener("keydown",keyDownHandler,false);
+document.addEventListener("keyup",keyUpHandler,false);
 
-
-
-
-
-
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-
-
-
-
-function keyDownHandler(e) {
-    if (e.keyCode == 38) {
-        upPressed = true;
-    } else if (e.keyCode == 40) {
-        downPressed = true;
+function keyDownHandler(event){
+    if(event.keyCode=='38'){//si la tecla presionada es direccional arriba
+        nave_UP= true;
     }
+    if(event.keyCode=='40'){//si la tecla presionada es direccional abajo
+        nave_DOWN = true;
+    }
+    if(event.keyCode=='35'){//si la tecla presionada es espacio para disparar
+       disparar = true;
+    } 
 
 }
-window.addEventListener("keydown", function(e) {
-    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        e.preventDefault();
+function keyUpHandler(event){
+    if(event.keyCode=='38'){//si la tecla presionada es direccional derecho
+        nave_UP = false;
     }
-}, false);
- 
-
-
-
-function keyUpHandler(e) {
-    if (e.keyCode == 38) { //ARRIBA
-        upPressed = false;
-    } else if (e.keyCode == 40) { //ABAJO
-        downPressed = false;
+    if(event.keyCode=='40'){//si la tecla presionada es direccional derecho
+        nave_DOWN = false;
     }
-
-
-
+    if(event.keyCode=='35'){//si la tecla presionada es espacio para disparar
+        disparar = false;
+    }
 }
-setInterval(draw, 10);
