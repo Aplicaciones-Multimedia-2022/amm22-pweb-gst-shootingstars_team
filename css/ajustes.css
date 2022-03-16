@@ -6,6 +6,10 @@ body{
     font-family: retro;
 }
 
+#ajustes_audio{
+    text-align: center;
+}
+
 table{
     image-orientation: right;
 
