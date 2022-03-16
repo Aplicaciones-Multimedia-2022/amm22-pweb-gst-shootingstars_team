@@ -2,60 +2,7 @@
     
     <head>
        
-        <style>
-            body{
-                background-image: url("Space\ Background\ \(3\).png");
-            }
-            body{
-                text-align: center;
-                color: white;
-                font-size:40px;
-                font-family: letrapixel;
-            }
-            @font-face{
-                font-family: letrajedi;
-                src:url(star-jedi_[allfont.net].ttf);
-            }
-            @font-face{
-                font-family: letrapixel;
-                src:url(Retro\ Gaming.ttf);
-            }
-            .titulo {
-             text-align: center;
-             color: #FFC107;
-             font-size: 70px;
-             font-family: letrajedi;
-            }
-
-            .navbar {
-             overflow: hidden;
-             background-color: #FFC107;
-             position: fixed;
-             bottom: 0;
-             left:0;
-             width: 100%;
-            }
-
-            .navbar button {
-             border:0px;
-             font-family: letrapixel;
-             display: inline-block;
-             background-color: #FFC107;
-             color: black;
-             text-align: center;
-             padding: 14px 16px;
-             font-size: 17px;
-            }
-
-            .navbar button:hover {
-             background:black;
-             color:#FFC107 ;
-            }
-            
-
-            
-
-        </style>
+        <link href="../css/portada.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
@@ -73,9 +20,20 @@
             <p> Personalizacion </p>
         </div>
 
-        <canvas id="personalizacion" width="1000" height="400" style="border:1px solid grey"></canvas>
+        <canvas id="personalizacion" width="1000" height="400" style="border:1px solid grey">
+        
+            <table>
+                <tr>
+                    <td><img src=".\Ship1.png" height=30 width=40></img></td>
+                </tr>
+
+            </table>
+           
+        
+        </canvas>
         <!--La idea es poner a la izquierda la eleccion actual en grande, y a la izda
         unas imagenes mas pqueñas de las naves-->
+
 
         <div class="navbar">
             <button class="home">Home</a>
