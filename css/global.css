@@ -1,0 +1,27 @@
+/* Esta es la configuración para la barra de menú de abajo*/
+.navbar {
+    overflow: hidden;
+    background-color: #FFC107;
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    text-align: center;
+   }
+
+.boton{
+    border:0px;
+    font-family: retro;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+    text-decoration: none;
+    background-color: #FFC107;
+    cursor: pointer;
+}
+.boton:hover{
+    background:black;
+    color:#FFC107 ;
+}
