@@ -36,7 +36,6 @@
     margin-top: 165;
 }
 .play{
-
     background-repeat:no-repeat;
     background-color: transparent;
     background-size: 90px 45px;
@@ -51,8 +50,7 @@
 }
 
 .play:hover {
-    box-shadow: 0 0px 20px 0 rgba(255,193,7,255), 0 0px 20px 0 rgba(255,193,7,255);
-    
+    box-shadow: 0 0px 20px 0 rgba(255,193,7,255), 0 0px 20px 0 rgba(255,193,7,255);  
 }
 
 .divcontroles{
