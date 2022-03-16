@@ -21,5 +21,23 @@ body{
  font-family: letrajedi;
 }
 
+table{
+    text-align: center;
+}
+
+#ajustes_audio{
+    width:4000 ;
+    height:150;
+    border:10px;
+    border-color: #FFC107;
+
+}
+#personalizacion{
+    width:1000 ;
+    height:400;
+    border:10px;
+    border-color: #FFC107;
+}
+
 
 
