@@ -1,4 +1,6 @@
-
+body{
+    background-image: url("Space\ Background\ \(3\).png");
+}
 body{
     text-align: center;
     color: white;
@@ -6,16 +8,18 @@ body{
     font-family: retro;
 }
 
+}
 @font-face{
     font-family: retro;
     src:url(Retro\ Gaming.ttf);
-}
-
-#ajustes_audio{
-    text-align: center;
-}
-
-table{
-    image-orientation: right;
 
 }
+.titulo {
+ text-align: center;
+ color: #FFC107;
+ font-size: 70px;
+ font-family: letrajedi;
+}
+
+
+
