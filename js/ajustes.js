@@ -9,8 +9,11 @@ var image1=document.querySelector()
 window.onload=init;
 
 function init(){     
-    var img = document.getElementById("nave1");
-    ctx2.drawImage(img, 10, 10);
+    draw();
+}
+
+function draw(){
+    ctx2.drawImage(document.getElementById('nave1'), 33, 71, 104, 124, 21, 20, 87, 104);
 }
 function aumentarVolumen(){
 
