@@ -43,5 +43,23 @@ body{
     font-family: retro;
     color: rgba(255, 193, 7,255);
     font-size: 10vh;
+    position: relative;
+}
 
+/*Para el boton de ajustes*/
+
+.divajustes{
+    margin: 10;
+    padding: 0 40px;
+    vertical-align: top;
+    position: absolute;
+    margin-left: 79%;
+}
+.ajustes{
+    background-color: transparent;
+    border: transparent;
+    display: block;
+    cursor: pointer;
+    margin-left: 95%;
+    margin-top: 2%;
 }
