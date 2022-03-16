@@ -1,4 +1,6 @@
-
+body{
+    background-image: url("Space\ Background\ \(3\).png");
+}
 body{
     text-align: center;
     color: white;
@@ -6,7 +8,50 @@ body{
     font-family: retro;
 }
 
-table{
-    image-orientation: right;
+
+@font-face{
+    font-family: retro;
+    src:url(Retro\ Gaming.ttf);
 
 }
+.titulo {
+ text-align: center;
+ color: #FFC107;
+ font-size: 70px;
+ font-family: letrajedi;
+}
+
+table{
+    text-align: center;
+}
+
+#ajustes_audio{
+    width:400 ;
+    height:150;
+    padding-right:0;
+    padding-left: 0 ;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-bottom: 10px solid #FFC107 ;
+    border-right: 10px solid #FFC107;
+    border-top: 10px solid #FFC107;
+    border-left:10px solid #FFC107;
+
+}
+#personalizacion{
+    width:1000 ;
+    height:400;
+    padding-right:0;
+    padding-left: 0 ;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-bottom: 10px solid #FFC107 ;
+    border-right: 10px solid #FFC107;
+    border-top: 10px solid #FFC107;
+    border-left:10px solid #FFC107;
+}
+
+
+
