@@ -5,3 +5,14 @@ var ctx = canvas2.getContext("2d");
 var pressed= true;
 
 window.onload=init;
+
+function init(){     
+    
+}
+function aumentarVolumen(){
+
+}
+
+function elegirNave(){
+    
+}
