@@ -1,0 +1,22 @@
+h1{
+    color: ffc107;
+    font-family: retro;
+    font-size: 75;
+    text-align: center;
+    
+}
+.tabla{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px; 
+    margin: auto;
+}
+td,th{
+    width: 25%;
+    text-align: center;
+    color: black;
+    background-color: rgba(255,193,7,255);
+    font-family: retro; 
+    padding: 20px;
+    
+}
