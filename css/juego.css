@@ -4,13 +4,13 @@ body{
 
 
 #game{
-    padding-left: 0;
+        padding-left: 0;
         padding-right: 0;
         margin-left: auto;
         margin-right: auto;
         display: block;
         background-image: url(../images/FondoCanvas.png);
-        
+
         border-top: 10px solid rgba(255,193,7,255);
         border-left: 10px solid rgba(255,193,7,255);
         border-right: 10px solid rgba(255,193,7,255);
