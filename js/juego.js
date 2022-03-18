@@ -14,14 +14,14 @@ var dx = 3;
 var disparar = false;
 window.onload = init;
 const final_nave = game.height - borde - alturanave;
-
+//Funcion para inicializar el programa
 function init() {
 
   pintarBola();
   pintarNave(); //llamamos a la funcion pintarNave
   setInterval(draw, 10);
 }
-
+//Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
   ctx.beginPath();
   ctx.rect(naveX, naveY, 20, alturanave);
@@ -29,7 +29,7 @@ function pintarNave() {
   ctx.fill();
   ctx.closePath();
 }
-
+//Pintamos la bala con la que dispara
 function pintarBola() {
   ctx.beginPath();
   ctx.arc(bol_disparoX, bol_disparoY, borde, 0, 2 * Math.PI);
@@ -38,7 +38,7 @@ function pintarBola() {
   ctx.closePath();
 }
 
-
+//Utilizamos esta funcion para dibujar el movimiento
 function draw() {
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
   pintarNave(); //llamamos a la funcion pintarNave
