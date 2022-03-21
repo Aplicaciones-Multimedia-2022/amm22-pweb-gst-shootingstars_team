@@ -14,12 +14,28 @@ var dx = 3;
 var disparar = false;
 window.onload = init;
 const final_nave = game.height - borde - alturanave;
+var posEnemigoY;
+var posEnemigoX;
+var dx;
+var Enemigo = new Image();
+
 //Funcion para inicializar el programa
 function init() {
-
+  posEnemigoY = mycanvas.height / 2;
+  posEnemigoX = mycanvas.width;
   pintarBola();
   pintarNave(); //llamamos a la funcion pintarNave
   setInterval(draw, 10);
+}
+function enemigo(posEnemigoX,posEnemigoY){
+  this.posEnemigoX = posEnemigoX;
+  this.posEnemigoY = posEnemigoY;
+}
+//funcion pintar enemigo
+function pintarEnemigo(){
+  var en = new enemigo(posEnemigoX,posEnemigoY);
+  Enemigo.src ="../images/Ship1.png";
+  ctx.drawImage(Enemigo, en.posEnemigoX, en.posEnemigoY);
 }
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
@@ -43,6 +59,7 @@ function draw() {
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
   pintarNave(); //llamamos a la funcion pintarNave
   pintarBola();
+  pintarEnemigo();
 
   if (nave_UP) {
     naveY -= dy;
@@ -62,6 +79,16 @@ function draw() {
     bol_disparoX += dx;
 
   }
+  if (this.posEnemigoX < 0) {
+        this.posEnemigoY = Math.random() * (mycanvas.width - 40) + 0;
+        this.posEnemigoX = mycanvas.width;
+
+    } else{
+
+        this.posEnemigoX -= 5;
+
+
+    }
 
 
 
@@ -100,4 +127,3 @@ window.addEventListener("keydown", function(e) {
         e.preventDefault();
     }
 }, false);
- 
