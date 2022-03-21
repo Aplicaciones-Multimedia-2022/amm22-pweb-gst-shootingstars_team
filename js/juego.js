@@ -25,18 +25,23 @@ function init() {
   posEnemigoX = mycanvas.width;
   pintarBola();
   pintarNave(); //llamamos a la funcion pintarNave
-  setInterval(draw, 10);
+
 }
-function enemigo(posEnemigoX,posEnemigoY){
+
+function enemigo(posEnemigoX, posEnemigoY) {
   this.posEnemigoX = posEnemigoX;
   this.posEnemigoY = posEnemigoY;
 }
+
+
 //funcion pintar enemigo
-function pintarEnemigo(){
-  var en = new enemigo(posEnemigoX,posEnemigoY);
-  Enemigo.src ="../images/Ship1.png";
+function pintarEnemigo() {
+  var en = new enemigo(posEnemigoX, posEnemigoY);
+  Enemigo.src = "../images/Ship1.png";
   ctx.drawImage(Enemigo, en.posEnemigoX, en.posEnemigoY);
 }
+
+
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
   ctx.beginPath();
@@ -45,6 +50,8 @@ function pintarNave() {
   ctx.fill();
   ctx.closePath();
 }
+
+
 //Pintamos la bala con la que dispara
 function pintarBola() {
   ctx.beginPath();
@@ -80,22 +87,24 @@ function draw() {
 
   }
   if (this.posEnemigoX < 0) {
-        this.posEnemigoY = Math.random() * (mycanvas.width - 40) + 0;
-        this.posEnemigoX = mycanvas.width;
+    this.posEnemigoY = Math.random() * (mycanvas.width - 40) + 0;
+    this.posEnemigoX = mycanvas.width;
 
-    } else{
+  } else {
 
-        this.posEnemigoX -= 5;
+    this.posEnemigoX -= 5;
 
 
-    }
+  }
 
 
 
 }
 
+
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
 
 function keyDownHandler(event) {
   if (event.keyCode == '38') { //si la tecla presionada es direccional arriba
@@ -110,6 +119,7 @@ function keyDownHandler(event) {
 
 }
 
+
 function keyUpHandler(event) {
   if (event.keyCode == '38') { //si la tecla presionada es direccional derecho
     nave_UP = false;
@@ -121,9 +131,12 @@ function keyUpHandler(event) {
     disparar = false;
   }
 }
+
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener("keydown", function(e) {
-    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        e.preventDefault();
-    }
+  if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+    e.preventDefault();
+  }
 }, false);
+
+setInterval(draw, 10);
