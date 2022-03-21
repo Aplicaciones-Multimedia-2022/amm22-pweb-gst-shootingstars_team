@@ -94,3 +94,10 @@ function keyUpHandler(event) {
     disparar = false;
   }
 }
+//Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
+window.addEventListener("keydown", function(e) {
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+ 
