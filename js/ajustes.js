@@ -11,7 +11,7 @@ var icono_volumen = new Image();
 
 
 function init(){     
-   
+   pintarIconos();
 }
 
 function pintarIconos(){
