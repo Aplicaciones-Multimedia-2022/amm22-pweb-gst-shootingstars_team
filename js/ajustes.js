@@ -4,26 +4,26 @@ var ctx1 = canvas1.getContext("2d");
 var ctx2 = canvas2.getContext("2d");
 var pressed= true;
 
-
-
-
-
 window.onload=init;
+
+var icono_volumen = new Image();
 
 
 
 function init(){     
-    var img1 = document.getElementById("icono_vol");
-    ctx1.drawImage(img1, 10, 10);
-    
-};
+   
+}
 
+function pintarIconos(){
+    icono_volumen.src="/images/pixil-frame-0.png";
+    ctx1.drawImage(icono_volumen,100,100);
+}
 
 
 function aumentarVolumen(){
 
-};
+}
 
 function elegirNave(){
 
-};
+}
