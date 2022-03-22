@@ -26,8 +26,8 @@ table{
 }
 
 #ajustes_audio{
-    width:800 ;
-    height:400;
+    width:400 ;
+    height:200;
     padding-right:0;
     padding-left: 0 ;
     margin-left: auto;
@@ -40,7 +40,7 @@ table{
 
 }
 
-.boton_1{
+.control_audio{
     border:0px;
     font-family: retro;
     display: inline-block;
