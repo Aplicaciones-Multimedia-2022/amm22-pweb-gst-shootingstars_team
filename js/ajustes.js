@@ -13,7 +13,7 @@ window.onload=init;
 
 
 function init(){     
-    var img1 = document.getElementById("scream");
+    var img1 = document.getElementById("icono_vol");
     ctx1.drawImage(img1, 10, 10);
     
 };
