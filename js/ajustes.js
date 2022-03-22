@@ -16,7 +16,7 @@ function init(){
 
 function pintarIconos(){
     icono_volumen.src="/images/pixil-frame-0.png";
-    ctx1.drawImage(icono_volumen,40,20);
+    ctx1.drawImage(icono_volumen,400,600);
 }
 
 
