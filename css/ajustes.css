@@ -39,6 +39,21 @@ table{
     border-left:10px solid #FFC107;
 
 }
+
+.boton_1{
+    border:0px;
+    font-family: retro;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+    text-decoration: none;
+    background-color: #FFC107;
+    cursor: pointer;
+}
+
+
 #personalizacion{
     width:1000 ;
     height:400;
