@@ -4,12 +4,12 @@ var naveX = 0;
 var naveY = 0;
 var nave_dispara = false;
 var nave_UP = false;
-var nave_DOWN = false;
+var nave_DOWN = false; 
 const borde = 10;
-var dy = 2; // movimiento y direccion de la nave
+var dy =2;
 var alturanave = 70;
 var bol_disparoX = 20;
-var bol_disparoY = naveY + (alturanave / 2);
+var bol_disparoY;
 var dx = 3;
 var disparar = false;
 window.onload = init;
@@ -18,6 +18,7 @@ var posEnemigoY;
 var posEnemigoX;
 var dx;
 var Enemigo = new Image();
+var Nave = new Image();
 
 //Funcion para inicializar el programa
 function init() {
@@ -28,14 +29,19 @@ function init() {
 
 }
 
-function enemigo(posEnemigoX, posEnemigoY) {
+function enemigo(naveX, naveY) {
+  
   this.posEnemigoX = posEnemigoX;
-  this.posEnemigoY = posEnemigoY;
+    this.posEnemigoY = posEnemigoY;
 }
 
+function nave(posEnemigoX, posEnemigoY, dy) {
+this.naveX = naveX;
+  this.naveY = naveY;
+  }
 
 //funcion pintar enemigo
-function pintarEnemigo() {
+function pintarEnemigo(){
   var en = new enemigo(posEnemigoX, posEnemigoY);
   Enemigo.src = "../images/Ship1.png";
   ctx.drawImage(Enemigo, en.posEnemigoX, en.posEnemigoY);
@@ -44,11 +50,9 @@ function pintarEnemigo() {
 
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
-  ctx.beginPath();
-  ctx.rect(naveX, naveY, 20, alturanave);
-  ctx.fillStyle = "yellow";
-  ctx.fill();
-  ctx.closePath();
+    var na = new nave(posEnemigoX, posEnemigoY);
+    Nave.src = "../images/Ship1.png";
+    ctx.drawImage(Nave, na.naveX, na.naveY);
 }
 
 
@@ -65,27 +69,22 @@ function pintarBola() {
 function draw() {
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
   pintarNave(); //llamamos a la funcion pintarNave
-  pintarBola();
   pintarEnemigo();
 
+
   if (nave_UP) {
-    naveY -= dy;
+    this.naveY -= this.dy;
   }
   if (nave_DOWN) {
-    naveY += dy;
+    this.naveY += this.dy;
   }
 
-  if (naveY < borde) {
-    naveY = borde;
-  } else if (naveY > final_nave) {
-    naveY = final_nave;
+  if (this.naveY < borde) {
+    this.naveY = borde;
+  } else if (this.naveY > final_nave) {
+    this.naveY = final_nave;
   }
 
-  if (disparar) {
-
-    bol_disparoX += dx;
-
-  }
   if (this.posEnemigoX < 0) {
     this.posEnemigoY = Math.random() * (mycanvas.width - 40) + 0;
     this.posEnemigoX = mycanvas.width;
@@ -96,6 +95,22 @@ function draw() {
 
 
   }
+
+  if (disparar) {
+
+    c = 1;
+    m = this.naveY
+    bol_disparoX = 20;
+    //bol_disparoY = naveY + (alturanave / 2);
+  }
+  if(c==1){
+        pintarBola();
+        
+        bol_disparoY = m;
+        bol_disparoX += dx;
+       
+  }
+  
 
 
 
@@ -113,7 +128,7 @@ function keyDownHandler(event) {
   if (event.keyCode == '40') { //si la tecla presionada es direccional abajo
     nave_DOWN = true;
   }
-  if (event.keyCode == '35') { //si la tecla presionada es espacio para disparar
+  if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
     disparar = true;
   }
 
@@ -127,7 +142,7 @@ function keyUpHandler(event) {
   if (event.keyCode == '40') { //si la tecla presionada es direccional derecho
     nave_DOWN = false;
   }
-  if (event.keyCode == '35') { //si la tecla presionada es espacio para disparar
+  if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
     disparar = false;
   }
 }
