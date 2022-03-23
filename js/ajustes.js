@@ -21,6 +21,8 @@ function init(){
         sonido1.play();
     });   
    pintarIconos();
+   playMp3();
+   pauseMp3();
 }
 
 function pintarIconos(){
@@ -35,4 +37,14 @@ function aumentarVolumen(){
 
 function elegirNave(){
 
+}
+
+const audioContainer = document.getElementById("audioContainer"); 
+
+function playMp3() { 
+  audioContainer.play(); 
+} 
+
+function pauseMp3() { 
+  audioContainer.pause(); 
 }

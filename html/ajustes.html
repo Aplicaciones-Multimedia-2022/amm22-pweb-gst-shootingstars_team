@@ -10,7 +10,13 @@
     </header>
     <body>
 <!-- todo malllllllllllll-->
-        <audio autoplay="autoplay" loop="loop" scr="../audio/cancion1.mp3"></audio>
+<audio id="audioContainer">
+    <source src="cancion1.mp3" type="audio/mpeg">
+       </audio>
+       <button onclick="playMp3()" type="button">Play Mp3</button>
+       <button onclick="pauseMp3()" type="button">Pause Mp3</button> 
+
+       
          <!-- declaracion de las imagenes
         <img id="icono_vol"  src="/images/pixil-frame-0.png" >
 -->
