@@ -9,7 +9,6 @@ sonido1.src="../audio/click/39562__the-bizniss__mouse-click.wav";
 
 
 
-
 window.onload=init;
 
 var icono_volumen = new Image();
@@ -25,8 +24,8 @@ function init(){
 }
 
 function pintarIconos(){
-    icono_volumen.src="../images/pixil-frame-0.png";
-    ctx1.drawImage(icono_volumen,600,600);
+    icono_volumen.src="../images/shot1_2.png";
+    ctx1.drawImage(icono_volumen,canvas1.height,canvas1.width + 50);
 }
 
 
