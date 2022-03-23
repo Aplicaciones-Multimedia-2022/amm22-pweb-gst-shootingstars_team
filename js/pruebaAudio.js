@@ -1,5 +1,5 @@
 
-var canvas= document.getElementById("putafoto");
+var canvas= document.getElementById("foto");
 var ctx= canvas.getContext("2d");
 var posEnemigoY=200;
 var posEnemigoX = 200;
