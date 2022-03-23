@@ -1,15 +1,31 @@
 
 var canvas= document.getElementById("putafoto");
 var ctx= canvas.getContext("2d");
+var posEnemigoY=200;
+var posEnemigoX = 200;
 window.onload = init;
 var imagen= new Image();
-
-
+var Enemigo = new Image();
 
 function init(){
-pintar();
-bola();
+    pintarEnemigo();
+    bola();
+    pintar();
 }
+
+function enemigo(naveX, naveY) {
+  
+    this.posEnemigoX = posEnemigoX;
+    this.posEnemigoY = posEnemigoY;
+}
+
+
+function pintarEnemigo(){
+    var en = new enemigo(posEnemigoX, posEnemigoY);
+    Enemigo.src = "../images/Ship1.png";
+    ctx.drawImage(Enemigo, en.posEnemigoX, en.posEnemigoY);
+}
+
 
 function pintar(){
     imagen.src="../images/Ship1.png";
