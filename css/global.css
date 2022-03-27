@@ -1,65 +1,74 @@
+/*Formatear texto: Mayus + Alt + F*/
+
 /*Fuente pixel*/
 @font-face {
-    font-family: retro;
-    src: url(../resources/Retro\ Gaming.ttf);
+  font-family: retro;
+  src: url(../resources/Retro\ Gaming.ttf);
 }
 /*Foto de fondo*/
-body{
-    background-image: url("../images/FondoGeneral.png");
-    background-size: 100% 100%; 
+body {
+  background-image: url("../images/FondoGeneral.png");
+  background-size: 100% 100%;
 }
 
+/*Segundos títulos*/
+h3 {
+  font-family: retro;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
 /* Esta es la configuración para la barra de menú de abajo*/
 .navbar {
-    overflow: hidden;
-    background-color: #FFC107;
-    position: fixed;
-    bottom: 0;
-    left:0;
-    width: 100%;
-    text-align: center;
-   }
-
-.boton{
-    border:0px;
-    font-family: retro;
-    display: inline-block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    font-size: 17px;
-    text-decoration: none;
-    background-color: #FFC107;
-    cursor: pointer;
+  overflow: hidden;
+  background-color: #ffc107;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
-.boton:hover{
-    background:black;
-    color:#FFC107 ;
+
+.boton {
+  border: 0px;
+  font-family: retro;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  text-decoration: none;
+  background-color: #ffc107;
+  cursor: pointer;
+}
+.boton:hover {
+  background: black;
+  color: #ffc107;
 }
 /*Para los títulos de las páginas*/
 
-.Titulo{
-    text-align: center;
-    font-family: retro;
-    color: rgba(255, 193, 7,255);
-    font-size: 10vh;
-    position: relative;
+.Titulo {
+  text-align: center;
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  font-size: 10vh;
+  position: relative;
 }
 
 /*Para el boton de ajustes*/
 
-.divajustes{
-    margin: 10;
-    padding: 0 40px;
-    vertical-align: top;
-    position: absolute;
-    margin-left: 79%;
+.divajustes {
+  margin: 10;
+  padding: 0 40px;
+  vertical-align: top;
+  position: absolute;
+  margin-left: 79%;
 }
-.ajustes{
-    background-color: transparent;
-    border: transparent;
-    display: block;
-    cursor: pointer;
-    margin-left: 95%;
-    margin-top: 2%;
+.ajustes {
+  background-color: transparent;
+  border: transparent;
+  display: block;
+  cursor: pointer;
+  margin-left: 95%;
+  margin-top: 2%;
 }

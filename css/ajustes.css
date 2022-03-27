@@ -1,57 +1,30 @@
-body{
-    background-image: url("Space\ Background\ \(3\).png");
-}
-body{
-    text-align: center;
-    color: white;
-    font-size:40px;
-    font-family: retro;
+table {
+  text-align: center;
 }
 
-
-@font-face{
-    font-family: retro;
-    src:url(Retro\ Gaming.ttf);
-
+#ajustes_audio {
+  width: 400;
+  height: 150;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-bottom: 10px solid #ffc107;
+  border-right: 10px solid #ffc107;
+  border-top: 10px solid #ffc107;
+  border-left: 10px solid #ffc107;
 }
-.titulo {
- text-align: center;
- color: #FFC107;
- font-size: 70px;
- font-family: letrajedi;
+#personalizacion {
+  width: 1000;
+  height: 400;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-bottom: 10px solid #ffc107;
+  border-right: 10px solid #ffc107;
+  border-top: 10px solid #ffc107;
+  border-left: 10px solid #ffc107;
 }
-
-table{
-    text-align: center;
-}
-
-#ajustes_audio{
-    width:400 ;
-    height:150;
-    padding-right:0;
-    padding-left: 0 ;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border-bottom: 10px solid #FFC107 ;
-    border-right: 10px solid #FFC107;
-    border-top: 10px solid #FFC107;
-    border-left:10px solid #FFC107;
-
-}
-#personalizacion{
-    width:1000 ;
-    height:400;
-    padding-right:0;
-    padding-left: 0 ;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border-bottom: 10px solid #FFC107 ;
-    border-right: 10px solid #FFC107;
-    border-top: 10px solid #FFC107;
-    border-left:10px solid #FFC107;
-}
-
-
-
