@@ -1,117 +1,157 @@
-var mycanvas = document.getElementById("nave");
+var mycanvas = document.getElementById('game');
 var ctx = mycanvas.getContext("2d");
-var x, y;
-var w, h;
-var posN;
-var downPressed;
-var upPressed;
+var naveX = 0;
+var naveY = 0;
+var nave_dispara = false;
+var nave_UP = false;
+var nave_DOWN = false; 
+const borde = 10;
+var dy =2;
+var alturanave = 70;
+var bol_disparoX = 20;
+var bol_disparoY;
+var dx = 3;
+var disparar = false;
+window.onload = init;
+const final_nave = game.height - borde - alturanave;
 var posEnemigoY;
 var posEnemigoX;
 var dx;
-var Nave = new Image();
 var Enemigo = new Image();
-var disparo = new Array();
-var i;
-var ruta;
-window.onload = init;
-var dispaux = new Image();
-//document.body.style.overflow = 'hidden';
+var Nave = new Image();
+
+//Funcion para inicializar el programa
 function init() {
-    w = mycanvas.width;
-    h = mycanvas.height;
-    x = 10;
-    y = h / 2;
-    posN = h / 2;
-    downPressed = false;
-    upPressed = false;
-    posEnemigoY = h / 2;
-    posEnemigoX = w;
-    dx = 0;
-    Nave.src = "../Ship1.png";
-    i = 0;
+  posEnemigoY = mycanvas.height / 2;
+  posEnemigoX = mycanvas.width;
+  pintarBola();
+  pintarNave(); //llamamos a la funcion pintarNave
 
-
-    pintarNave();
-    pintarEnemigo();
 }
 
+function enemigo(naveX, naveY) {
+  
+  this.posEnemigoX = posEnemigoX;
+    this.posEnemigoY = posEnemigoY;
+}
+
+function nave(posEnemigoX, posEnemigoY, dy) {
+this.naveX = naveX;
+  this.naveY = naveY;
+  }
+
+//funcion pintar enemigo
+function pintarEnemigo(){
+  var en = new enemigo(posEnemigoX, posEnemigoY);
+  Enemigo.src = "../images/Ship1.png";
+  ctx.drawImage(Enemigo, en.posEnemigoX, en.posEnemigoY);
+}
+
+
+//Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
-    ctx.drawImage(Nave, 10, posN);
-
-
-
+    var na = new nave(posEnemigoX, posEnemigoY);
+    Nave.src = "../images/Ship1.png";
+    ctx.drawImage(Nave, na.naveX, na.naveY);
 }
 
-function pintarEnemigo() {
 
-    Enemigo.src = "../Ship2.png";
-    ctx.drawImage(Enemigo, posEnemigoX, posEnemigoY);
-
-
+//Pintamos la bala con la que dispara
+function pintarBola() {
+  ctx.beginPath();
+  ctx.arc(bol_disparoX, bol_disparoY, borde, 0, 2 * Math.PI);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  ctx.closePath();
 }
 
+//Utilizamos esta funcion para dibujar el movimiento
 function draw() {
-    ctx.clearRect(0, 0, w, h);
-    pintarNave();
-    pintarEnemigo();
+  ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
+  pintarNave(); //llamamos a la funcion pintarNave
+  pintarEnemigo();
 
 
-    if (downPressed && posN < mycanvas.height - 40) {
-        posN += 5;
+  if (nave_UP) {
+    this.naveY -= this.dy;
+  }
+  if (nave_DOWN) {
+    this.naveY += this.dy;
+  }
 
-    } else if (upPressed && posN > 0) {
-        posN -= 5;
-    }
-    if (posEnemigoX < 0) {
-        posEnemigoY = Math.random() * w + 0;
-        posEnemigoX = mycanvas.width;
+  if (this.naveY < borde) {
+    this.naveY = borde;
+  } else if (this.naveY > final_nave) {
+    this.naveY = final_nave;
+  }
 
-    } else{
+  if (this.posEnemigoX < 0) {
+    this.posEnemigoY = Math.random() * (mycanvas.width - 40) + 0;
+    this.posEnemigoX = mycanvas.width;
 
-        posEnemigoX -= 5;
+  } else {
+
+    this.posEnemigoX -= 5;
+
+
+  }
+
+  if (disparar) {
+
+    c = 1;
+    m = this.naveY
+    bol_disparoX = 20;
+    //bol_disparoY = naveY + (alturanave / 2);
+  }
+  if(c==1){
+        pintarBola();
         
+        bol_disparoY = m;
+        bol_disparoX += dx;
+       
+  }
+  
 
-    }
+
 
 }
-
-
-
-
-
 
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 
-
-
-function keyDownHandler(e) {
-    if (e.keyCode == 38) {
-        upPressed = true;
-    } else if (e.keyCode == 40) {
-        downPressed = true;
-    }
+function keyDownHandler(event) {
+  if (event.keyCode == '38') { //si la tecla presionada es direccional arriba
+    nave_UP = true;
+  }
+  if (event.keyCode == '40') { //si la tecla presionada es direccional abajo
+    nave_DOWN = true;
+  }
+  if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
+    disparar = true;
+  }
 
 }
+
+
+function keyUpHandler(event) {
+  if (event.keyCode == '38') { //si la tecla presionada es direccional derecho
+    nave_UP = false;
+  }
+  if (event.keyCode == '40') { //si la tecla presionada es direccional derecho
+    nave_DOWN = false;
+  }
+  if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
+    disparar = false;
+  }
+}
+
+//Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener("keydown", function(e) {
-    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        e.preventDefault();
-    }
+  if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+    e.preventDefault();
+  }
 }, false);
- 
 
-
-
-function keyUpHandler(e) {
-    if (e.keyCode == 38) { //ARRIBA
-        upPressed = false;
-    } else if (e.keyCode == 40) { //ABAJO
-        downPressed = false;
-    }
-
-
-
-}
 setInterval(draw, 10);
