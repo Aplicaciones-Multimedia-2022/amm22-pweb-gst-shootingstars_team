@@ -33,7 +33,10 @@ function init() {
 
 function enemigo(naveX, naveY) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
 =======
 >>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
   this.posEnemigoX = posEnemigoX;
@@ -97,6 +100,7 @@ function draw() {
     this.posEnemigoX = mycanvas.width;
   } else {
     this.posEnemigoX -= 5;
+<<<<<<< HEAD
   }
 
   if (disparar) {
@@ -105,22 +109,30 @@ function draw() {
     m = this.naveY + Enemigo.height / 2;
     bol_disparoX = Enemigo.width;
 
+=======
+>>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
   }
   if (c == 1) {
     pintarBola();
 
+<<<<<<< HEAD
     bol_disparoY = m;
     bol_disparoX += dx;
 
 
 
 =======
+=======
+  if (disparar) {
+    c = 1;
+>>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
     m = this.naveY;
     bol_disparoX = 20;
     //bol_disparoY = naveY + (alturanave / 2);
   }
   if (c == 1) {
     pintarBola();
+<<<<<<< HEAD
 >>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
 
     bol_disparoY = m;
@@ -170,6 +182,14 @@ function draw() {
     }
   }, false);
 =======
+=======
+
+    bol_disparoY = m;
+    bol_disparoX += dx;
+  }
+}
+
+>>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
@@ -213,6 +233,11 @@ window.addEventListener(
   },
   false
 );
+<<<<<<< HEAD
 >>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
 
   setInterval(draw, 10);
+=======
+
+setInterval(draw, 10);
+>>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
