@@ -1,32 +1,31 @@
-.objetivos{
-    font-family: retro;
-    color: rgba(255, 193, 7,255);
-    font-size: 20px;
-    margin-right: 100px;
-    margin-left: 100px;
-    border: solid 5px rgba(255, 193, 7,255);
-    text-align: center;
+.objetivos {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  font-size: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+  border: solid 5px rgba(255, 193, 7, 255);
+  text-align: center;
 }
 
-.up{
-    width: 250px;
-    height: auto;
-    margin: 15px 20px;
-    vertical-align: middle;
+.up {
+  width: 250px;
+  height: auto;
+  margin: 15px 20px;
+  vertical-align: middle;
 }
-p{
-    font-family: retro;
-    color: rgba(255, 193, 7,255);
-    font-size: 20px; 
-    align-self: justify;
-
+p {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  font-size: 20px;
+  align-self: justify;
 }
-.controles{
-    font-family: retro;
-    color: rgba(255, 193, 7,255);
-    font-size: 20px;
-    margin-right: 100px;
-    margin-left: 100px;
-    border: solid 5px rgba(255, 193, 7,255);
-    text-align: start;
+.controles {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  font-size: 20px;
+  margin-right: 100px;
+  margin-left: 100px;
+  border: solid 5px rgba(255, 193, 7, 255);
+  text-align: start;
 }
