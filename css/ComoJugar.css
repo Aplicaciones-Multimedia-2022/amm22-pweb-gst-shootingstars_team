@@ -14,12 +14,14 @@
   margin: 15px 20px;
   vertical-align: middle;
 }
+
 p {
   font-family: retro;
   color: rgba(255, 193, 7, 255);
   font-size: 20px;
   align-self: justify;
 }
+
 .controles {
   font-family: retro;
   color: rgba(255, 193, 7, 255);
