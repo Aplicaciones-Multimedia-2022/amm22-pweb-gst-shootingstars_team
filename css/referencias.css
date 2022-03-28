@@ -1,0 +1,26 @@
+.referencias{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px; 
+    margin: auto;
+    
+}
+td{
+    width: 25%;
+    text-align: center;
+    color: rgba(255,193,7,255);
+    background-color: transparent;
+    font-family: retro; 
+    padding: 20px;
+    border: solid 3px rgba(255, 193, 7,255);
+    
+}
+th{
+    width: 25%;
+    text-align: center;
+    color: black;
+    background-color: rgba(255,193,7,255);
+    font-family: retro; 
+    padding: 20px;
+    border: solid 3px rgba(255, 193, 7,255);
+}

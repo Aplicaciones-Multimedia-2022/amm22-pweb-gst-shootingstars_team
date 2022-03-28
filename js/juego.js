@@ -1,4 +1,4 @@
-var mycanvas = document.getElementById('game');
+var mycanvas = document.getElementById("game");
 var ctx = mycanvas.getContext("2d");
 var naveX = 0;
 var naveY = 0;
@@ -29,11 +29,13 @@ function init() {
   posEnemigoX = mycanvas.width;
   pintarBola();
   pintarNave(); //llamamos a la funcion pintarNave
-
 }
 
 function enemigo(naveX, naveY) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
   this.posEnemigoX = posEnemigoX;
   this.posEnemigoY = posEnemigoY;
 }
@@ -50,14 +52,12 @@ function pintarEnemigo() {
   ctx.drawImage(Enemigo, en.posEnemigoX, en.posEnemigoY);
 }
 
-
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
   var na = new nave(posEnemigoX, posEnemigoY);
   Nave.src = "../images/Ship1.png";
   ctx.drawImage(Nave, na.naveX, na.naveY);
 }
-
 
 //Pintamos la bala con la que dispara
 function pintarBola() {
@@ -79,7 +79,6 @@ function draw() {
   pintarNave(); //llamamos a la funcion pintarNave
   pintarEnemigo();
 
-
   if (nave_UP) {
     this.naveY -= this.dy;
   }
@@ -96,17 +95,13 @@ function draw() {
   if (this.posEnemigoX < 0) {
     this.posEnemigoY = Math.random() * (mycanvas.width - 40) + 0;
     this.posEnemigoX = mycanvas.width;
-
   } else {
-
     this.posEnemigoX -= 5;
-
-
   }
 
   if (disparar) {
-
     c = 1;
+<<<<<<< HEAD
     m = this.naveY + Enemigo.height / 2;
     bol_disparoX = Enemigo.width;
 
@@ -119,9 +114,21 @@ function draw() {
 
 
 
+=======
+    m = this.naveY;
+    bol_disparoX = 20;
+    //bol_disparoY = naveY + (alturanave / 2);
+  }
+  if (c == 1) {
+    pintarBola();
+>>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
 
+    bol_disparoY = m;
+    bol_disparoX += dx;
+  }
 }
 
+<<<<<<< HEAD
   }
 
 
@@ -162,5 +169,50 @@ function draw() {
       e.preventDefault();
     }
   }, false);
+=======
+document.addEventListener("keydown", keyDownHandler, false);
+document.addEventListener("keyup", keyUpHandler, false);
+
+function keyDownHandler(event) {
+  if (event.keyCode == "38") {
+    //si la tecla presionada es direccional arriba
+    nave_UP = true;
+  }
+  if (event.keyCode == "40") {
+    //si la tecla presionada es direccional abajo
+    nave_DOWN = true;
+  }
+  if (event.keyCode == "32") {
+    //si la tecla presionada es espacio para disparar
+    disparar = true;
+  }
+}
+
+function keyUpHandler(event) {
+  if (event.keyCode == "38") {
+    //si la tecla presionada es direccional derecho
+    nave_UP = false;
+  }
+  if (event.keyCode == "40") {
+    //si la tecla presionada es direccional derecho
+    nave_DOWN = false;
+  }
+  if (event.keyCode == "32") {
+    //si la tecla presionada es espacio para disparar
+    disparar = false;
+  }
+}
+
+//Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
+window.addEventListener(
+  "keydown",
+  function (e) {
+    if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+      e.preventDefault();
+    }
+  },
+  false
+);
+>>>>>>> e9a1e3196af24dec32b506d36faf8e2f9a29739f
 
   setInterval(draw, 10);
