@@ -14,7 +14,7 @@ function init(){
 }
 
 function enemigo(naveX, naveY) {
-  
+
     this.posEnemigoX = posEnemigoX;
     this.posEnemigoY = posEnemigoY;
 }
@@ -39,4 +39,3 @@ function bola(){
   ctx.fill();
   ctx.closePath();
 }
-

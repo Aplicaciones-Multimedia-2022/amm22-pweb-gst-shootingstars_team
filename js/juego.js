@@ -4,9 +4,9 @@ var naveX = 0;
 var naveY = 0;
 var nave_dispara = false;
 var nave_UP = false;
-var nave_DOWN = false; 
+var nave_DOWN = false;
 const borde = 10;
-var dy =2;
+var dy = 2;
 var alturanave = 70;
 var bol_disparoX = 20;
 var bol_disparoY;
@@ -17,11 +17,14 @@ const final_nave = game.height - borde - alturanave;
 var posEnemigoY;
 var posEnemigoX;
 var dx;
+var balas = new Array();
 var Enemigo = new Image();
 var Nave = new Image();
+//var shoot = new Image();
 
 //Funcion para inicializar el programa
 function init() {
+
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
   pintarBola();
@@ -30,18 +33,18 @@ function init() {
 }
 
 function enemigo(naveX, naveY) {
-  
+
   this.posEnemigoX = posEnemigoX;
-    this.posEnemigoY = posEnemigoY;
+  this.posEnemigoY = posEnemigoY;
 }
 
 function nave(posEnemigoX, posEnemigoY, dy) {
-this.naveX = naveX;
+  this.naveX = naveX;
   this.naveY = naveY;
-  }
+}
 
 //funcion pintar enemigo
-function pintarEnemigo(){
+function pintarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
   Enemigo.src = "../images/Ship1.png";
   ctx.drawImage(Enemigo, en.posEnemigoX, en.posEnemigoY);
@@ -50,14 +53,19 @@ function pintarEnemigo(){
 
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
-    var na = new nave(posEnemigoX, posEnemigoY);
-    Nave.src = "../images/Ship1.png";
-    ctx.drawImage(Nave, na.naveX, na.naveY);
+  var na = new nave(posEnemigoX, posEnemigoY);
+  Nave.src = "../images/Ship1.png";
+  ctx.drawImage(Nave, na.naveX, na.naveY);
 }
 
 
 //Pintamos la bala con la que dispara
 function pintarBola() {
+  /*  var b = new Image(shoot);
+    b.x = this.naveX;
+    b.y = this.naveY;
+    balas.push(b);*/
+
   ctx.beginPath();
   ctx.arc(bol_disparoX, bol_disparoY, borde, 0, 2 * Math.PI);
   ctx.fillStyle = "white";
@@ -99,59 +107,60 @@ function draw() {
   if (disparar) {
 
     c = 1;
-    m = this.naveY
-    bol_disparoX = 20;
-    //bol_disparoY = naveY + (alturanave / 2);
+    m = this.naveY + Enemigo.height / 2;
+    bol_disparoX = Enemigo.width;
+
   }
-  if(c==1){
-        pintarBola();
-        
-        bol_disparoY = m;
-        bol_disparoX += dx;
-       
-  }
-  
+  if (c == 1) {
+    pintarBola();
+
+    bol_disparoY = m;
+    bol_disparoX += dx;
+
 
 
 
 }
 
-
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-
-
-function keyDownHandler(event) {
-  if (event.keyCode == '38') { //si la tecla presionada es direccional arriba
-    nave_UP = true;
-  }
-  if (event.keyCode == '40') { //si la tecla presionada es direccional abajo
-    nave_DOWN = true;
-  }
-  if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
-    disparar = true;
   }
 
-}
+
+  document.addEventListener("keydown", keyDownHandler, false);
+  document.addEventListener("keyup", keyUpHandler, false);
 
 
-function keyUpHandler(event) {
-  if (event.keyCode == '38') { //si la tecla presionada es direccional derecho
-    nave_UP = false;
-  }
-  if (event.keyCode == '40') { //si la tecla presionada es direccional derecho
-    nave_DOWN = false;
-  }
-  if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
-    disparar = false;
-  }
-}
+  function keyDownHandler(event) {
+    if (event.keyCode == '38') { //si la tecla presionada es direccional arriba
+      nave_UP = true;
+    }
+    if (event.keyCode == '40') { //si la tecla presionada es direccional abajo
+      nave_DOWN = true;
+    }
+    if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
+      disparar = true;
+    }
 
-//Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
-window.addEventListener("keydown", function(e) {
-  if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-    e.preventDefault();
   }
-}, false);
 
-setInterval(draw, 10);
+
+  function keyUpHandler(event) {
+    if (event.keyCode == '38') { //si la tecla presionada es direccional derecho
+      nave_UP = false;
+    }
+    if (event.keyCode == '40') { //si la tecla presionada es direccional derecho
+      nave_DOWN = false;
+    }
+    if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
+      disparar = false;
+
+    }
+  }
+
+  //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
+  window.addEventListener("keydown", function(e) {
+    if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+      e.preventDefault();
+    }
+  }, false);
+
+  setInterval(draw, 10);
