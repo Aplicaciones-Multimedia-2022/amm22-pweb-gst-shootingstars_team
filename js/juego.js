@@ -20,7 +20,7 @@ var dx;
 var balas = new Array();
 var Enemigo = new Image();
 var Nave = new Image();
-//var shoot = new Image();
+var shoots = [];
 
 //Funcion para inicializar el programa
 function init() {
@@ -41,6 +41,10 @@ function nave(posEnemigoX, posEnemigoY, dy) {
   this.naveX = naveX;
   this.naveY = naveY;
 }
+function Bala(bol_disparoX,bol_disparoY) {
+  this.bol_disparoX = bol_disparoX + Enemigo.width;
+  this.bol_disparoY = naveY + Enemigo.height/2;
+}
 
 //funcion pintar enemigo
 function pintarEnemigo() {
@@ -60,11 +64,28 @@ function pintarNave() {
 function pintarBola() {
 
 
-  ctx.beginPath();
-  ctx.arc(bol_disparoX, bol_disparoY, borde, 0, 2 * Math.PI);
-  ctx.fillStyle = "white";
-  ctx.fill();
-  ctx.closePath();
+
+  for (var i = 0; i <shoots.length; i++) {
+    if(shoots[i].bol_disparoX< game.width){
+
+      ctx.beginPath();
+      ctx.arc(shoots[i].bol_disparoX, shoots[i].bol_disparoY, borde, 0, 2 * Math.PI);
+      ctx.fillStyle = "white";
+      ctx.fill();
+      ctx.closePath();
+      shoots[i].bol_disparoX +=2;
+    }else{
+      shoots.splice(i, 1);
+      if(shoots.length == 0){
+      disparar = false;
+      i = 0;
+    }
+
+
+
+    }
+  }
+
 }
 
 //Utilizamos esta funcion para dibujar el movimiento
@@ -72,6 +93,11 @@ function draw() {
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
   pintarNave(); //llamamos a la funcion pintarNave
   pintarEnemigo();
+  if(disparar){
+  pintarBola();
+
+}
+
 
   if (nave_UP) {
     this.naveY -= this.dy;
@@ -94,7 +120,7 @@ function draw() {
 
   }
 
-  if (disparar) {
+/*  if (disparar) {
     c = 1;
 
     m = this.naveY + Enemigo.height / 2;
@@ -105,12 +131,14 @@ function draw() {
   }  if (c == 1) {
     pintarBola();
 
-
     bol_disparoY = m;
     bol_disparoX += dx;
 
 
-}
+}*/
+
+
+
 
 }
 
@@ -169,6 +197,8 @@ function keyDownHandler(event) {
   if (event.keyCode == "32") {
     //si la tecla presionada es espacio para disparar
     disparar = true;
+    bala =new Bala(bol_disparoX,bol_disparoY);
+    shoots.push(bala);
   }
 }
 
@@ -183,7 +213,8 @@ function keyUpHandler(event) {
   }
   if (event.keyCode == "32") {
     //si la tecla presionada es espacio para disparar
-    disparar = false;
+
+
   }
 }
 
