@@ -25,6 +25,8 @@ table {
   text-decoration: none;
   background-color: #ffc107;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #personalizacion {
