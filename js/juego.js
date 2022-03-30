@@ -11,6 +11,7 @@ var alturanave = 70;
 var bol_disparoX = 20;
 var bol_disparoY;
 var dx = 3;
+var enemigoLlega = false;
 
 window.onload = init;
 var final_nave;
@@ -22,15 +23,16 @@ var Enemigo = new Image();
 var Nave = new Image();
 var imagenBala = new Image();
 var shoots = [];
+var enemies = [];
 
 //Funcion para inicializar el programa
 function init() {
 
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
-  pintarBola();
+  pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
-  final_nave =  game.height - borde - alturanave;
+  final_nave = game.height - borde - alturanave;
 }
 
 function enemigo(naveX, naveY) {
@@ -52,9 +54,24 @@ function Bala(bol_disparoX, bol_disparoY, imagenBala) {
 
 //funcion pintar enemigo
 function pintarEnemigo() {
+  for (var j = 0; j < enemies.length; j++) {
+    ctx.drawImage(Enemigo, enemies[j].posEnemigoX, enemies[j].posEnemigoY);
+    enemies[j].posEnemigoX -= 5;
+    if (enemies[j].posEnemigoX < 0) {
+      enemies.splice(j, 1);
+
+    }
+
+  }
+}
+
+
+function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
-  Enemigo.src = "../images/Ship1.png";
-  ctx.drawImage(Enemigo, en.posEnemigoX, en.posEnemigoY);
+  Enemigo.src = "../images/Ship2.png";
+  en.posEnemigoX = game.width;
+  en.posEnemigoY = Math.floor(Math.random() * (game.height-Enemigo.height));
+  enemies.push(en);
 }
 
 //Ahora hacemos la funcion de pintar la nave
@@ -65,7 +82,7 @@ function pintarNave() {
 }
 
 //Pintamos la bala con la que dispara
-function pintarBola() {
+function pintarBala() {
 
   imagenBala.src = "../images/bala.png";
 
@@ -91,9 +108,15 @@ function pintarBola() {
 function draw() {
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
   pintarNave(); //llamamos a la funcion pintarNave
-  pintarEnemigo();
+  if (enemies.length != 0) {
+    pintarEnemigo();
+    j = 0;
+
+
+  }
+
   if (nave_dispara) {
-    pintarBola();
+    pintarBala();
 
   }
 
@@ -111,13 +134,7 @@ function draw() {
     this.naveY = final_nave;
   }
 
-  if (this.posEnemigoX < 0) {
-    this.posEnemigoY = Math.random() * (mycanvas.width - 40) + 0;
-    this.posEnemigoX = mycanvas.width;
-  } else {
-    this.posEnemigoX -= 5;
 
-  }
 
 
 }
@@ -212,3 +229,4 @@ window.addEventListener(
 );
 
 setInterval(draw, 10);
+setInterval(generarEnemigo, 2000);
