@@ -73,3 +73,7 @@ h3 {
   display: block;
   cursor: pointer;
 }
+
+body{
+  margin-bottom: 5%;
+}
