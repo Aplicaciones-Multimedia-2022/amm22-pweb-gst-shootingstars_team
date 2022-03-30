@@ -23,7 +23,6 @@ var Nave = new Image();
 var imagenBala = new Image();
 var shoots = [];
 
-
 //Funcion para inicializar el programa
 function init() {
 
@@ -31,7 +30,7 @@ function init() {
   posEnemigoX = mycanvas.width;
   pintarBola();
   pintarNave(); //llamamos a la funcion pintarNave
-  final_nave =  game.height - Nave.height;
+  final_nave =  game.height - borde - alturanave;
 }
 
 function enemigo(naveX, naveY) {
