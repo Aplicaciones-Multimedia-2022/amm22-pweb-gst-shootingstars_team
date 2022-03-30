@@ -20,6 +20,7 @@ var dx;
 var balas = new Array();
 var Enemigo = new Image();
 var Nave = new Image();
+var imagenBala = new Image();
 var shoots = [];
 
 //Funcion para inicializar el programa
@@ -42,9 +43,10 @@ function nave(posEnemigoX, posEnemigoY, dy) {
   this.naveY = naveY;
 }
 
-function Bala(bol_disparoX, bol_disparoY) {
-  this.bol_disparoX = bol_disparoX + Enemigo.width;
-  this.bol_disparoY = naveY + Enemigo.height / 2;
+function Bala(bol_disparoX, bol_disparoY, imagenBala) {
+  this.bol_disparoX = Nave.width;
+  this.bol_disparoY = naveY + (Nave.height/2) - 9;
+  this.imagenBala = imagenBala;
 }
 
 //funcion pintar enemigo
@@ -64,16 +66,17 @@ function pintarNave() {
 //Pintamos la bala con la que dispara
 function pintarBola() {
 
-
+  imagenBala.src = "../images/bala.png";
 
   for (var i = 0; i < shoots.length; i++) {
     if (shoots[i].bol_disparoX < game.width) {
 
-      ctx.beginPath();
+      /*ctx.beginPath();
       ctx.arc(shoots[i].bol_disparoX, shoots[i].bol_disparoY, borde, 0, 2 * Math.PI);
       ctx.fillStyle = "white";
       ctx.fill();
-      ctx.closePath();
+      ctx.closePath();*/
+      ctx.drawImage(imagenBala,shoots[i].bol_disparoX,shoots[i].bol_disparoY);
       shoots[i].bol_disparoX += 2;
     } else {
       shoots.splice(i, 1);
