@@ -1,70 +1,70 @@
-.divlogo{
-    background-position:center;
-    margin: 10;
-    padding: 0 40px;
-    margin-top: 2%;
-
+.divlogo {
+  background-position: center;
+  margin: 10;
+  padding: 0 40px;
+  margin-top: 8%;
 }
 
-.logo_principal{
-    background-repeat:no-repeat;
-    background-position:center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    background-size: 5vh;
+.logo_principal {
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: 5vh;
 }
-.divplay{
-    background-position:center;
-    margin: 10;
-    padding: 0 40px;
-    margin-top: 165;
+.divplay {
+  background-position: center;
+  margin: 10;
+  padding: 0 40px;
+  margin-top: 165;
 }
-.play{
-    background-repeat:no-repeat;
-    background-color: transparent;
-    background-size: 90px 45px;
-    background-position:center;
-    border: 5px solid rgba(255,193,7,255);
-    cursor: pointer;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 70%;
-    margin-top: -150;
+.play {
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 90px 45px;
+  background-position: center;
+  border: 5px solid rgba(255, 193, 7, 255);
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 70%;
+  margin-top: -150;
 }
 
 .play:hover {
-    box-shadow: 0 0px 20px 0 rgba(255,193,7,255), 0 0px 20px 0 rgba(255,193,7,255);  
+  box-shadow: 0 0px 20px 0 rgba(255, 193, 7, 255),
+    0 0px 20px 0 rgba(255, 193, 7, 255);
 }
 
-.divcontroles{
-    text-align: center;
-    margin: 10;
-    padding: 0 40px;
-    margin-top: 150;
+.divcontroles {
+  text-align: center;
+  margin: 10;
+  padding: 0 40px;
+  margin-top: 150;
 }
 
-.boton1{
-    font-family: retro;
-    color: rgba(255,193,7,255);
-    background-repeat:no-repeat;
-    background-color: transparent;
-    cursor: pointer;
-    bottom: 100%;
-    margin-left: 30;
-    margin-right: 30;
-    margin: 20;
-    border: 3px solid rgba(255,193,7,255);
-    display: inline-block; 
-    text-align: center;
-    padding: 14px 16px;
-    font-size: 17px;
-    transition-duration: 0.4s;
-    text-decoration: none;
+.boton1 {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  bottom: 100%;
+  margin-left: 30;
+  margin-right: 30;
+  margin: 20;
+  border: 3px solid rgba(255, 193, 7, 255);
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  transition-duration: 0.4s;
+  text-decoration: none;
 }
 
 .boton1:hover {
-    background-color: rgba(255,193,7,255);
-    color: black;
+  background-color: rgba(255, 193, 7, 255);
+  color: black;
 }
