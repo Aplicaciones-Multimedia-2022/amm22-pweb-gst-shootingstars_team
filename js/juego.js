@@ -11,16 +11,18 @@ var alturanave = 70;
 var bol_disparoX = 20;
 var bol_disparoY;
 var dx = 3;
-var disparar = false;
+
 window.onload = init;
-const final_nave = game.height - borde - alturanave;
+var final_nave;
 var posEnemigoY;
 var posEnemigoX;
 var dx;
 var balas = new Array();
 var Enemigo = new Image();
 var Nave = new Image();
+var imagenBala = new Image();
 var shoots = [];
+
 
 //Funcion para inicializar el programa
 function init() {
@@ -29,6 +31,7 @@ function init() {
   posEnemigoX = mycanvas.width;
   pintarBola();
   pintarNave(); //llamamos a la funcion pintarNave
+  final_nave =  game.height - Nave.height;
 }
 
 function enemigo(naveX, naveY) {
@@ -42,9 +45,10 @@ function nave(posEnemigoX, posEnemigoY, dy) {
   this.naveY = naveY;
 }
 
-function Bala(bol_disparoX, bol_disparoY) {
-  this.bol_disparoX = bol_disparoX + Enemigo.width;
-  this.bol_disparoY = naveY + Enemigo.height / 2;
+function Bala(bol_disparoX, bol_disparoY, imagenBala) {
+  this.bol_disparoX = Nave.width;
+  this.bol_disparoY = naveY + (Nave.height / 2) - 9;
+  this.imagenBala = imagenBala;
 }
 
 //funcion pintar enemigo
@@ -56,29 +60,24 @@ function pintarEnemigo() {
 
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
-  var na = new nave(posEnemigoX, posEnemigoY);
+  var naveAux = new nave(posEnemigoX, posEnemigoY);
   Nave.src = "../images/Ship1.png";
-  ctx.drawImage(Nave, na.naveX, na.naveY);
+  ctx.drawImage(Nave, naveAux.naveX, naveAux.naveY);
 }
 
 //Pintamos la bala con la que dispara
 function pintarBola() {
 
-
+  imagenBala.src = "../images/bala.png";
 
   for (var i = 0; i < shoots.length; i++) {
     if (shoots[i].bol_disparoX < game.width) {
-
-      ctx.beginPath();
-      ctx.arc(shoots[i].bol_disparoX, shoots[i].bol_disparoY, borde, 0, 2 * Math.PI);
-      ctx.fillStyle = "white";
-      ctx.fill();
-      ctx.closePath();
-      shoots[i].bol_disparoX += 2;
+      ctx.drawImage(imagenBala, shoots[i].bol_disparoX, shoots[i].bol_disparoY);
+      shoots[i].bol_disparoX += 5;
     } else {
       shoots.splice(i, 1);
       if (shoots.length == 0) {
-        disparar = false;
+        nave_dispara = false;
         i = 0;
       }
 
@@ -94,7 +93,7 @@ function draw() {
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
   pintarNave(); //llamamos a la funcion pintarNave
   pintarEnemigo();
-  if (disparar) {
+  if (nave_dispara) {
     pintarBola();
 
   }
@@ -120,25 +119,6 @@ function draw() {
     this.posEnemigoX -= 5;
 
   }
-
-  /*  if (disparar) {
-      c = 1;
-
-      m = this.naveY + Enemigo.height / 2;
-      bol_disparoX = Enemigo.width;
-
-
-
-    }  if (c == 1) {
-      pintarBola();
-
-      bol_disparoY = m;
-      bol_disparoX += dx;
-
-
-  }*/
-
-
 
 
 }
@@ -197,11 +177,13 @@ function keyDownHandler(event) {
   }
   if (event.keyCode == "32") {
     //si la tecla presionada es espacio para disparar
-    disparar = true;
+    nave_dispara = true;
     bala = new Bala(bol_disparoX, bol_disparoY);
     shoots.push(bala);
   }
 }
+
+
 
 function keyUpHandler(event) {
   if (event.keyCode == "38") {
