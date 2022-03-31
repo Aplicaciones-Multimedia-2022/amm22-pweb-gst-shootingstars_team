@@ -27,7 +27,6 @@ var enemies = [];
 
 //Funcion para inicializar el programa
 function init() {
-
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
   pintarBala();
@@ -36,7 +35,6 @@ function init() {
 }
 
 function enemigo(naveX, naveY) {
-
   this.posEnemigoX = posEnemigoX;
   this.posEnemigoY = posEnemigoY;
 }
@@ -48,7 +46,7 @@ function nave(posEnemigoX, posEnemigoY, dy) {
 
 function Bala(bol_disparoX, bol_disparoY, imagenBala) {
   this.bol_disparoX = Nave.width;
-  this.bol_disparoY = naveY + (Nave.height / 2) - 9;
+  this.bol_disparoY = naveY + Nave.height / 2 - 9;
   this.imagenBala = imagenBala;
 }
 
@@ -59,18 +57,15 @@ function pintarEnemigo() {
     enemies[j].posEnemigoX -= 5;
     if (enemies[j].posEnemigoX < 0) {
       enemies.splice(j, 1);
-
     }
-
   }
 }
-
 
 function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
   Enemigo.src = "../images/Ship2.png";
   en.posEnemigoX = game.width;
-  en.posEnemigoY = Math.floor(Math.random() * (game.height-Enemigo.height));
+  en.posEnemigoY = Math.floor(Math.random() * (game.height - Enemigo.height));
   enemies.push(en);
 }
 
@@ -83,7 +78,6 @@ function pintarNave() {
 
 //Pintamos la bala con la que dispara
 function pintarBala() {
-
   imagenBala.src = "../images/bala.png";
 
   for (var i = 0; i < shoots.length; i++) {
@@ -96,12 +90,8 @@ function pintarBala() {
         nave_dispara = false;
         i = 0;
       }
-
-
-
     }
   }
-
 }
 
 //Utilizamos esta funcion para dibujar el movimiento
@@ -111,15 +101,11 @@ function draw() {
   if (enemies.length != 0) {
     pintarEnemigo();
     j = 0;
-
-
   }
 
   if (nave_dispara) {
     pintarBala();
-
   }
-
 
   if (nave_UP) {
     this.naveY -= this.dy;
@@ -133,51 +119,51 @@ function draw() {
   } else if (this.naveY > final_nave) {
     this.naveY = final_nave;
   }
-
-
-
-
 }
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
-
 function keyDownHandler(event) {
-  if (event.keyCode == '38') { //si la tecla presionada es direccional arriba
+  if (event.keyCode == "38") {
+    //si la tecla presionada es direccional arriba
     nave_UP = true;
   }
-  if (event.keyCode == '40') { //si la tecla presionada es direccional abajo
+  if (event.keyCode == "40") {
+    //si la tecla presionada es direccional abajo
     nave_DOWN = true;
   }
-  if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
+  if (event.keyCode == "32") {
+    //si la tecla presionada es espacio para disparar
     disparar = true;
   }
-
 }
 
-
 function keyUpHandler(event) {
-  if (event.keyCode == '38') { //si la tecla presionada es direccional derecho
+  if (event.keyCode == "38") {
+    //si la tecla presionada es direccional derecho
     nave_UP = false;
   }
-  if (event.keyCode == '40') { //si la tecla presionada es direccional derecho
+  if (event.keyCode == "40") {
+    //si la tecla presionada es direccional derecho
     nave_DOWN = false;
   }
-  if (event.keyCode == '32') { //si la tecla presionada es espacio para disparar
+  if (event.keyCode == "32") {
+    //si la tecla presionada es espacio para disparar
     disparar = false;
-
   }
 }
 
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
-window.addEventListener("keydown", function(e) {
-  if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-    e.preventDefault();
-  }
-}, false);
-
-
+window.addEventListener(
+  "keydown",
+  function (e) {
+    if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+      e.preventDefault();
+    }
+  },
+  false
+);
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -199,8 +185,6 @@ function keyDownHandler(event) {
   }
 }
 
-
-
 function keyUpHandler(event) {
   if (event.keyCode == "38") {
     //si la tecla presionada es direccional derecho
@@ -212,15 +196,13 @@ function keyUpHandler(event) {
   }
   if (event.keyCode == "32") {
     //si la tecla presionada es espacio para disparar
-
-
   }
 }
 
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function(e) {
+  function (e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
