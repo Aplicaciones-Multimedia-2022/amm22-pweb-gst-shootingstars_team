@@ -19,7 +19,8 @@ p {
   font-family: retro;
   color: rgba(255, 193, 7, 255);
   font-size: 20px;
-  align-self: justify;
+  margin: 2%;
+  font-size: 25px;
 }
 
 .controles {
