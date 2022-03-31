@@ -103,6 +103,8 @@ th {
 .github{
   background-color: transparent;
   border: transparent;
-  display: right;
+  position:absolute;
+  right: 0%;
   cursor: pointer;
+
 }
