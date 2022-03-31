@@ -17,7 +17,7 @@ table {
 .control_audio {
   border: 0px;
   font-family: retro;
-  display: inline-block;
+  display: flex;
   color: black;
   text-align: center;
   padding: 14px 16px;
@@ -25,7 +25,14 @@ table {
   text-decoration: none;
   background-color: #ffc107;
   cursor: pointer;
+<<<<<<< HEAD
 
+=======
+  margin-left: 42%;
+  margin-right: 42%;
+  justify-content: space-around;
+  margin-top: 2%;
+>>>>>>> 0c5b976a90d30a7cbbfca1b6e888eb055ed5fc17
 }
 
 #personalizacion {

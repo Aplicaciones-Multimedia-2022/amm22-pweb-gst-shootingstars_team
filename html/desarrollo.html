@@ -20,13 +20,11 @@
     </div>
   </header>
   <body>
-    <div class="menu">
-      <ul>
-        <li><a href="#proceso">Proceso</a></li>
-        <li><a href="#problemas">Problemas</a></li>
-        <li><a href="#mec">Mec</a></li>
-        <li><a href="#mec2">Mec</a></li>
-      </ul>
+    <div id="menu">
+      <a href="#proceso">Proceso</a>
+      <a href="#problemas">Problemas</a>
+      <a href="#mec">Mec</a>
+      <a href="#mec2">Mec</a>
     </div>
     <div class="desarrollo">
       <div class="tituloapartados">
@@ -62,26 +60,10 @@
       </div>
       <div class="apartado">
         <p>
-          En primer lugar, en la pantalla de inicio, hemos tratado los eventos
-          multimedia 'ended' de manera que al acabar el vídeo, nos lleva
-          directamente a la pantalla de juego. En la página de instrucciones,
-          hemos incluido una demo interactiva, implementada en javascript, para
-          que el usuario aprenda a jugar de una manera sencilla. Por otro lado,
-          en la página del juego, hemos hecho uso de formularios para recoger
-          información del jugador, donde además comprobamos la entrada de
-          caracteres válidos para poder empezar el juego; también hemos
-          implementado una base de datos indexedDB para poder guardar las
-          puntuaciones del usuario y hemos implementado diferentes sonidos a lo
-          largo de la partida con posibilidad de silenciarlos. En esta misma
-          pantalla existen varios botones; el de pausa, el de puntuaciones,
-          donde si pulsas te muestra tu historial de puntuaciones y, cuando
-          acaba el juego, el botón de reinciar la partida. Por otro lado, en la
-          página de desarrollo, para dinamizar la lectura hemos utilizado la
-          funcionalidad sticky para que la tabla de contenidos te siga a medida
-          que avanzas por la página y la funcionalidad 'ancla' con
-          scroll-behavior tipo smooth, para poder navegar más cómodamente.Por
-          último,en la página de referencias hemos hecho uso de CSS grid para
-          ajustar el tamaño de las pantallas de manera autómatica.
+          - Al colocar la barra de navegación fija en todas las pantallas, parte
+          de la pantalla se quedaba oculta. <br />Solución: añadir un margen
+          extra en el body para que no se quedase oculta ninguna parte de la
+          pantalla.
         </p>
       </div>
 
@@ -90,26 +72,9 @@
       </div>
       <div class="apartado">
         <p>
-          En primer lugar, en la pantalla de inicio, hemos tratado los eventos
-          multimedia 'ended' de manera que al acabar el vídeo, nos lleva
-          directamente a la pantalla de juego. En la página de instrucciones,
-          hemos incluido una demo interactiva, implementada en javascript, para
-          que el usuario aprenda a jugar de una manera sencilla. Por otro lado,
-          en la página del juego, hemos hecho uso de formularios para recoger
-          información del jugador, donde además comprobamos la entrada de
-          caracteres válidos para poder empezar el juego; también hemos
-          implementado una base de datos indexedDB para poder guardar las
-          puntuaciones del usuario y hemos implementado diferentes sonidos a lo
-          largo de la partida con posibilidad de silenciarlos. En esta misma
-          pantalla existen varios botones; el de pausa, el de puntuaciones,
-          donde si pulsas te muestra tu historial de puntuaciones y, cuando
-          acaba el juego, el botón de reinciar la partida. Por otro lado, en la
-          página de desarrollo, para dinamizar la lectura hemos utilizado la
-          funcionalidad sticky para que la tabla de contenidos te siga a medida
-          que avanzas por la página y la funcionalidad 'ancla' con
-          scroll-behavior tipo smooth, para poder navegar más cómodamente.Por
-          último,en la página de referencias hemos hecho uso de CSS grid para
-          ajustar el tamaño de las pantallas de manera autómatica.
+          Hemos añadido un Sticky NavBar, que es una barra que se queda fija en la
+          parte superior de la pantalla mientras navegas a través de ella hasta
+          cierto punto.
         </p>
       </div>
 
@@ -150,4 +115,5 @@
       <a class="boton" href="../html/referencias.html">Referencias</a>
     </div>
   </body>
+  <script src="../js/desarrollo.js"></script>
 </html>
