@@ -15,3 +15,23 @@ body {
   border-right: 10px solid rgba(255, 193, 7, 255);
   border-bottom: 10px solid rgba(255, 193, 7, 255);
 }
+.divJuego {
+  float: left;
+  margin-left: 10%;
+}
+.divpuntuaciones {
+  float: right;
+  height: 420px;
+  width: 220px;
+  margin-right: 7%;
+}
+.tabla {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+  margin: auto;
+}
+
+p {
+  font-size: 30px;
+}

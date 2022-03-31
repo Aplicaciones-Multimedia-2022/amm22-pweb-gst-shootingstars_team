@@ -56,7 +56,3 @@ p {
   border: solid 5px rgba(255, 193, 7, 255);
   text-align: center;
 }
-
-p.negrita{
-  font-weight: bold;
-}
