@@ -211,4 +211,4 @@ window.addEventListener(
 );
 
 setInterval(draw, 10);
-setInterval(generarEnemigo, 2000);
+setInterval(generarEnemigo, 1000);
