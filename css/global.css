@@ -100,11 +100,14 @@ th {
   border: solid 3px rgba(255, 193, 7, 255);
 }
 
-.github{
+.github {
   background-color: transparent;
   border: transparent;
-  position:absolute;
+  position: absolute;
   right: 0%;
   cursor: pointer;
+}
 
+.icono {
+  float: right;
 }
