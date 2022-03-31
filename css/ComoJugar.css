@@ -18,17 +18,37 @@
 p {
   font-family: retro;
   color: rgba(255, 193, 7, 255);
-  font-size: 20px;
   margin: 2%;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .controles {
-  font-family: retro;
-  color: rgba(255, 193, 7, 255);
-  font-size: 20px;
   margin-right: 100px;
   margin-left: 100px;
   border: solid 5px rgba(255, 193, 7, 255);
-  text-align: start;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.flecha_arriba {
+  float: left;
+  width: 33%;
+}
+
+.flecha_abajo {
+  float: none;
+  width: 33%;
+}
+
+.espacio {
+  float: right;
+  width: 33%;
+}
+
+.contenido {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  margin: 2%;
+  font-size: 25px;
 }
