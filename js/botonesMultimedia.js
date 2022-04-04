@@ -3,6 +3,7 @@ const boton2= document.getElementById("boton2");
 const boton4= document.getElementById("boton4");
 const boton5= document.getElementById("boton5");
 const boton6= document.getElementById("bajustes");
+const boton7= document.getElementById("bjuego");
 const boton8= document.getElementById("boton8");
 let sonido1 = new Audio();
 let espera;
@@ -31,6 +32,10 @@ function init(){
       sonido1.play();
       espera = setTimeout(redireccionar6, 400);
     }); 
+    boton7.addEventListener('click',function siete(){
+      sonido1.play();
+      espera = setTimeout(redireccionar7, 400);
+    });
     boton8.addEventListener('click',function ocho(){
       sonido1.play();
       espera = setTimeout(redireccionar8, 400);
@@ -53,6 +58,9 @@ function redireccionar5(){
 }
 function redireccionar6(){
   location.replace("../html/ajustes.html")
+}
+function redireccionar7(){
+  location.replace("../html/juego.html")
 }
 function redireccionar8(){
   location.replace("../html/portada.html")
