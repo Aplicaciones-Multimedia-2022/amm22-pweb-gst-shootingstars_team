@@ -18,6 +18,9 @@ let sonido1 = new Audio();
 let espera;
 sonido1.src="../audio/click/39562__the-bizniss__mouse-click.wav";
 
+/*var imagen2 = new Image();
+imagen2.src = "../images/vol1.png";*/
+
 window.onload=init;
 
 function init(){  
@@ -51,12 +54,14 @@ function init(){
     });
     botonmenos.addEventListener('click',function(){
       sonido1.play();
+      borrar();
     }); 
     botonmas.addEventListener('click',function(){
-    sonido1.play();
+      sonido1.play();
+      draw2();
     });
     
-    draw2();
+    draw1();
 
 }
 
@@ -83,9 +88,39 @@ function redireccionar7(){
   location.replace("../html/juego.html")
 }
 
-function draw2() {
-  var img = document.getElementById("imagen"); 
-	ctx1.drawImage(img, 10, 20, 100, 100); 
+function draw1() {
+  var imagen1 = document.getElementById("imagen1"); 
+	ctx1.drawImage(imagen1, 20, 30, 100, 100); 
 
+}
+
+
+
+
+
+/*problema:como saber en cual estas para saber cual añadir y cual borrar de
+vulumen
+posibles solucione: usar arrays para poner cada uno en una posicion*/ 
+function draw2(){
+  //para dibujar las lineas del volumen
+  var imagen2 = document.getElementById("imagen2");
+  var imagen3 = document.getElementById("imagen3");
+  var imagen4 = document.getElementById("imagen4");
+  ctx1.drawImage(imagen2, 130, 27, 25, 100);
+
+  botonmas.addEventListener('click',function(){
+    sonido1.play();
+    ctx1.drawImage(imagen3, 180, 27, 25, 100);
+    botonmas.addEventListener('click',function(){
+      sonido1.play();
+      ctx1.drawImage(imagen4, 230, 27, 25, 100);
+      
+    });
+  });
+}
+
+function borrar(){
+  //para borrar las lineas de voulmen
+  ctx1.clearRect(130, 27, 25, 100);
 }
 
