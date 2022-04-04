@@ -12,6 +12,7 @@ var bol_disparoX = 20;
 var bol_disparoY;
 var dx = 3;
 var enemigoLlega = false;
+var contador=0;
 
 window.onload = init;
 var final_nave;
@@ -69,12 +70,15 @@ function detectarColision() {
           shoots[k].bol_disparoY > enemies[l].posEnemigoY &&
           shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74
         ) {
+          contador++;
           enemies.splice(l, 1);
           shoots.splice(k, 1);
         }
       }
     }
   }
+  document.getElementById("contador").innerHTML = contador;
+  
 }
 
 
@@ -148,6 +152,8 @@ function draw() {
   } else if (this.naveY > 340) {
     this.naveY = 340;
   }
+
+
 }
 
 document.addEventListener("keydown", keyDownHandler, false);
