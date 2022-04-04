@@ -34,12 +34,12 @@ function init() {
   final_nave = game.height - borde - alturanave;
 }
 
-function enemigo(naveX, naveY) {
+function enemigo(posEnemigoX, posEnemigoY) {
   this.posEnemigoX = posEnemigoX;
   this.posEnemigoY = posEnemigoY;
 }
 
-function nave(posEnemigoX, posEnemigoY, dy) {
+function nave(naveX, naveY) {
   this.naveX = naveX;
   this.naveY = naveY;
 }
@@ -77,6 +77,7 @@ function detectarColision() {
   }
 }
 
+
 function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
   Enemigo.src = "../images/Ship2.png";
@@ -87,7 +88,7 @@ function generarEnemigo() {
 
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
-  var naveAux = new nave(posEnemigoX, posEnemigoY);
+ naveAux = new nave(naveX, naveY);
   Nave.src = "../images/Ship1.png";
   ctx.drawImage(Nave, naveAux.naveX, naveAux.naveY);
 }
@@ -109,6 +110,17 @@ function pintarBala() {
     }
   }
 }
+function muerte(){
+  for (var k = 0; k < enemies.length; k++){
+    if(enemies[k].posEnemigoX < naveAux.naveX + 64){
+      if((enemies[k].posEnemigoY > naveAux.naveY) && (enemies[k].posEnemigoY < (naveAux.naveY + 64))){
+
+      alert("Has perdiooo");
+      shoots.splice(k, 1);
+      }
+  }
+}
+}
 
 //Utilizamos esta funcion para dibujar el movimiento
 function draw() {
@@ -119,6 +131,7 @@ function draw() {
     j = 0;
   }
   detectarColision();
+  muerte();
   if (nave_dispara) {
     pintarBala();
   }
