@@ -15,12 +15,13 @@
             <canvas id="div_drch" width="150" height="800"></canvas>
         </div>
 
-        
+       
 
         <div class="introduccion">
             <h3>Bienvenido a SHOOTING STARS</h3>
            <p>
-               Estas a punto de comenzar una viaje intelestalar lleno de emociones, lucharas contra enemigos y tendras que esquivar rocas espaciales.
+               Estas a punto de comenzar un viaje intelestalar lleno de emociones.<br>
+               Desde evitar asteroides hasta vencer a miles de naves enemigas.<br> ¿ Crees que eres capaz de ello ? DEMUESTRALO.<br>
                Pero antes de comenzar...!DINOS! Como se llama el piloto a bordo de la nave espacial
            </p>
         </div>
@@ -31,27 +32,71 @@
 
         <div class="introduccion2">
             <p>
-                Y ahora...hasta donde estas dispuesto a llehar pequeño tripulante...
+                Una vez conocido tu nombre, nos falta saber de tu valía, ¿hasta donde estarias dispuestoa llegar?<br>
+                Para conocer mejor experiencias que te depara la galaxia, 
+                nuestro Mandaloriano esta dispuesto a informarte sobre lo que te depara en el infinito y mas alla...solo dale click
             </p>
         </div>
 
         
        
-    
-        <input id="mostrar-modal" name="modal" type="radio" /> 
-        <label for="mostrar-modal"> Facil </label>
+    <div class="botones_jugabilidad">
+        <button class="btn_easy" id="btn_easy">FACIL</button>
+        <button class="btn_medio" id="btn_medio">MEDIO</button>
+        <button class="btn_hard" id="btn_hard">DIFICIL</button>
+    </div>
 
 
+    <div class="mando_ayuda">
+    <button class="btn" id="btn">
+        <img class="fotomando" src="../images/manda.png" width="150px" />
+    </button>
+    </div>
        
 
-        <div id="modal">
-            <p>este nivel es para gente que aun no ha jugado, mi recomendacion es que lo pruebes si es tu primera vez </p>
-        </div>
+        <div class="overlay" id="overlay"> <!--para que se difumine toda la pantalla-->
+            <div class="ventana_easy" id="ventana_easy"> <!--la ventana en si-->
+
+                <button class="btn_cerrar" id="btn_cerrar">X</button>
+
+                <table class="tabla">
+                    <tr>
+                      <th>FACIL</th>
+                      <th>MEDIO</th>
+                      <th>DIFICIL</th>
+                    </tr>
+                
+                    <tr>
+                      <td>
+                        <p>
+                          esto es de locos
+                        </p>
+                      </td>
+                
+                      <td>
+                        <p>
+                          de locos medio
+                        </p>
+                      </td>
+                
+                      <td>
+                        <p>
+                          de locos harddd
+                        </p>
+                      </td>
+                
+                    </tr>
+                  </table>
+                
+            </div>
+            
 
         
 
     </body>
-    <script src="../js/pre_juego.js"></script> 
     <script src="../js/pre_juego2.js"></script>
+    <script src="../js/pre_juego.js"></script> 
+    <script src="../js/ventanaS_LEVE.js"></script>
+   
     
 </html>
