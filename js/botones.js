@@ -12,10 +12,6 @@ sonido1.src="../audio/click/39562__the-bizniss__mouse-click.wav";
 
 window.onload=init;
 
-
-
-
-
 function init(){  
     boton1.addEventListener('click',function(){
         sonido1.play();
