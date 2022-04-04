@@ -61,6 +61,22 @@ function pintarEnemigo() {
   }
 }
 
+function detectarColision() {
+
+  for (var k = 0; k < shoots.length; k++) {
+    for (var l = 0; l < enemies.length; l++) {
+      if (shoots[k].bol_disparoX > enemies[l].posEnemigoX) {
+        if (shoots[k].bol_disparoY > enemies[l].posEnemigoY && shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74) {
+
+
+          enemies.splice(l, 1);
+          shoots.splice(k, 1);
+        }
+      }
+    }
+  }
+}
+
 function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
   Enemigo.src = "../images/Ship2.png";
@@ -102,7 +118,7 @@ function draw() {
     pintarEnemigo();
     j = 0;
   }
-
+  detectarColision();
   if (nave_dispara) {
     pintarBala();
   }
@@ -157,7 +173,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -202,7 +218,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
