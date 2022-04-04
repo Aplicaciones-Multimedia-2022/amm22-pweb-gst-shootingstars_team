@@ -99,7 +99,7 @@ function pintarBala() {
   for (var i = 0; i < shoots.length; i++) {
     if (shoots[i].bol_disparoX < game.width) {
       ctx.drawImage(imagenBala, shoots[i].bol_disparoX, shoots[i].bol_disparoY);
-      shoots[i].bol_disparoX += 5;
+      shoots[i].bol_disparoX += 8;
     } else {
       shoots.splice(i, 1);
       if (shoots.length == 0) {
@@ -130,10 +130,10 @@ function draw() {
     this.naveY += this.dy;
   }
 
-  if (this.naveY < borde) {
-    this.naveY = borde;
-  } else if (this.naveY > final_nave) {
-    this.naveY = final_nave;
+  if (this.naveY < 0) {
+    this.naveY = 0;
+  } else if (this.naveY > 340) {
+    this.naveY = 340;
   }
 }
 
