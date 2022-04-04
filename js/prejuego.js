@@ -11,24 +11,18 @@ var metX_izq = 0;
 var metY = 800;
 var dy = -2;
 
-window.onload = init;
 
 
-function init() {
+
+
     
-    
-    pintar_cosa();
    
-
     
-    setInterval(draw, 10);
-    
-    
-}
 
 
 
-function pintar_cosa(){
+
+function pintar_cosa_izq(){
     
     Meteorito1.src = "../images/grogu.png";
    ctx.drawImage(Meteorito1, metX_izq, metY);
@@ -39,9 +33,9 @@ function pintar_cosa(){
 
 
 
-function draw(){
+function draw_izq(){
     ctx.clearRect(0, 0, div_izq.width, div_izq.height);
-    pintar_cosa();
+    pintar_cosa_izq();
     
 
     metY += dy;
@@ -55,7 +49,4 @@ function draw(){
     
 }
 
-
-
-
-
+setInterval(draw_izq, 10);
