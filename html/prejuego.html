@@ -1,102 +1,102 @@
 <html>
-    <head>
-        <link href="../css/global.css" rel="stylesheet" type="text/css" />
-        <link href="../css/prejuego.css" rel="stylesheet" type="text/css" />
-        
-
-        
-    </head>
-
-    <body>
-        <div class="columnas"> <!--esto es una prueba-->
-            <canvas id="div_izq" width="150" height="800"></canvas>
-         
-         
-            <canvas id="div_drch" width="150" height="800"></canvas>
-        </div>
-
-       
-
-        <div class="introduccion">
-            <h3>Bienvenido a SHOOTING STARS</h3>
-           <p>
-               Estas a punto de comenzar un viaje intelestalar lleno de emociones.<br>
-               Desde evitar asteroides hasta vencer a miles de naves enemigas.<br> ¿ Crees que eres capaz de ello ? DEMUESTRALO.<br>
-               Pero antes de comenzar...!DINOS! Como se llama el piloto a bordo de la nave espacial
-           </p>
-        </div>
-
-        <div class="botoncito">
-	        <input class="nombre" type="text" name="nombre" id="nombre" placeholder=" &#128126 Escribe tu nombre &#128126 "/>
-        </div>
-
-        <div class="introduccion2">
-            <p>
-                Una vez conocido tu nombre, nos falta saber de tu valía, ¿hasta donde estarias dispuestoa llegar?<br>
-                Para conocer mejor experiencias que te depara la galaxia, 
-                nuestro Mandaloriano esta dispuesto a informarte sobre lo que te depara en el infinito y mas alla...solo dale click
-            </p>
-        </div>
-
-        
-       
+  <head>
+    <link href="../css/global.css" rel="stylesheet" type="text/css" />
+    <link href="../css/prejuego.css" rel="stylesheet" type="text/css" />
+  </head>
+  <header>
+    <div class="columnas">
+      <canvas id="div_izq" width="150" height="800"></canvas>
+      <canvas id="div_drch" width="150" height="800"></canvas>
+    </div>
+    <div class="encabezado">
+      <div class="titulo">
+        <h2 class="Titulo">Bienvenido a <br />SHOOTING STARS</h2>
+      </div>
+      <div class="divajustes">
+        <button class="ajustes" id="bajustes">
+          <img src="../images/ajustes.png" width="100px" />
+        </button>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="introduccion">
+      <p>
+        Estas a punto de comenzar un viaje intelestalar lleno de emociones.<br />
+        Desde evitar asteroides hasta vencer a miles de naves enemigas.<br />
+        ¿Crees que eres capaz de ello? DEMUÉSTRALO.<br />
+        Pero antes de comenzar... ¿Cómo se llama el piloto a bordo de la nave
+        espacial?
+      </p>
+    </div>
+    <div class="introduccion2">
+      <p>
+        Una vez conocido tu nombre, nos falta saber tu nivel, ¿hasta dónde
+        estarías dispuesto a llegar?<br />
+        Para conocer mejor lo que te espera en la galaxia, nuestro Mandaloriano
+        está dispuesto a informarte sobre lo que te depara en el infinito y más
+        allá. Solo dale click y que comience la aventura...
+      </p>
+    </div>
     <div class="botones_jugabilidad">
-        <button class="btn_easy" id="btn_easy">FACIL</button>
-        <button class="btn_medio" id="btn_medio">MEDIO</button>
-        <button class="btn_hard" id="btn_hard">DIFICIL</button>
+      <button class="btn_easy" id="btn_easy">FÁCIL</button>
+      <button class="btn_medio" id="btn_medio">MEDIO</button>
+      <button class="btn_hard" id="btn_hard">DIFÍCIL</button>
     </div>
-
-
     <div class="mando_ayuda">
-    <button class="btn" id="btn">
+      <button class="btn" id="btn">
         <img class="fotomando" src="../images/manda.png" width="150px" />
-    </button>
+      </button>
     </div>
-       
+    <div class="overlay" id="overlay">
+      <!--para que se difumine toda la pantalla-->
+      <div class="ventana_easy" id="ventana_easy">
+        <!--la ventana en si-->
 
-        <div class="overlay" id="overlay"> <!--para que se difumine toda la pantalla-->
-            <div class="ventana_easy" id="ventana_easy"> <!--la ventana en si-->
+        <button class="btn_cerrar" id="btn_cerrar">X</button>
 
-                <button class="btn_cerrar" id="btn_cerrar">X</button>
+        <table class="tabla">
+          <tr>
+            <th>FACIL</th>
+            <th>MEDIO</th>
+            <th>DIFICIL</th>
+          </tr>
 
-                <table class="tabla">
-                    <tr>
-                      <th>FACIL</th>
-                      <th>MEDIO</th>
-                      <th>DIFICIL</th>
-                    </tr>
-                
-                    <tr>
-                      <td>
-                        <p>
-                          esto es de locos
-                        </p>
-                      </td>
-                
-                      <td>
-                        <p>
-                          de locos medio
-                        </p>
-                      </td>
-                
-                      <td>
-                        <p>
-                          de locos harddd
-                        </p>
-                      </td>
-                
-                    </tr>
-                  </table>
-                
-            </div>
-            
+          <tr>
+            <td>
+              <p>esto es de locos</p>
+            </td>
 
-        
+            <td>
+              <p>de locos medio</p>
+            </td>
 
-    </body>
-    <script src="../js/prejuego2.js"></script>
-    <script src="../js/prejuego.js"></script> 
-    <script src="../js/ventanaS_LEVE.js"></script>
-   
-    
+            <td>
+              <p>de locos harddd</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="navbar">
+      <a class="boton" id="boton8">Portada</a>
+      <a class="boton" id="bjuego">Juego</a>
+      <a class="boton" id="boton1">Cómo jugar</a>
+      <a class="boton" id="boton3">Multimedia</a>
+      <a class="boton" id="boton4">Desarrollo</a>
+      <a class="boton" id="boton5">Referencias</a>
+      <div class="icono">
+        <a
+          href="https://github.com/Aplicaciones-Multimedia-2022/amm22-pweb-gst-shootingstars_team"
+          class="github"
+        >
+          <img src="../images/gh.png" width="49px"
+        /></a>
+      </div>
+    </div>
+  </body>
+  <script src="../js/prejuego2.js"></script>
+  <script src="../js/prejuego.js"></script>
+  <script src="../js/ventanaS_LEVE.js"></script>
+  <script src="../js/botonesAutores.js"></script>
 </html>

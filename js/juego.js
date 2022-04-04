@@ -56,7 +56,7 @@ function pintarEnemigo() {
   for (var j = 0; j < enemies.length; j++) {
     ctx.drawImage(Enemigo, enemies[j].posEnemigoX, enemies[j].posEnemigoY);
     enemies[j].posEnemigoX -= 5;
-    if (enemies[j].posEnemigoX < 0) {
+    if (enemies[j].posEnemigoX < -1) {
       enemies.splice(j, 1);
     }
   }
@@ -65,6 +65,8 @@ function pintarEnemigo() {
 function detectarColision() {
   for (var k = 0; k < shoots.length; k++) {
     for (var l = 0; l < enemies.length; l++) {
+
+
       if (shoots[k].bol_disparoX > enemies[l].posEnemigoX) {
         if (
           shoots[k].bol_disparoY > enemies[l].posEnemigoY &&
@@ -78,7 +80,7 @@ function detectarColision() {
     }
   }
   document.getElementById("contador").innerHTML = contador;
-  
+
 }
 
 
@@ -86,7 +88,7 @@ function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
   Enemigo.src = "../images/Ship2.png";
   en.posEnemigoX = game.width;
-  en.posEnemigoY = Math.floor(Math.random() * (game.height - Enemigo.height));
+  en.posEnemigoY = Math.floor(Math.random() * (game.height - Enemigo.height - 10));
   enemies.push(en);
 }
 
@@ -115,15 +117,14 @@ function pintarBala() {
   }
 }
 function muerte(){
-  for (var k = 0; k < enemies.length; k++){
-    if((enemies[k].posEnemigoY + 74 > naveAux.naveY) && (enemies[k].posEnemigoY + 74 < (naveAux.naveY + Nave.height))){
-      if(enemies[k].posEnemigoX < 64){
+  for (var l = 0; l < enemies.length; l++) {
+    if(enemies[l].posEnemigoX  <  5){
 
-      alert("Has perdiooo");
-      shoots.splice(k, 1);
-      }
+        alert("gameover");
+
+    }
   }
-}
+
 }
 
 //Utilizamos esta funcion para dibujar el movimiento

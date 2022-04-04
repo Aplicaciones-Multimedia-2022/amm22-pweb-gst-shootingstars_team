@@ -1,4 +1,3 @@
-
 p {
   color: rgba(255, 193, 7, 255);
   font-size: 15px;
@@ -10,8 +9,6 @@ p {
   text-align: center;
 }
 
-
-
 #div_izq {
   padding-left: 0;
   padding-right: 0;
@@ -22,10 +19,8 @@ p {
   border-top: 10px transparent;
   border-left: 10px transparent;
   border-right: 10px transparent;
-  border-bottom: 10px transparent; 
+  border-bottom: 10px transparent;
 }
-
-
 
 #div_drch {
   padding-left: 0;
@@ -37,79 +32,75 @@ p {
   border-top: 10px transparent;
   border-left: 10px transparent;
   border-right: 10px transparent;
-  border-bottom: 10px transparent; 
+  border-bottom: 10px transparent;
 }
 
-
-.botoncito{
+.botoncito {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.nombre{
-      border: 4px solid #ffc107;
-      background: transparent;
-      border-radius: 6px;
-      text-align: center;
-      font-family: retro;
-      font-weight:600;
-      font-size:20px;
-      color:#ffc107;
-      padding-top:20px;
-      padding-bottom:20px;
-      padding-left:40px;
-      padding-right:40px;  
+.nombre {
+  border: 4px solid #ffc107;
+  background: transparent;
+  border-radius: 6px;
+  text-align: center;
+  font-family: retro;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffc107;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-.botones_jugabilidad{
-
-
-  
+.botones_jugabilidad {
   text-align: center;
 }
-.btn_easy{
+.btn_easy {
   border: 4px solid #ffc107;
-      background: transparent;
-      border-radius: 6px;
-      text-align: center;
-      font-family: retro;
-      font-weight:600;
-      font-size:20px;
-      color:#ffc107;
-      padding-top:20px;
-      padding-bottom:20px;
-      padding-left:40px;
-      padding-right:40px;
+  background: transparent;
+  border-radius: 6px;
+  text-align: center;
+  font-family: retro;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffc107;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
-.btn_medio{
+.btn_medio {
   border: 4px solid #ffc107;
-      background: transparent;
-      border-radius: 6px;
-      text-align: center;
-      font-family: retro;
-      font-weight:600;
-      font-size:20px;
-      color:#ffc107;
-      padding-top:20px;
-      padding-bottom:20px;
-      padding-left:40px;
-      padding-right:40px;
+  background: transparent;
+  border-radius: 6px;
+  text-align: center;
+  font-family: retro;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffc107;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
-.btn_hard{
+.btn_hard {
   border: 4px solid #ffc107;
-      background: transparent;
-      border-radius: 6px;
-      text-align: center;
-      font-family: retro;
-      font-weight:600;
-      font-size:20px;
-      color:#ffc107;
-      padding-top:20px;
-      padding-bottom:20px;
-      padding-left:40px;
-      padding-right:40px;
+  background: transparent;
+  border-radius: 6px;
+  text-align: center;
+  font-family: retro;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffc107;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
-  
+
 th {
   width: 25%;
   text-align: center;
@@ -120,29 +111,34 @@ th {
   border: solid 3px rgba(255, 193, 7, 255);
 }
 
-
-.btn{
+.btn {
   background: transparent;
   border: transparent;
-}
-
-.btn_cerrar{
+  background-position: center;
   
 }
+.mando_ayuda {
+  height: 20%;
+  width: 20%;
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-.overlay{
+.overlay {
   background: rgba(14, 12, 12, 0.5);
-  position: fixed;
-  top:500;
-  bottom:50;
-  left:350;
-  right:350;
+  position: static;
+  top: 500;
+  bottom: 50;
+  left: 350;
+  right: 350;
   display: flex;
   align-items: center;
   justify-content: center;
   visibility: hidden;
 }
 
-.overlay.active{
+.overlay.active {
   visibility: visible;
 }
