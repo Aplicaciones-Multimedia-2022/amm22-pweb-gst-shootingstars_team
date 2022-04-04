@@ -7,7 +7,7 @@ var pressed= true;
 const botonmenos= document.getElementById("botonmenos");
 const botonmas= document.getElementById("botonmas");
 let sonido2 = new Audio();
-sonido1.src="../audio/click/39562__the-bizniss__mouse-click.wav";
+sonido2.src="../audio/click/39562__the-bizniss__mouse-click.wav";
 
 
 
