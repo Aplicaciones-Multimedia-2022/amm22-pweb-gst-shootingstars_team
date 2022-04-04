@@ -105,15 +105,15 @@ function pintarBala() {
       shoots.splice(i, 1);
       if (shoots.length == 0) {
         nave_dispara = false;
-        i = 0;
+
       }
     }
   }
 }
 function muerte(){
   for (var k = 0; k < enemies.length; k++){
-    if(enemies[k].posEnemigoX < naveAux.naveX + 64){
-      if((enemies[k].posEnemigoY > naveAux.naveY) && (enemies[k].posEnemigoY < (naveAux.naveY + 64))){
+    if((enemies[k].posEnemigoY + 74 > naveAux.naveY) && (enemies[k].posEnemigoY + 74 < (naveAux.naveY + Nave.height))){
+      if(enemies[k].posEnemigoX < 64){
 
       alert("Has perdiooo");
       shoots.splice(k, 1);
