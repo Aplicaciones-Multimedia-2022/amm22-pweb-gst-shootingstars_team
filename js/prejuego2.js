@@ -1,10 +1,10 @@
-var mycanvas = document.getElementById("div_izq");
-var ctx = mycanvas.getContext("2d");
+var mycanvas2 = document.getElementById("div_drch");
+var ctx2 = mycanvas2.getContext("2d");
 
 
 
 
-var Meteorito1 = new Image();
+var Meteorito2 = new Image();
 
 
 var metX_izq = 0;
@@ -30,8 +30,8 @@ function init() {
 
 function pintar_cosa(){
     
-    Meteorito1.src = "../images/grogu.png";
-   ctx.drawImage(Meteorito1, metX_izq, metY);
+    Meteorito2.src = "../images/grogu.png";
+   ctx2.drawImage(Meteorito2, metX_izq, metY);
     
 }
 
@@ -40,7 +40,7 @@ function pintar_cosa(){
 
 
 function draw(){
-    ctx.clearRect(0, 0, div_izq.width, div_izq.height);
+    ctx2.clearRect(0, 0, div_drch.width, div_drch.height);
     pintar_cosa();
     
 
@@ -54,8 +54,3 @@ function draw(){
     
     
 }
-
-
-
-
-

@@ -2,7 +2,9 @@
     <head>
         <link href="../css/global.css" rel="stylesheet" type="text/css" />
         <link href="../css/pre_juego.css" rel="stylesheet" type="text/css" />
+        
 
+        
     </head>
 
     <body>
@@ -12,6 +14,8 @@
          
             <canvas id="div_drch" width="150" height="800"></canvas>
         </div>
+
+        
 
         <div class="introduccion">
             <h3>Bienvenido a SHOOTING STARS</h3>
@@ -31,15 +35,23 @@
             </p>
         </div>
 
-        <div class="botones_jugabilidad">
+        
+       
+    
+        <input id="mostrar-modal" name="modal" type="radio" /> 
+        <label for="mostrar-modal"> Facil </label>
 
-            <nav>
-                <input class="btones" type="button" value="FACIL" >
-                <input class="btones" type="button" title="Hola eres nuevo" value="MEDIO">
-                <input class="btones" type="button" value="DIFICIL">
-            </nav>
 
+       
+
+        <div id="modal">
+            <p>este nivel es para gente que aun no ha jugado, mi recomendacion es que lo pruebes si es tu primera vez </p>
         </div>
+
+        
+
     </body>
-    <script src="../js/pre_juego.js"></script>
+    <script src="../js/pre_juego.js"></script> 
+    <script src="../js/pre_juego2.js"></script>
+    
 </html>
