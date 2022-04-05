@@ -137,3 +137,30 @@ th {
   background-color: rgba(255, 193, 7, 255);
   color: black;
 }
+
+/*Botón play*/
+
+.divplay {
+  background-position: center;
+  margin: 10;
+  padding: 0 40px;
+  margin-top: 165;
+}
+.play {
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 90px 45px;
+  background-position: center;
+  border: 5px solid rgba(255, 193, 7, 255);
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 70%;
+  margin-top: -150;
+}
+
+.play:hover {
+  box-shadow: 0 0px 20px 0 rgba(255, 193, 7, 255),
+    0 0px 20px 0 rgba(255, 193, 7, 255);
+}
