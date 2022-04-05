@@ -2,7 +2,7 @@
     function showGameOver(){
       $('.overlay_go').addClass('active');
     }
-    setTimeout(showGameOver,2000);
+    
   })
 
 
