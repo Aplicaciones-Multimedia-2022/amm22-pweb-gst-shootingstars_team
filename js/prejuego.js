@@ -4,7 +4,7 @@ var ctx = mycanvas.getContext("2d");
 var Meteorito1 = new Image();
 
 var metX_izq = 0;
-var metY = 800;
+var metY = 2000;
 var dy = -2;
 
 function pintar_cosa_izq() {
@@ -19,7 +19,7 @@ function draw_izq() {
   metY += dy;
 
   if (metY + 150 < 0) {
-    metY = 800;
+    metY = 2000;
   }
 }
 
