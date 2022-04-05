@@ -16,6 +16,10 @@ function init(){
         sonido1.play();
         espera = setTimeout(redireccionar1, 400);
     }); 
+    boton2.addEventListener('click',function dos(){
+      sonido1.play();
+      espera = setTimeout(redireccionar2, 400);
+    }); 
     boton3.addEventListener('click',function tres(){
       sonido1.play();
       espera = setTimeout(redireccionar3, 400);
