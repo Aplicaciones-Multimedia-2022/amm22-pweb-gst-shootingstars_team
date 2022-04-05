@@ -35,3 +35,34 @@ body {
 p {
   font-size: 30px;
 }
+
+.overlay_go {
+  background-image: url("../images/FondoGeneral.png");
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+.overlay_go.active {
+  visibility: visible;
+}
+.ventana{
+  border: 2px solid;
+  border-color: aliceblue;
+  width: 1000;
+  height: 621;
+}
+
+.go{
+  text-align: center;
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  font-size: 10vh;
+  
+}
+

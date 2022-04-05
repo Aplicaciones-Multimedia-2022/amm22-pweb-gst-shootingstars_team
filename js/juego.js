@@ -13,6 +13,7 @@ var bol_disparoY;
 var dx = 3;
 var enemigoLlega = false;
 var contador=0;
+var overlay_go = document.getElementById("overlay_go");
 
 window.onload = init;
 var final_nave;
@@ -26,14 +27,19 @@ var imagenBala = new Image();
 var shoots = [];
 var enemies = [];
 
-//Funcion para inicializar el programa
+
+
+//Funcion para inicializar el programa{}
 function init() {
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
   pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
+  
 }
+
+
 
 function enemigo(posEnemigoX, posEnemigoY) {
   this.posEnemigoX = posEnemigoX;
@@ -120,7 +126,7 @@ function muerte(){
   for (var l = 0; l < enemies.length; l++) {
     if(enemies[l].posEnemigoX  <  5){
 
-        alert("gameover");
+        //alert("gameover");
 
     }
   }
@@ -245,6 +251,12 @@ window.addEventListener(
   },
   false
 );
+
+function activar(){
+if(contador==3){
+  overlay_go.classList.add("active");
+}
+}
 
 setInterval(draw, 10);
 setInterval(generarEnemigo, 1000);
