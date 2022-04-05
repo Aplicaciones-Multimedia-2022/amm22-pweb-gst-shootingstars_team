@@ -13,7 +13,9 @@ var bol_disparoY;
 var dx = 3;
 var enemigoLlega = false;
 var contador=0;
+var perder=0;
 var overlay_go = document.getElementById("overlay_go");
+
 
 window.onload = init;
 var final_nave;
@@ -38,6 +40,7 @@ function init() {
   final_nave = game.height - borde - alturanave;
   
 }
+
 
 
 
@@ -126,7 +129,7 @@ function muerte(){
   for (var l = 0; l < enemies.length; l++) {
     if(enemies[l].posEnemigoX  <  5){
 
-        //alert("gameover");
+        perder ++;
 
     }
   }
@@ -158,6 +161,10 @@ function draw() {
     this.naveY = 0;
   } else if (this.naveY > 340) {
     this.naveY = 340;
+  }
+
+  if(perder == 3){
+    overlay_go.classList.add("active");
   }
 
 
@@ -252,11 +259,7 @@ window.addEventListener(
   false
 );
 
-function activar(){
-if(contador==3){
-  overlay_go.classList.add("active");
-}
-}
+
 
 setInterval(draw, 10);
 setInterval(generarEnemigo, 1000);
