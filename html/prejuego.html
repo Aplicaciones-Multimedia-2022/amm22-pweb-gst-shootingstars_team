@@ -22,12 +22,22 @@
   <body>
     <div class="introduccion">
       <p>
-        Estas a punto de comenzar un viaje intelestalar lleno de emociones.<br />
-        Desde evitar asteroides hasta vencer a miles de naves enemigas.<br />
+        Estás a punto de comenzar un viaje intelestalar lleno de emociones.<br />
+        Desde vencer a miles de naves enemigas para poder completar la
+        misión.<br />
         ¿Crees que eres capaz de ello? DEMUÉSTRALO.<br />
         Pero antes de comenzar... ¿Cómo se llama el piloto a bordo de la nave
         espacial?
       </p>
+    </div>
+    <div class="botoncito">
+      <input
+        class="nombre"
+        type="text"
+        name="nombre"
+        id="nombre"
+        placeholder="Escribe tu nombre"
+      />
     </div>
     <div class="introduccion2">
       <p>
@@ -39,9 +49,9 @@
       </p>
     </div>
     <div class="botones_jugabilidad">
-      <button class="boton1">FÁCIL</button>
-      <button class="boton1">MEDIO</button>
-      <button class="boton1">DIFÍCIL</button>
+      <button class="boton1" id="btn_easy">FÁCIL</button>
+      <button class="boton1" id="btn_medio">MEDIO</button>
+      <button class="boton1" id="btn_hard">DIFÍCIL</button>
     </div>
     <div class="mando_ayuda">
       <button class="btn" id="btn">
@@ -54,7 +64,6 @@
         <!--la ventana en si-->
 
         <button class="btn_cerrar" id="btn_cerrar">X</button>
-
         <table class="tabla">
           <tr>
             <th>FACIL</th>

@@ -1,6 +1,6 @@
 p {
-  color: rgba(255, 193, 7, 255);
-  font-size: 15px;
+  color: white;
+  font-size: 23px;
   font-family: retro;
   padding: 14px 16px;
   text-decoration: none;
@@ -59,24 +59,13 @@ p {
   text-align: center;
 }
 
-th {
-  width: 25%;
-  text-align: center;
-  color: rgba(255, 193, 7, 255);
-  background-color: transparent;
-  font-family: retro;
-  padding: 20px;
-  border: solid 3px rgba(255, 193, 7, 255);
-}
-
 .btn {
   background: transparent;
   border: transparent;
   background-position: center;
+  cursor: pointer;
 }
 .mando_ayuda {
-  padding: 2%;
-  cursor: pointer;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -93,7 +82,6 @@ th {
   display: flex;
   align-items: center;
   justify-content: center;
-  visibility: hidden;
 }
 
 .overlay.active {
