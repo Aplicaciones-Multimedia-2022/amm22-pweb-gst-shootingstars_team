@@ -6,6 +6,8 @@ const boton5= document.getElementById("boton5");
 const boton6= document.getElementById("bajustes");
 const boton8= document.getElementById("boton8");
 const botonFacil = document.getElementById("botonFacil");
+const botonMedio = document.getElementById("botonMedio");
+const botonDificil = document.getElementById("botonDificil");
 let sonido1 = new Audio();
 let espera;
 sonido1.src="../audio/click/39562__the-bizniss__mouse-click.wav";
@@ -43,7 +45,15 @@ function init(){
     });
     botonFacil.addEventListener('click',function facil(){
       sonido1.play();
-      espera = setTimeout(facil, 400);
+      espera = setTimeout(redireccionarFacil, 400);
+    });
+    botonMedio.addEventListener('click',function medio(){
+      sonido1.play();
+      espera = setTimeout(redireccionarMedio, 400);
+    });
+    botonDificil.addEventListener('click',function dificil(){
+      sonido1.play();
+      espera = setTimeout(redireccionarDificil, 400);
     });
 }
 
@@ -69,6 +79,12 @@ function redireccionar6(){
 function redireccionar8(){
   location.replace("../html/portada.html")
 }
-function facil(){
+function redireccionarFacil(){
+  location.replace("../html/juego.html")
+}
+function redireccionarMedio(){
+  location.replace("../html/juego.html")
+}
+function redireccionarDificil(){
   location.replace("../html/juego.html")
 }
