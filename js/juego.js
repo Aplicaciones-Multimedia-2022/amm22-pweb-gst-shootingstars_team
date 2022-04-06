@@ -6,7 +6,7 @@ var nave_dispara = false;
 var nave_UP = false;
 var nave_DOWN = false;
 const borde = 10;
-var dy = 2;
+var dy = 5;
 var alturanave = 70;
 var bol_disparoX = 20;
 var bol_disparoY;
@@ -18,7 +18,8 @@ var enemigoLlega = false;
 var contador=0;
 var perder=0;
 var overlay_go = document.getElementById("overlay_go");
-
+var sonido_disparo = new Audio();
+sonido_disparo.src = '../audio/SonidoDisparos/disparoNave.wav';
 
 window.onload = init;
 var final_nave;
@@ -42,7 +43,7 @@ function init() {
   pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
-  
+
 }
 
 
@@ -95,7 +96,7 @@ function detectarColision() {
 
           enemies.splice(l, 1);
           shoots.splice(k, 1);
-          
+
         }
       }
     }
@@ -164,7 +165,7 @@ function draw() {
   }
   detectarColision();
   muerte();
- 
+
   if (nave_dispara) {
     pintarBala();
   }
@@ -247,9 +248,11 @@ function keyDownHandler(event) {
   }
   if (event.keyCode == "32") {
     //si la tecla presionada es espacio para disparar
+    sonido_disparo.load();
     nave_dispara = true;
     bala = new Bala(bol_disparoX, bol_disparoY);
     shoots.push(bala);
+    sonido_disparo.play();
   }
 }
 
