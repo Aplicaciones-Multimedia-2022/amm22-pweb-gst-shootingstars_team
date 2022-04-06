@@ -32,6 +32,7 @@ var enemies = [];
 var velocidad_enemigos = 5;
 var generar_enemigo = 1500;
 var contador2=0;
+var sonido_explosion = new Audio();
 window.onload = init;
 //document.getElementById("dificultad").innerHTML = dificultad;
 
@@ -64,7 +65,7 @@ function elegir(dificultad){
     //velocidad_enemigos = 10;
     //generar_enemigo = 500;
   }
-  
+
 }
 
 
@@ -110,12 +111,14 @@ function detectarColision() {
           shoots[k].bol_disparoY > enemies[l].posEnemigoY &&
           shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74
         ) {
+          sonido_explosion.src = '../audio/sonidoExplosion.wav';
+          sonido_explosion.load();
           pintarExp(shoots[k].bol_disparoX, shoots[k].bol_disparoY);
           contador++;
 
           enemies.splice(l, 1);
           shoots.splice(k, 1);
-
+            sonido_explosion.play();
         }
       }
     }
@@ -124,10 +127,10 @@ function detectarColision() {
 
 }
 
-  
 
 
-  
+
+
 
 
 function generarEnemigo() {
