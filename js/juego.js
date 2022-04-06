@@ -15,6 +15,8 @@ var posExpY;
 var bol_disparoY;
 var enemigoLlega = false;
 var contador = 0;
+var contador1 = 0;
+var puntmax = 0;
 var vidas_nave = 0;
 var overlay_go = document.getElementById("overlay_go");
 var sonido_disparo = new Audio();
@@ -108,6 +110,7 @@ function detectarColision() {
           sonido_explosion.load();
           pintarExp(shoots[k].bol_disparoX, shoots[k].bol_disparoY);
           contador++;
+          contador1 = contador;
 
           enemies.splice(l, 1);
           shoots.splice(k, 1);
@@ -115,8 +118,13 @@ function detectarColision() {
         }
       }
     }
+    if (contador > puntmax) {
+      puntmax = contador;
+    }
   }
   document.getElementById("contador").innerHTML = contador;
+  document.getElementById("contador1").innerHTML = contador1;
+  document.getElementById("puntmax").innerHTML = puntmax;
 }
 
 function generarEnemigo() {
