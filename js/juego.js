@@ -31,22 +31,14 @@ var shoots = [];
 var enemies = [];
 var velocidad_enemigos = 5;
 var generar_enemigo = 1500;
-var dificultad=  3;
+var contador2=0;
 window.onload = init;
 //document.getElementById("dificultad").innerHTML = dificultad;
 
 //Funcion para inicializar el programa{}
 function init() {
-  if(dificultad==1){
-    velocidad_enemigos = 4;
-    generar_enemigo = 1500;
-  }else if(dificultad == 2){
-    velocidad_enemigos = 5;
-    generar_enemigo = 1000;
-  } else if(dificultad == 3){
-    velocidad_enemigos = 10;
-    generar_enemigo = 500;
-  }
+
+  elegir(1);
 
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
@@ -57,7 +49,23 @@ function init() {
 
 }
 
-
+function elegir(dificultad){
+  document.getElementById("contador2").innerHTML = contador2;
+  if(dificultad==1){
+    contador2 = 1;
+    //velocidad_enemigos = 4;
+    //generar_enemigo = 1500;
+  }else if(dificultad == 2){
+    contador2 = 2;
+    //velocidad_enemigos = 5;
+    //generar_enemigo = 1000;
+  } else if(dificultad == 3){
+    contador2 = 3;
+    //velocidad_enemigos = 10;
+    //generar_enemigo = 500;
+  }
+  
+}
 
 
 function enemigo(posEnemigoX, posEnemigoY) {
