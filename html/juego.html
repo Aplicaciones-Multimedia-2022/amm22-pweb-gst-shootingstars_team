@@ -10,7 +10,7 @@
         <h2 class="Titulo">JUEGO</h2>
       </div>
       <div class="divajustes">
-        <button class="ajustes"id="bajustes">
+        <button class="ajustes" id="bajustes">
           <img src="../images/ajustes.png" width="100px" />
         </button>
       </div>
@@ -28,11 +28,13 @@
         <td>
           <dt>
             Tu puntuación <br />
-            <p><span><span id="contador"></span></span></p>
+            <p>
+              <span><span id="contador"></span></span>
+            </p>
           </dt>
           <dt>
             Puntuación máxima <br />
-            <p>502</p>
+            <p>15</p>
           </dt>
         </td>
       </tr>
@@ -61,11 +63,18 @@
       <div class="ventana" id="ventana">
         <!--la ventana en si-->
         <p class="go">GAME OVER</p>
-        <p>Tu puntuación ha sido de <span><span id="contador"></span></span></p>
-        
+        <p>
+          Tu puntuación ha sido de <br />
+          <span><span id="contador"></span></span>
+        </p>
+        <div class="divcontroles">
+          <nav>
+            <a class="boton1" id="bvolver">Volver a jugar</a>
+            <a class="boton1" id="bportada">Portada</a>
+          </nav>
+        </div>
       </div>
     </div>
-
   </body>
   <script src="../js/juego.js"></script>
   <script src="../js/botonesJuego.js"></script>

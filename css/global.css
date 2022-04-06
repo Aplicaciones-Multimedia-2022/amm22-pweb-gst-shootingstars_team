@@ -164,3 +164,11 @@ th {
   box-shadow: 0 0px 20px 0 rgba(255, 193, 7, 255),
     0 0px 20px 0 rgba(255, 193, 7, 255);
 }
+
+/*Botones*/
+.divcontroles {
+  text-align: center;
+  margin: 10;
+  padding: 0 40px;
+  margin-top: 150;
+}

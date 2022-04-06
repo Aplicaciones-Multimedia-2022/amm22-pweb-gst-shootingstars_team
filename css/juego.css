@@ -1,7 +1,3 @@
-body {
-  background-image: url(../images/FondoGeneral.png);
-}
-
 #game {
   padding-left: 0;
   padding-right: 0;
@@ -33,7 +29,10 @@ body {
 }
 
 p {
-  font-size: 30px;
+  font-family: retro;
+  color: white;
+  text-align: center;
+  font-size: 26px;
 }
 
 .overlay_go {
@@ -51,18 +50,21 @@ p {
 .overlay_go.active {
   visibility: visible;
 }
-.ventana{
-  border: 2px solid;
-  border-color: aliceblue;
-  width: 1000;
+.ventana {
+  border: 2px solid rgba(255, 193, 7, 255);
+  width: 1200;
   height: 621;
 }
-
-.go{
+.go {
   text-align: center;
   font-family: retro;
   color: rgba(255, 193, 7, 255);
-  font-size: 10vh;
-  
+  font-size: 12vh;
 }
 
+#contador{
+  font-family: retro;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
