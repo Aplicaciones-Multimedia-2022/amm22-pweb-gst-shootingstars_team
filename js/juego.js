@@ -106,8 +106,21 @@ function detectarColision() {
 }
 
 function nivelFacil(velocidad_enemigos,generar_enemigo){
-  velocidad_enemigos =
+  velocidad_enemigos = 4;
+  generarEnemigo = 1500;
 }
+
+function nivelMedio(velocidad_enemigos,generar_enemigo){
+  velocidad_enemigos = 5;
+  generarEnemigo = 1000;
+}
+
+function nivelDificil(velocidad_enemigos,generar_enemigo){
+  velocidad_enemigos = 5;
+  generarEnemigo = 800;
+}
+
+
 function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
   Enemigo.src = "../images/Ship2.png";
@@ -115,6 +128,7 @@ function generarEnemigo() {
   en.posEnemigoY = Math.floor(Math.random() * (game.height - Enemigo.height - 10));
   enemies.push(en);
 }
+
 
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
@@ -147,9 +161,7 @@ function pintarBala() {
   }
 }
 
-function dificultad() {
 
-}
 
 
 
