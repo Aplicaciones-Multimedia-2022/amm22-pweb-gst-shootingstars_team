@@ -6,9 +6,12 @@
   src: url(../resources/Retro\ Gaming.ttf);
 }
 /*Foto de fondo*/
+
+/* Para el margen inferior de la página*/
 body {
   background-image: url("../images/FondoGeneral.png");
   background-size: 100% 100%;
+  margin-bottom: 5%;
 }
 
 /*Segundos títulos*/
@@ -72,11 +75,6 @@ h3 {
   border: transparent;
   display: block;
   cursor: pointer;
-}
-
-/* Para el margen inferior de la página*/
-body {
-  margin-bottom: 5%;
 }
 
 /*Para las tablas de las páginas autores y referencias*/
