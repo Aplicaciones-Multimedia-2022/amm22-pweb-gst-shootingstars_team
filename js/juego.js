@@ -31,13 +31,22 @@ var shoots = [];
 var enemies = [];
 var velocidad_enemigos = 5;
 var generar_enemigo = 1500;
-var dificultad= 1;
+var dificultad=  3;
 window.onload = init;
 //document.getElementById("dificultad").innerHTML = dificultad;
 
 //Funcion para inicializar el programa{}
 function init() {
-  elegirDifificultad(dificultad);
+  if(dificultad==1){
+    velocidad_enemigos = 4;
+    generar_enemigo = 1500;
+  }else if(dificultad == 2){
+    velocidad_enemigos = 5;
+    generar_enemigo = 1000;
+  } else if(dificultad == 3){
+    velocidad_enemigos = 10;
+    generar_enemigo = 500;
+  }
 
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
@@ -76,7 +85,7 @@ function Explosion(posExpX, posExpY) {
 function pintarEnemigo() {
   for (var j = 0; j < enemies.length; j++) {
     ctx.drawImage(Enemigo, enemies[j].posEnemigoX, enemies[j].posEnemigoY);
-    enemies[j].posEnemigoX -= 5;
+    enemies[j].posEnemigoX -= velocidad_enemigos;
     if (enemies[j].posEnemigoX < -1) {
       enemies.splice(j, 1);
     }
@@ -107,25 +116,11 @@ function detectarColision() {
 
 }
 
-function elegirDifificultad(dificultad) {
-  switch (dificultad) {
-    case 1:
-      velocidad_enemigos = 4;
-      generar_enemigo = 1500;
-      break;
-    case 2:
-      velocidad_enemigos = 5;
-      generarEnemigo = 1000;
-      break;
-    case 3:
-      velocidad_enemigos = 5;
-      generar_enemigo = 800;
-      break;
+  
 
 
-  }
+  
 
-}
 
 function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
