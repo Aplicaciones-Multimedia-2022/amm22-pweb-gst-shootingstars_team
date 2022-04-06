@@ -29,20 +29,22 @@ var imagenBala = new Image();
 var exp = new Image();
 var shoots = [];
 var enemies = [];
-var velocidad_enemigos;
-var generar_enemigo;
+var velocidad_enemigos = 5;
+var generar_enemigo = 1500;
+var dificultad;
 window.onload = init;
-
+document.getElementById("dificultad").innerHTML = dificultad;
 
 //Funcion para inicializar el programa{}
 function init() {
+  elegirDifificultad(dificultad);
+
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
   pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
-  velocidad_enemigos = 5;
-  generar_enemigo = 1500;
+
 
 }
 
@@ -105,21 +107,25 @@ function detectarColision() {
 
 }
 
-function nivelFacil(velocidad_enemigos,generar_enemigo){
-  velocidad_enemigos = 4;
-  generarEnemigo = 1500;
-}
+function elegirDifificultad(dificultad) {
+  switch (dificultad) {
+    case 1:
+      velocidad_enemigos = 4;
+      generar_enemigo = 1500;
+      break;
+    case 2:
+      velocidad_enemigos = 5;
+      generarEnemigo = 1000;
+      break;
+    case 3:
+      velocidad_enemigos = 5;
+      generar_enemigo = 800;
+      break;
 
-function nivelMedio(velocidad_enemigos,generar_enemigo){
-  velocidad_enemigos = 5;
-  generarEnemigo = 1000;
-}
 
-function nivelDificil(velocidad_enemigos,generar_enemigo){
-  velocidad_enemigos = 5;
-  generarEnemigo = 800;
-}
+  }
 
+}
 
 function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
