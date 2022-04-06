@@ -31,7 +31,7 @@ var shoots = [];
 var enemies = [];
 var velocidad_enemigos = 5;
 var generar_enemigo = 1500;
-var dificultad= 1;
+var dificultad= 2;
 window.onload = init;
 //document.getElementById("dificultad").innerHTML = dificultad;
 
