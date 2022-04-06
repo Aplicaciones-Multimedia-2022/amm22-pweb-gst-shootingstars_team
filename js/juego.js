@@ -10,6 +10,9 @@ var dy = 2;
 var alturanave = 70;
 var bol_disparoX = 20;
 var bol_disparoY;
+var posExpX;
+var posExpY;
+var bol_disparoY;
 var dx = 3;
 var enemigoLlega = false;
 var contador=0;
@@ -26,6 +29,7 @@ var balas = new Array();
 var Enemigo = new Image();
 var Nave = new Image();
 var imagenBala = new Image();
+var exp = new Image();
 var shoots = [];
 var enemies = [];
 
@@ -60,6 +64,11 @@ function Bala(bol_disparoX, bol_disparoY, imagenBala) {
   this.imagenBala = imagenBala;
 }
 
+function Explosion(posExpX, posExpY){
+  this.posExpX = posExpX;
+  this.posExpY = posExpY;
+}
+
 //funcion pintar enemigo
 function pintarEnemigo() {
   for (var j = 0; j < enemies.length; j++) {
@@ -81,9 +90,12 @@ function detectarColision() {
           shoots[k].bol_disparoY > enemies[l].posEnemigoY &&
           shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74
         ) {
+          pintarExp(shoots[k].bol_disparoX,shoots[k].bol_disparoY);
           contador++;
+
           enemies.splice(l, 1);
           shoots.splice(k, 1);
+          
         }
       }
     }
@@ -106,6 +118,12 @@ function pintarNave() {
  naveAux = new nave(naveX, naveY);
   Nave.src = "../images/Ship1.png";
   ctx.drawImage(Nave, naveAux.naveX, naveAux.naveY);
+}
+
+function pintarExp(x,y){
+  expAux = new Explosion(x, y);
+  exp.src = "../images/explosion_p.png";
+  ctx.drawImage(exp, expAux.posExpX, expAux.posExpY);
 }
 
 //Pintamos la bala con la que dispara
@@ -146,6 +164,7 @@ function draw() {
   }
   detectarColision();
   muerte();
+ 
   if (nave_dispara) {
     pintarBala();
   }
