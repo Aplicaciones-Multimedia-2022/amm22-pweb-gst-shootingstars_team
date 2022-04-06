@@ -165,5 +165,15 @@ th {
     0 0px 20px 0 rgba(255, 193, 7, 255);
 }
 
+<<<<<<< HEAD
 
 
+=======
+/*Botones*/
+.divcontroles {
+  text-align: center;
+  margin: 10;
+  padding: 0 40px;
+  margin-top: 150;
+}
+>>>>>>> 7d13dfd305fae87eb32bc666bd4839e887decd3a
