@@ -76,7 +76,7 @@ function redireccionar8(){
   location.replace("../html/portada.html")
 }
 function redireccionar9(){
-  location.replace("../html/prejuego.html")
+  location.replace("../html/juego.html")
 }
 function redireccionar10(){
   location.replace("../html/portada.html")
