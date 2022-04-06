@@ -50,12 +50,33 @@ function init() {
     generar_enemigo = 500;
   }
 
+  elegir(1);
+
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
   pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
 }
+
+function elegir(dificultad){
+  document.getElementById("contador2").innerHTML = contador2;
+  if(dificultad==1){
+    contador2 = 1;
+    //velocidad_enemigos = 4;
+    //generar_enemigo = 1500;
+  }else if(dificultad == 2){
+    contador2 = 2;
+    //velocidad_enemigos = 5;
+    //generar_enemigo = 1000;
+  } else if(dificultad == 3){
+    contador2 = 3;
+    //velocidad_enemigos = 10;
+    //generar_enemigo = 500;
+  }
+
+}
+
 
 function enemigo(posEnemigoX, posEnemigoY) {
   this.posEnemigoX = posEnemigoX;
@@ -97,6 +118,8 @@ function detectarColision() {
           shoots[k].bol_disparoY > enemies[l].posEnemigoY &&
           shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74
         ) {
+          sonido_explosion.src = '../audio/sonidoExplosion.wav';
+          sonido_explosion.load();
           pintarExp(shoots[k].bol_disparoX, shoots[k].bol_disparoY);
           contador++;
           contador1 = contador;
