@@ -6,26 +6,22 @@ var nave_dispara = false;
 var nave_UP = false;
 var nave_DOWN = false;
 const borde = 10;
-var dy = 5;
+var velocidad_nave = 5;
 var alturanave = 70;
 var bol_disparoX = 20;
 var bol_disparoY;
 var posExpX;
 var posExpY;
 var bol_disparoY;
-var dx = 3;
 var enemigoLlega = false;
-var contador=0;
-var perder=0;
+var contador = 0;
+var vidas_nave = 0;
 var overlay_go = document.getElementById("overlay_go");
 var sonido_disparo = new Audio();
 sonido_disparo.src = '../audio/SonidoDisparos/disparoNave.wav';
-
-window.onload = init;
 var final_nave;
 var posEnemigoY;
 var posEnemigoX;
-var dx;
 var balas = new Array();
 var Enemigo = new Image();
 var Nave = new Image();
@@ -33,7 +29,9 @@ var imagenBala = new Image();
 var exp = new Image();
 var shoots = [];
 var enemies = [];
-
+var velocidad_enemigos;
+var generar_enemigo;
+window.onload = init;
 
 
 //Funcion para inicializar el programa{}
@@ -43,6 +41,8 @@ function init() {
   pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
+  velocidad_enemigos = 5;
+  generar_enemigo = 1500;
 
 }
 
@@ -65,7 +65,7 @@ function Bala(bol_disparoX, bol_disparoY, imagenBala) {
   this.imagenBala = imagenBala;
 }
 
-function Explosion(posExpX, posExpY){
+function Explosion(posExpX, posExpY) {
   this.posExpX = posExpX;
   this.posExpY = posExpY;
 }
@@ -91,7 +91,7 @@ function detectarColision() {
           shoots[k].bol_disparoY > enemies[l].posEnemigoY &&
           shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74
         ) {
-          pintarExp(shoots[k].bol_disparoX,shoots[k].bol_disparoY);
+          pintarExp(shoots[k].bol_disparoX, shoots[k].bol_disparoY);
           contador++;
 
           enemies.splice(l, 1);
@@ -105,6 +105,21 @@ function detectarColision() {
 
 }
 
+function nivelFacil(velocidad_enemigos,generar_enemigo){
+  velocidad_enemigos = 4;
+  generarEnemigo = 1500;
+}
+
+function nivelMedio(velocidad_enemigos,generar_enemigo){
+  velocidad_enemigos = 5;
+  generarEnemigo = 1000;
+}
+
+function nivelDificil(velocidad_enemigos,generar_enemigo){
+  velocidad_enemigos = 5;
+  generarEnemigo = 800;
+}
+
 
 function generarEnemigo() {
   var en = new enemigo(posEnemigoX, posEnemigoY);
@@ -114,14 +129,15 @@ function generarEnemigo() {
   enemies.push(en);
 }
 
+
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
- naveAux = new nave(naveX, naveY);
+  naveAux = new nave(naveX, naveY);
   Nave.src = "../images/Ship1.png";
   ctx.drawImage(Nave, naveAux.naveX, naveAux.naveY);
 }
 
-function pintarExp(x,y){
+function pintarExp(x, y) {
   expAux = new Explosion(x, y);
   exp.src = "../images/explosion_p.png";
   ctx.drawImage(exp, expAux.posExpX, expAux.posExpY);
@@ -144,11 +160,16 @@ function pintarBala() {
     }
   }
 }
-function muerte(){
-  for (var l = 0; l < enemies.length; l++) {
-    if(enemies[l].posEnemigoX  <  5){
 
-        perder ++;
+
+
+
+
+function muerte() {
+  for (var l = 0; l < enemies.length; l++) {
+    if (enemies[l].posEnemigoX < 5) {
+
+      vidas_nave++;
 
     }
   }
@@ -171,10 +192,10 @@ function draw() {
   }
 
   if (nave_UP) {
-    this.naveY -= this.dy;
+    this.naveY -= this.velocidad_nave;
   }
   if (nave_DOWN) {
-    this.naveY += this.dy;
+    this.naveY += this.velocidad_nave;
   }
 
   if (this.naveY < 0) {
@@ -183,7 +204,7 @@ function draw() {
     this.naveY = 340;
   }
 
-  if(perder == 3){
+  if (vidas_nave == 3) {
     overlay_go.classList.add("active");
   }
 
@@ -226,7 +247,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -273,7 +294,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -284,4 +305,4 @@ window.addEventListener(
 
 
 setInterval(draw, 10);
-setInterval(generarEnemigo, 1000);
+setInterval(generarEnemigo, generar_enemigo);
