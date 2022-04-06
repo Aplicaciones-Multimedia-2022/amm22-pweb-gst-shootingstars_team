@@ -11,7 +11,7 @@ window.onload=init;
 function init(){ 
     nave1.addEventListener("click",function(){
         var nave1 = document.getElementById("imagen5"); 
-	    ctx2.drawImage(nave1, 20, 30, 100, 100); 
+	    ctx2.drawImage(nave1, 40, 20, 200, 150); 
 
     }); 
 
