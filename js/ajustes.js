@@ -172,9 +172,11 @@ function onClickMenos() {
 vulumen
 posibles solucione: usar arrays para poner cada uno en una posicion*/ 
 function draw2(){//para dibujar las lineas del volumen
-  onClickMas();
-  onClickMenos();
-  document.getElementById("demo").innerHTML = contador;
+  //onClickMas();
+  //onClickMenos();
+  //document.getElementById("demo").innerHTML = contador;
+  botonmas.addEventListener("click", onClickMas);
+  botonmenos.addEventListener("click", onClickMenos);
   var imagen2 = document.getElementById("imagen2");
   var imagen3 = document.getElementById("imagen3");
   var imagen4 = document.getElementById("imagen4");
