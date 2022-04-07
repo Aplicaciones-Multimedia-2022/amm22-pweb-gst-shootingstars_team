@@ -1,6 +1,6 @@
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <link href="../css/ajustes.css" rel="stylesheet" type="text/css" />
     <link href="../css/portada.css" rel="stylesheet" type="text/css" />
     <link href="../css/global.css" rel="stylesheet" type="text/css" />
@@ -27,9 +27,10 @@
         el volumen, y que hubiese mas o menos rayitas-->
     </div>
     <div class="control_audio">
-      <b class="boton" id="botonmenos">-</b>
+      <button id="botonmenos" onClick="onClickMenos()">-</button>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <b class="boton" id="botonmas">+</b>
+      <button id="botonmas" onClick="onClickMas()">+</button>
+      <p id="demo"></p>
     </div>
 
     <h3>Personalizaci&oacute;n</h3>
