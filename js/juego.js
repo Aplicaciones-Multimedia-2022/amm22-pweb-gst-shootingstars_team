@@ -35,7 +35,7 @@ var velocidad_enemigos = 5;
 var generar_enemigo = 1500;
 var contador2 = 0;
 var sonido_explosion = new Audio();
-
+var fin_juego = false;
 var sonido_gameover = new Audio('../audio/sonidoGO.wav');
 var sonido_explosion_canvas = new Audio('../audio/explosion_contra_canvas.wav');
 
@@ -174,19 +174,20 @@ function pintarBala() {
 
 function muerte() {
   for (var l = 0; l < enemies.length; l++) {
-    if (enemies[l].posEnemigoX < 5) {
-      sonido_explosion_canvas.play();
-      vidas_nave++;
-      
+    if (fin_juego == false) {
+      if (enemies[l].posEnemigoX < 5) {
+        sonido_explosion_canvas.pause();
+        sonido_explosion_canvas.load();
+        sonido_explosion_canvas.play();
+        vidas_nave++;
+
+      }
     }
   }
 }
 
-function pausajuego(){
-  shoots = 0;
-  enemies = 0;
-  enemies.length = 0;
-  velocidad_enemigos = 0;
+function pausajuego() {
+  fin_juego = true;
 }
 
 //Utilizamos esta funcion para dibujar el movimiento
@@ -199,9 +200,10 @@ function draw() {
   }
   detectarColision();
   muerte();
-
-  if (nave_dispara) {
-    pintarBala();
+  if (fin_juego == false) {
+    if (nave_dispara) {
+      pintarBala();
+    }
   }
 
   if (nave_UP) {
@@ -218,10 +220,12 @@ function draw() {
   }
 
   if (vidas_nave == 3) {
-    pausajuego();
+    if(fin_juego == false){
     sonido_gameover.play();
+  }
+    pausajuego();
     overlay_go.classList.add("active");
-    
+
   }
 }
 
@@ -261,7 +265,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -283,11 +287,13 @@ function keyDownHandler(event) {
   }
   if (event.keyCode == "32") {
     //si la tecla presionada es espacio para disparar
-    sonido_disparo.load();
-    nave_dispara = true;
-    bala = new Bala(bol_disparoX, bol_disparoY);
-    shoots.push(bala);
-    sonido_disparo.play();
+    if (fin_juego == false) {
+      sonido_disparo.load();
+      nave_dispara = true;
+      bala = new Bala(bol_disparoX, bol_disparoY);
+      shoots.push(bala);
+      sonido_disparo.play();
+    }
   }
 }
 
@@ -308,7 +314,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -317,4 +323,6 @@ window.addEventListener(
 );
 
 setInterval(draw, 10);
-setInterval(generarEnemigo, generar_enemigo);
+if (fin_juego == false) {
+  setInterval(generarEnemigo, generar_enemigo);
+}
