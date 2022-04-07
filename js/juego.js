@@ -1,5 +1,7 @@
 var mycanvas = document.getElementById("game");
 var ctx = mycanvas.getContext("2d");
+var mycanvas_dos = document.getElementById("vidas");
+var ctx_2 = mycanvas_dos.getContext("2d");
 var naveX = 0;
 var naveY = 0;
 var nave_dispara = false;
@@ -39,6 +41,10 @@ var fin_juego = false;
 var sonido_gameover = new Audio('../audio/sonidoGO.wav');
 var sonido_explosion_canvas = new Audio('../audio/explosion_contra_canvas.wav');
 
+var Estrella = new Image();
+
+
+
 
 window.onload = init;
 //document.getElementById("dificultad").innerHTML = dificultad;
@@ -52,7 +58,17 @@ function init() {
   pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
+
 }
+
+////////////////////////////
+function dibujar_estrella(){
+  Estrella.src = "../images/estrella.png";
+  ctx_2.drawImage(Estrella,  20, 0, 60,60 ); 
+}
+
+
+////////////////////////////
 
 function elegir(dificultad) {
   document.getElementById("contador2").innerHTML = contador2;
@@ -70,6 +86,8 @@ function elegir(dificultad) {
     //generar_enemigo = 500;
   }
 }
+
+
 
 function enemigo(posEnemigoX, posEnemigoY) {
   this.posEnemigoX = posEnemigoX;
@@ -227,6 +245,9 @@ function draw() {
     overlay_go.classList.add("active");
 
   }
+
+  ctx_2.clearRect(0, 0, vidas.width, vidas.height);
+  dibujar_estrella();
 }
 
 document.addEventListener("keydown", keyDownHandler, false);
@@ -326,3 +347,4 @@ setInterval(draw, 10);
 if (fin_juego == false) {
   setInterval(generarEnemigo, generar_enemigo);
 }
+
