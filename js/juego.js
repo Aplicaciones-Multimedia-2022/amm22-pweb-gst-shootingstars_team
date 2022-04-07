@@ -182,6 +182,13 @@ function muerte() {
   }
 }
 
+function pausajuego(){
+  shoots = 0;
+  enemies = 0;
+  enemies.length = 0;
+  velocidad_enemigos = 0;
+}
+
 //Utilizamos esta funcion para dibujar el movimiento
 function draw() {
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
@@ -211,8 +218,10 @@ function draw() {
   }
 
   if (vidas_nave == 3) {
+    pausajuego();
     sonido_gameover.play();
     overlay_go.classList.add("active");
+    
   }
 }
 
