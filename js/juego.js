@@ -35,6 +35,8 @@ var velocidad_enemigos = 5;
 var generar_enemigo = 1500;
 var contador2 = 0;
 var sonido_explosion = new Audio();
+var sonido_gameover = new Audio();
+sonido_gameover.src = "../audio/sonidoGO.wav";
 window.onload = init;
 //document.getElementById("dificultad").innerHTML = dificultad;
 
@@ -146,7 +148,7 @@ function pintarNave() {
 
 function pintarExp(x, y) {
   expAux = new Explosion(x, y);
-  exp.src = "../images/explosion_p.png";
+  exp.src = "../images/explosion_m.png";
   ctx.drawImage(exp, expAux.posExpX, expAux.posExpY);
 }
 
@@ -171,6 +173,7 @@ function muerte() {
   for (var l = 0; l < enemies.length; l++) {
     if (enemies[l].posEnemigoX < 5) {
       vidas_nave++;
+      
     }
   }
 }
@@ -204,6 +207,7 @@ function draw() {
   }
 
   if (vidas_nave == 3) {
+    sonido_gameover.load();
     overlay_go.classList.add("active");
   }
 }
