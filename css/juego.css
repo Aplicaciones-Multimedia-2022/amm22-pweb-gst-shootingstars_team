@@ -73,7 +73,20 @@ p {
 }
 
 .estrella{
-  background-color: aquamarine;
   margin-left: 77%;
   margin-right: 6%;
+  
+  
+}
+
+#vidas {
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+  background: transparent;
+
+  border-top: 10px transparent;
+  border-left: 10px transparent;
+  border-right: 10px transparent;
+  border-bottom: 10px transparent;
 }
