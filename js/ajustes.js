@@ -25,10 +25,10 @@ imagen2.src = "../images/vol1.png";*/
 var canvas2 = document.getElementById("personalizacion");
 var ctx2 = canvas2.getContext("2d");
 
-const nave1= document.getElementById("nave1");
+/*const nave1= document.getElementById("nave1");
 const nave2= document.getElementById("nave2");
 const nave3= document.getElementById("nave3");
-const nave4= document.getElementById("nave4");
+const nave4= document.getElementById("nave4");*/
 
 
 
@@ -80,11 +80,30 @@ function init(){
 
    //para la parte de personalizacion
 
-    nave1.addEventListener("click",function(){
+   /* nave1.addEventListener("click",function(){
       var nave1 = document.getElementById("imagen5"); 
     ctx2.drawImage(nave1, 40, 20, 200, 150); 
 
-   }); 
+   }); */
+   
+   $(document).ready(function(){
+   $("#nave1").click(function(){
+   $  ("#imagen5").show();
+   });
+  });
+  /*
+  $(document).ready(function(){
+  $('#btn1').on("click",function(e){
+   $('#myImg').toggle('slow');
+  });
+});
+*/
+/*$(document).ready(function(){
+$('#nave1').on("click",function(){
+  $('#imagen5').toggle('slow');
+ });
+});*/
+
    nave2.addEventListener("click",function(){
       var nave2 = document.getElementById("imagen6"); 
     ctx2.drawImage(nave2, 40, 20, 200, 150); 
