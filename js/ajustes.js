@@ -73,10 +73,8 @@ function init(){
       //draw2();
     });
     
-    draw1();
+    //draw1();
 
-    //onClickMas();
-    //onClickMenos();
 
     draw2();
 
@@ -141,37 +139,18 @@ function redireccionar7(){
   location.replace("../html/juego.html")
 }
 
-function draw1() {
+/*function draw1() {
   var imagen1 = document.getElementById("imagen1"); 
 	ctx1.drawImage(imagen1, 20, 30, 100, 100); 
 
-}
+}*/
 
-
-function onClickMas() {
- if(contador<3){
-  contador++;
-  //document.getElementById("demo").innerHTML = contador;
-  } else{
-    contador=contador;
-  } 
-  return contador;
-};
-function onClickMenos() {
-  if(contador>=1){
-    contador-- ;
-   // document.getElementById("demo").innerHTML = contador;
-    } else{
-      contador=contador;
-    } 
-    return contador;
-};
 
 
 /*problema:como saber en cual estas para saber cual añadir y cual borrar de
 vulumen
 posibles solucione: usar arrays para poner cada uno en una posicion*/ 
-function draw2(){//para dibujar las lineas del volumen
+/*function draw2(){//para dibujar las lineas del volumen
   //onClickMas();
   //onClickMenos();
   //document.getElementById("demo").innerHTML = contador;
@@ -199,10 +178,78 @@ function draw2(){//para dibujar las lineas del volumen
   }
   
 
-}
-
-/*function borrar(){
-  //para borrar las lineas de voulmen
-  ctx1.clearRect(130, 27, 25, 100);
 }*/
 
+
+// Select increment and decrement buttons
+
+
+// Select total count
+const totalCount = document.getElementById("total-count");
+
+// Variable to track count
+var count = 0;
+
+// Display initial count value
+totalCount.innerHTML = count;
+
+// Function to increment count
+const handleIncrement = () => {
+  if(count<3){
+    count++;
+  }else{
+    
+  }
+  totalCount.innerHTML = count;
+};
+
+// Function to decrement count
+const handleDecrement = () => {
+  if(count>0){
+    count--;
+  }else{
+
+  }
+  totalCount.innerHTML = count;
+};
+
+// Add click event to buttons
+
+
+function draw2(){//para dibujar las lineas del volumen
+  var imagen1 = document.getElementById("imagen1"); 
+  var imagen2 = document.getElementById("imagen2");
+  var imagen3 = document.getElementById("imagen3");
+  var imagen4 = document.getElementById("imagen4");
+  botonmas.addEventListener("click", handleIncrement);
+  botonmenos.addEventListener("click", handleDecrement);
+  //me la sy¡uda ya si me funciona el contador y se me imprime
+  //el microfono porque coño no se encienden las imagenes
+  //de moemnto unica hipotesis es que considera el resultado de la
+  //comparacion como false y el unico que son false todas imprime eso
+  //hipotesis comprobada, su puta madre
+  //si pones distinto de solo te sale la primera comprobado
+  //con menores e iguales sale igual que en el de iguales
+  if(count>0 || count<2){
+    ctx1.clearRect(0, 0, 300, 150); 
+    ctx1.drawImage(imagen1, 20, 30, 100, 100); 
+    ctx1.drawImage(imagen2, 130, 27, 25, 100);
+  }else if(count>1 || count<3){
+    ctx1.clearRect(0, 0, 300, 150); 
+    ctx1.drawImage(imagen1, 20, 30, 100, 100); 
+    ctx1.drawImage(imagen2, 130, 27, 25, 100);
+    ctx1.drawImage(imagen3, 180, 27, 25, 100);
+  }else if(count>2 || count<4){
+    ctx1.clearRect(0, 0, 300, 150); 
+    ctx1.drawImage(imagen1, 20, 30, 100, 100); 
+    ctx1.drawImage(imagen2, 130, 27, 25, 100);
+    ctx1.drawImage(imagen3, 180, 27, 25, 100);
+    ctx1.drawImage(imagen4, 230, 27, 25, 100);
+  }else{
+    ctx1.clearRect(0, 0, 300, 150);
+    ctx1.drawImage(imagen1, 20, 30, 100, 100);  
+    ctx1.drawImage(imagen4, 230, 27, 25, 100);
+  }
+  
+
+}
