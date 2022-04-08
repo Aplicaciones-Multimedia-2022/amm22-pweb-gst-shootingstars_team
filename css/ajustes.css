@@ -27,12 +27,12 @@
   margin-top: 0%;
 }
 
-.divpersonalizacion{
+.divpersonalizacion {
   height: 450;
   align-items: center;
   display: flex;
   justify-content: center;
-    align-items: center;
+  align-items: center;
 }
 #personalizacion {
   width: 500;
@@ -53,10 +53,9 @@
   border: 0px;
   font-family: retro;
   display: inline-block;
-  color: black;
   text-align: right;
   padding: 14px 16px;
-  font-size: 17px;
+  font-size: 19px;
   text-decoration: none;
   background-color: #ffc107;
   cursor: pointer;
@@ -64,7 +63,6 @@
 
 .divtabla {
   float: right;
-  height: 440px;
   width: 240px;
 }
 .tabla2 {

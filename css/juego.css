@@ -68,11 +68,9 @@ p {
   text-align: center;
   font-size: 50px;
 }
-.namee{
+.namee {
   color: aliceblue;
 }
-
-
 
 #vidas {
   margin-left: 78%;
@@ -80,7 +78,5 @@ p {
   padding-left: 0;
   padding-right: 0;
   display: block;
-  background-color: aqua;
-
-  
+  background-color: transparent;
 }

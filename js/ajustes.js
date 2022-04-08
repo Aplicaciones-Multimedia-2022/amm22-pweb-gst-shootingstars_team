@@ -136,7 +136,7 @@ function redireccionar8(){
   location.replace("../html/portada.html")
 }
 function redireccionar7(){
-  location.replace("../html/juego.html")
+  location.replace("../html/prejuego.html")
 }
 
 /*function draw1() {
