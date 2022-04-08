@@ -13,7 +13,6 @@
 }
 .divJuego {
   float: left;
-  margin-left: 10%;
 }
 .divpuntuaciones {
   float: right;
@@ -32,7 +31,7 @@ p {
   font-family: retro;
   color: white;
   text-align: center;
-  font-size: 26px;
+  font-size: 20px;
 }
 
 .overlay_go {
@@ -55,6 +54,23 @@ p {
   width: 1200;
   height: 621;
 }
+.extra {
+  float: right;
+}
+.estrella {
+  width: 220px;
+  margin-right: 5px;
+}
+#vidas {
+  display: block;
+  background-color: transparent;
+}
+.jueg0 {
+  height: 450;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 .go {
   text-align: center;
   font-family: retro;
@@ -69,14 +85,6 @@ p {
   font-size: 50px;
 }
 .namee {
-  color: aliceblue;
-}
-
-#vidas {
-  margin-left: 78%;
-  margin-right: 7%;
-  padding-left: 0;
-  padding-right: 0;
-  display: block;
-  background-color: transparent;
+  color: white;
+  width: 220px;
 }
