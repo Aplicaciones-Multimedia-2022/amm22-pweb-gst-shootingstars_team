@@ -42,17 +42,15 @@ var sonido_gameover = new Audio('../audio/sonidoGO.wav');
 var sonido_explosion_canvas = new Audio('../audio/explosion_contra_canvas.wav');
 
 var Estrella = new Image();
-
+var df = localStorage.getItem('dificultad');
 
 
 
 window.onload = init;
-//document.getElementById("dificultad").innerHTML = dificultad;
+
 
 //Funcion para inicializar el programa{}
 function init() {
-  elegir(1);
-
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
   pintarBala();
@@ -60,30 +58,30 @@ function init() {
   final_nave = game.height - borde - alturanave;
 
 }
-
+elegir_dificultad(df);
 ////////////////////////////
-function dibujar_estrella(){
+function dibujar_estrella() {
   Estrella.src = "../images/estrella.png";
-  ctx_2.drawImage(Estrella,  20, 0, 60,60 ); 
+  ctx_2.drawImage(Estrella, 20, 0, 60, 60);
 }
 
 
 ////////////////////////////
 
-function elegir(dificultad) {
-  document.getElementById("contador2").innerHTML = contador2;
+function elegir_dificultad(dificultad) {
+
   if (dificultad == 1) {
-    contador2 = 1;
-    //velocidad_enemigos = 4;
-    //generar_enemigo = 1500;
+
+    velocidad_enemigos = 4;
+    generar_enemigo = 1500;
   } else if (dificultad == 2) {
-    contador2 = 2;
-    //velocidad_enemigos = 5;
-    //generar_enemigo = 1000;
+
+    velocidad_enemigos = 5;
+    generar_enemigo = 1000;
   } else if (dificultad == 3) {
-    contador2 = 3;
-    //velocidad_enemigos = 10;
-    //generar_enemigo = 500;
+
+    velocidad_enemigos = 10;
+    generar_enemigo = 500;
   }
 }
 
@@ -238,9 +236,9 @@ function draw() {
   }
 
   if (vidas_nave == 3) {
-    if(fin_juego == false){
-    sonido_gameover.play();
-  }
+    if (fin_juego == false) {
+      sonido_gameover.play();
+    }
     pausajuego();
     overlay_go.classList.add("active");
 
@@ -347,4 +345,3 @@ setInterval(draw, 10);
 if (fin_juego == false) {
   setInterval(generarEnemigo, generar_enemigo);
 }
-

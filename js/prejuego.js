@@ -151,12 +151,15 @@ function redireccionar8(){
 }
 function redireccionarFacil(){
   location.replace("../html/juego.html")
+  localStorage.setItem('dificultad', '1');
 }
 function redireccionarMedio(){
   location.replace("../html/juego.html")
+  localStorage.setItem('dificultad', '2');
 }
 function redireccionarDificil(){
   location.replace("../html/juego.html")
+  localStorage.setItem('dificultad', '3');
 }
 
 
