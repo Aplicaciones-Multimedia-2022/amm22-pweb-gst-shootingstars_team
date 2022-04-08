@@ -40,8 +40,10 @@ var sonido_explosion = new Audio();
 var fin_juego = false;
 var sonido_gameover = new Audio('../audio/sonidoGO.wav');
 var sonido_explosion_canvas = new Audio('../audio/explosion_contra_canvas.wav');
-
+var estX;
+var estY;
 var Estrella = new Image();
+
 var df = localStorage.getItem('dificultad');
 
 
@@ -56,14 +58,50 @@ function init() {
   pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
+  
+  //if(muerte==1){
+  //ctx_2.clearRect(0, 0); 
+  //}
+
 
 }
 elegir_dificultad(df);
 ////////////////////////////
-function dibujar_estrella() {
-  Estrella.src = "../images/estrella.png";
-  ctx_2.drawImage(Estrella, 20, 0, 60, 60);
+
+
+function estrella(estX, estY) {
+  this.estX = estX;
+  this.estY = estY;
 }
+
+function pintarEst() {
+  est1 = new estrella(-10,-15);
+  est2 = new estrella(60,-15);
+  est3 = new estrella(130,-15);
+  
+  Estrella.src = "../images/estrella.png"
+  
+  ctx_2.drawImage(Estrella, est1.estX, est1.estY,80,80);
+  ctx_2.drawImage(Estrella, est2.estX, est2.estY,80,80);
+  ctx_2.drawImage(Estrella, est3.estX, est3.estY,80,80);
+
+  
+}
+
+function borrar_estrella(){
+  if(vidas_nave==1){
+
+    ctx_2.clearRect(130, 0, vidas.width, vidas.height);
+  }else if(vidas_nave==2){
+    ctx_2.clearRect(60, 0, vidas.width, vidas.height);
+    
+  }else if(vidas_nave==3){
+    ctx_2.clearRect(0, 0, vidas.width, vidas.height);
+  }
+  
+}
+  
+
 
 
 ////////////////////////////
@@ -107,6 +145,7 @@ function Explosion(posExpX, posExpY) {
   this.posExpX = posExpX;
   this.posExpY = posExpY;
 }
+
 
 //funcion pintar enemigo
 function pintarEnemigo() {
@@ -192,10 +231,11 @@ function muerte() {
   for (var l = 0; l < enemies.length; l++) {
     if (fin_juego == false) {
       if (enemies[l].posEnemigoX < 5) {
+        vidas_nave ++;
         sonido_explosion_canvas.pause();
-        sonido_explosion_canvas.load();
+        
         sonido_explosion_canvas.play();
-        vidas_nave++;
+        
 
       }
     }
@@ -238,15 +278,16 @@ function draw() {
   if (vidas_nave == 3) {
     if (fin_juego == false) {
       sonido_gameover.play();
+      pausajuego();
     }
-    pausajuego();
+    
     overlay_go.classList.add("active");
 
   }
-
-  ctx_2.clearRect(0, 0, vidas.width, vidas.height);
-  dibujar_estrella();
+  pintarEst();
+  borrar_estrella();
 }
+
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -345,3 +386,19 @@ setInterval(draw, 10);
 if (fin_juego == false) {
   setInterval(generarEnemigo, generar_enemigo);
 }
+
+
+/*
+Estrella.onload = function(){
+  ctx_2.drawImage(Estrella, 20, 0, 60, 60);
+  if(contador==1){
+    ctx_2.clearRect(0, 0, vidas.width, vidas.height); // limpiar canvas
+  }
+}
+function dibujar_estrella(){
+  ctx_2.drawImage(Estrella, 20, 0, 60, 60);
+  if(contador==1){
+    ctx_2.clearRect(20, 0, vidas.width, vidas.height); // limpiar canvas
+  }
+}
+*/
