@@ -255,7 +255,7 @@ function draw() {
     j = 0;
   }
   detectarColision();
-  muerte();
+  //muerte();
   if (fin_juego == false) {
     if (nave_dispara) {
       pintarBala();
@@ -275,7 +275,7 @@ function draw() {
     this.naveY = 340;
   }
 
-  if (vidas_nave == 3) {
+  /*if (vidas_nave == 3) {
     if (fin_juego == false) {
       sonido_gameover.play();
       pausajuego();
@@ -283,7 +283,7 @@ function draw() {
     
     overlay_go.classList.add("active");
 
-  }
+  }*/
   pintarEst();
   borrar_estrella();
 }
