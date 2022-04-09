@@ -223,7 +223,7 @@ function draw2(){//para dibujar las lineas del volumen
   var imagen4 = document.getElementById("imagen4");
   botonmas.addEventListener("click", handleIncrement);
   botonmenos.addEventListener("click", handleDecrement);
-  count2=document.getElementById("total-count");
+  //var count2=document.getElementById("total-count");
   //me la sy¡uda ya si me funciona el contador y se me imprime
   //el microfono porque coño no se encienden las imagenes
   //de moemnto unica hipotesis es que considera el resultado de la
@@ -233,7 +233,7 @@ function draw2(){//para dibujar las lineas del volumen
   //con menores e iguales sale igual que en el de iguales
   //da igual como haga la logica siempre me sale lo mismo intercalo entre 
   //la de 0 y la de 3 cuenta
-  /*if(count==1){
+  if(count==1){
     ctx1.clearRect(0, 0, 300, 150); 
     ctx1.drawImage(imagen1, 20, 30, 100, 100); 
     ctx1.drawImage(imagen2, 130, 27, 25, 100);
@@ -251,31 +251,6 @@ function draw2(){//para dibujar las lineas del volumen
   }else{
     ctx1.clearRect(0, 0, 300, 150);
     ctx1.drawImage(imagen1, 20, 30, 100, 100);  
-  }*/
-  switch(count2){
-    case 1:
-      ctx1.clearRect(0, 0, 300, 150); 
-      ctx1.drawImage(imagen1, 20, 30, 100, 100); 
-      ctx1.drawImage(imagen2, 130, 27, 25, 100);
-
-    case 2:
-      ctx1.clearRect(0, 0, 300, 150); 
-      ctx1.drawImage(imagen1, 20, 30, 100, 100); 
-      ctx1.drawImage(imagen2, 130, 27, 25, 100);
-      ctx1.drawImage(imagen3, 180, 27, 25, 100);
-    
-    case 3:
-      ctx1.clearRect(0, 0, 300, 150); 
-      ctx1.drawImage(imagen1, 20, 30, 100, 100); 
-      ctx1.drawImage(imagen2, 130, 27, 25, 100);
-      ctx1.drawImage(imagen3, 180, 27, 25, 100);
-      ctx1.drawImage(imagen4, 230, 27, 25, 100);
-
-    default:
-      ctx1.clearRect(0, 0, 300, 150);
-      ctx1.drawImage(imagen1, 20, 30, 100, 100);
-
-
   }
   
 
