@@ -18,7 +18,7 @@ var bol_disparoY;
 var enemigoLlega = false;
 var contador = 0;
 var contador1 = 0;
-var puntmax = 0;
+var puntmax = localStorage.getItem('max');
 var vidas_nave = 0;
 var overlay_go = document.getElementById("overlay_go");
 var sonido_disparo = new Audio();
@@ -26,8 +26,10 @@ sonido_disparo.src = "../audio/SonidoDisparos/disparoNave.wav";
 var final_nave;
 var posEnemigoY;
 var posEnemigoX;
+var preMax;
 var balas = new Array();
 var Enemigo = new Image();
+Enemigo.src = "../images/Ship2.png";
 var Nave = new Image();
 Nave.src = "../images/Ship1.png";
 var imagenBala = new Image();
@@ -126,9 +128,10 @@ function elegir_dificultad(dificultad) {
 
 
 
-function enemigo(posEnemigoX, posEnemigoY) {
+function enemigo(posEnemigoX, posEnemigoY, imagenEnemigo) {
   this.posEnemigoX = posEnemigoX;
   this.posEnemigoY = posEnemigoY;
+  this.imagenEnemigo = imagenEnemigo;
 }
 
 function nave(naveX, naveY, imagenNave, velocidad_nave) {
@@ -153,7 +156,7 @@ function Explosion(posExpX, posExpY) {
 //funcion pintar enemigo
 function pintarEnemigo() {
   for (var j = 0; j < enemies.length; j++) {
-    ctx.drawImage(Enemigo, enemies[j].posEnemigoX, enemies[j].posEnemigoY);
+    ctx.drawImage(enemies[j].imagenEnemigo, enemies[j].posEnemigoX, enemies[j].posEnemigoY);
     enemies[j].posEnemigoX -= velocidad_enemigos;
     if (enemies[j].posEnemigoX < -1) {
       enemies.splice(j, 1);
@@ -182,7 +185,10 @@ function detectarColision() {
       }
     }
     if (contador > puntmax) {
-      puntmax = contador;
+      preMax = contador.toString();
+      localStorage.setItem('max',preMax);
+      puntmax = localStorage.getItem('max');
+
     }
   }
   document.getElementById("contador").innerHTML = contador;
@@ -191,11 +197,11 @@ function detectarColision() {
 }
 
 function generarEnemigo() {
-  var en = new enemigo(posEnemigoX, posEnemigoY);
-  Enemigo.src = "../images/Ship2.png";
+  var en = new enemigo(posEnemigoX, posEnemigoY,Enemigo);
+
   en.posEnemigoX = game.width;
   en.posEnemigoY = Math.floor(
-    Math.random() * (game.height - Enemigo.height - 10)
+  Math.random() * (game.height - en.imagenEnemigo.height - 10)
   );
   enemies.push(en);
 }
@@ -204,7 +210,7 @@ function generarEnemigo() {
 function pintarNave() {
 
 
-  ctx.drawImage(Nave, naveAux.naveX, naveAux.naveY);
+  ctx.drawImage(naveAux.imagenNave, naveAux.naveX, naveAux.naveY);
 }
 
 function pintarExp(x, y) {
