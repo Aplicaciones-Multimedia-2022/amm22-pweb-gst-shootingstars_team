@@ -18,7 +18,7 @@ var bol_disparoY;
 var enemigoLlega = false;
 var contador = 0;
 var contador1 = 0;
-var puntmax = localStorage.getItem('max');
+var puntmax = localStorage.getItem("max");
 var vidas_nave = 0;
 var overlay_go = document.getElementById("overlay_go");
 var sonido_disparo = new Audio();
@@ -41,18 +41,17 @@ var generar_enemigo = 1500;
 var contador2 = 0;
 var sonido_explosion = new Audio();
 var fin_juego = false;
-var sonido_gameover = new Audio('../audio/sonidoGO.wav');
-var sonido_explosion_canvas = new Audio('../audio/explosion_contra_canvas.wav');
+var sonido_gameover = new Audio("../audio/sonidoGO.wav");
+var sonido_explosion_canvas = new Audio("../audio/explosion_contra_canvas.wav");
 var estX;
 var estY;
 var Estrella = new Image();
 
-var df = localStorage.getItem('dificultad');
+var df = localStorage.getItem("dificultad");
 
 naveAux = new nave(naveX, naveY, Nave);
 
 window.onload = init;
-
 
 //Funcion para inicializar el programa{}
 function init() {
@@ -65,12 +64,9 @@ function init() {
   //if(muerte==1){
   //ctx_2.clearRect(0, 0);
   //}
-
-
 }
 elegir_dificultad(df);
 ////////////////////////////
-
 
 function estrella(estX, estY) {
   this.estX = estX;
@@ -78,55 +74,41 @@ function estrella(estX, estY) {
 }
 
 function pintarEst() {
-  est1 = new estrella(-10,-15);
-  est2 = new estrella(60,-15);
-  est3 = new estrella(130,-15);
+  est1 = new estrella(-10, -15);
+  est2 = new estrella(60, -15);
+  est3 = new estrella(130, -15);
 
-  Estrella.src = "../images/estrella.png"
+  Estrella.src = "../images/estrella.png";
 
-  ctx_2.drawImage(Estrella, est1.estX, est1.estY,80,80);
-  ctx_2.drawImage(Estrella, est2.estX, est2.estY,80,80);
-  ctx_2.drawImage(Estrella, est3.estX, est3.estY,80,80);
-
-
+  ctx_2.drawImage(Estrella, est1.estX, est1.estY, 80, 80);
+  ctx_2.drawImage(Estrella, est2.estX, est2.estY, 80, 80);
+  ctx_2.drawImage(Estrella, est3.estX, est3.estY, 80, 80);
 }
 
-function borrar_estrella(){
-  if(vidas_nave==1){
-
+function borrar_estrella() {
+  if (vidas_nave == 1) {
     ctx_2.clearRect(130, 0, vidas.width, vidas.height);
-  }else if(vidas_nave==2){
+  } else if (vidas_nave == 2) {
     ctx_2.clearRect(60, 0, vidas.width, vidas.height);
-
-  }else if(vidas_nave==3){
+  } else if (vidas_nave == 3) {
     ctx_2.clearRect(0, 0, vidas.width, vidas.height);
   }
-
 }
-
-
-
 
 ////////////////////////////
 
 function elegir_dificultad(dificultad) {
-
   if (dificultad == 1) {
-
     velocidad_enemigos = 4;
     generar_enemigo = 1500;
   } else if (dificultad == 2) {
-
     velocidad_enemigos = 5;
     generar_enemigo = 1000;
   } else if (dificultad == 3) {
-
     velocidad_enemigos = 10;
     generar_enemigo = 500;
   }
 }
-
-
 
 function enemigo(posEnemigoX, posEnemigoY, imagenEnemigo) {
   this.posEnemigoX = posEnemigoX;
@@ -152,11 +134,14 @@ function Explosion(posExpX, posExpY) {
   this.posExpY = posExpY;
 }
 
-
 //funcion pintar enemigo
 function pintarEnemigo() {
   for (var j = 0; j < enemies.length; j++) {
-    ctx.drawImage(enemies[j].imagenEnemigo, enemies[j].posEnemigoX, enemies[j].posEnemigoY);
+    ctx.drawImage(
+      enemies[j].imagenEnemigo,
+      enemies[j].posEnemigoX,
+      enemies[j].posEnemigoY
+    );
     enemies[j].posEnemigoX -= velocidad_enemigos;
     if (enemies[j].posEnemigoX < -1) {
       enemies.splice(j, 1);
@@ -186,9 +171,8 @@ function detectarColision() {
     }
     if (contador > puntmax) {
       preMax = contador.toString();
-      localStorage.setItem('max',preMax);
-      puntmax = localStorage.getItem('max');
-
+      localStorage.setItem("max", preMax);
+      puntmax = localStorage.getItem("max");
     }
   }
   document.getElementById("contador").innerHTML = contador;
@@ -197,19 +181,17 @@ function detectarColision() {
 }
 
 function generarEnemigo() {
-  var en = new enemigo(posEnemigoX, posEnemigoY,Enemigo);
+  var en = new enemigo(posEnemigoX, posEnemigoY, Enemigo);
 
   en.posEnemigoX = game.width;
   en.posEnemigoY = Math.floor(
-  Math.random() * (game.height - en.imagenEnemigo.height - 10)
+    Math.random() * (game.height - en.imagenEnemigo.height - 10)
   );
   enemies.push(en);
 }
 
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
-
-
   ctx.drawImage(naveAux.imagenNave, naveAux.naveX, naveAux.naveY);
 }
 
@@ -240,12 +222,10 @@ function muerte() {
   for (var l = 0; l < enemies.length; l++) {
     if (fin_juego == false) {
       if (enemies[l].posEnemigoX < 1) {
-        vidas_nave ++;
+        vidas_nave++;
         sonido_explosion_canvas.pause();
         sonido_explosion_canvas.load();
         sonido_explosion_canvas.play();
-
-
       }
     }
   }
@@ -291,12 +271,10 @@ function draw() {
     }
 
     overlay_go.classList.add("active");
-
   }
   pintarEst();
   borrar_estrella();
 }
-
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -334,7 +312,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function(e) {
+  function (e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -383,7 +361,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function(e) {
+  function (e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -395,7 +373,6 @@ setInterval(draw, 10);
 if (fin_juego == false) {
   setInterval(generarEnemigo, generar_enemigo);
 }
-
 
 /*
 Estrella.onload = function(){
