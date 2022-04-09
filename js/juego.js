@@ -131,10 +131,11 @@ function enemigo(posEnemigoX, posEnemigoY) {
   this.posEnemigoY = posEnemigoY;
 }
 
-function nave(naveX, naveY, imagenNave) {
+function nave(naveX, naveY, imagenNave, velocidad_nave) {
   this.naveX = naveX;
   this.naveY = naveY;
   this.imagenNave = imagenNave;
+  this.velocidad_nave = 5;
 }
 
 function Bala(bol_disparoX, bol_disparoY, imagenBala) {
@@ -265,10 +266,10 @@ function draw() {
   }
 
   if (nave_UP) {
-    naveAux.naveY -= velocidad_nave;
+    naveAux.naveY -= naveAux.velocidad_nave;
   }
   if (nave_DOWN) {
-    naveAux.naveY += velocidad_nave;
+    naveAux.naveY += naveAux.velocidad_nave;
   }
 
   if (naveAux.naveY < 0) {
