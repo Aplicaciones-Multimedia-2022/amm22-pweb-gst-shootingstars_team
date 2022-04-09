@@ -29,6 +29,7 @@ var posEnemigoX;
 var balas = new Array();
 var Enemigo = new Image();
 var Nave = new Image();
+Nave.src = "../images/Ship1.png";
 var imagenBala = new Image();
 var exp = new Image();
 var shoots = [];
@@ -46,7 +47,7 @@ var Estrella = new Image();
 
 var df = localStorage.getItem('dificultad');
 
-
+naveAux = new nave(naveX, naveY, Nave);
 
 window.onload = init;
 
@@ -58,9 +59,9 @@ function init() {
   pintarBala();
   pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
-  
+
   //if(muerte==1){
-  //ctx_2.clearRect(0, 0); 
+  //ctx_2.clearRect(0, 0);
   //}
 
 
@@ -78,14 +79,14 @@ function pintarEst() {
   est1 = new estrella(-10,-15);
   est2 = new estrella(60,-15);
   est3 = new estrella(130,-15);
-  
+
   Estrella.src = "../images/estrella.png"
-  
+
   ctx_2.drawImage(Estrella, est1.estX, est1.estY,80,80);
   ctx_2.drawImage(Estrella, est2.estX, est2.estY,80,80);
   ctx_2.drawImage(Estrella, est3.estX, est3.estY,80,80);
 
-  
+
 }
 
 function borrar_estrella(){
@@ -94,13 +95,13 @@ function borrar_estrella(){
     ctx_2.clearRect(130, 0, vidas.width, vidas.height);
   }else if(vidas_nave==2){
     ctx_2.clearRect(60, 0, vidas.width, vidas.height);
-    
+
   }else if(vidas_nave==3){
     ctx_2.clearRect(0, 0, vidas.width, vidas.height);
   }
-  
+
 }
-  
+
 
 
 
@@ -130,14 +131,15 @@ function enemigo(posEnemigoX, posEnemigoY) {
   this.posEnemigoY = posEnemigoY;
 }
 
-function nave(naveX, naveY) {
+function nave(naveX, naveY, imagenNave) {
   this.naveX = naveX;
   this.naveY = naveY;
+  this.imagenNave = imagenNave;
 }
 
 function Bala(bol_disparoX, bol_disparoY, imagenBala) {
-  this.bol_disparoX = Nave.width;
-  this.bol_disparoY = naveY + Nave.height / 2 - 9;
+  this.bol_disparoX = naveAux.imagenNave.width;
+  this.bol_disparoY = naveAux.naveY + naveAux.imagenNave.height / 2 - 9;
   this.imagenBala = imagenBala;
 }
 
@@ -199,8 +201,8 @@ function generarEnemigo() {
 
 //Ahora hacemos la funcion de pintar la nave
 function pintarNave() {
-  naveAux = new nave(naveX, naveY);
-  Nave.src = "../images/Ship1.png";
+
+
   ctx.drawImage(Nave, naveAux.naveX, naveAux.naveY);
 }
 
@@ -230,12 +232,12 @@ function pintarBala() {
 function muerte() {
   for (var l = 0; l < enemies.length; l++) {
     if (fin_juego == false) {
-      if (enemies[l].posEnemigoX < 5) {
+      if (enemies[l].posEnemigoX < 1) {
         vidas_nave ++;
         sonido_explosion_canvas.pause();
-        
+        sonido_explosion_canvas.load();
         sonido_explosion_canvas.play();
-        
+
 
       }
     }
@@ -263,16 +265,16 @@ function draw() {
   }
 
   if (nave_UP) {
-    this.naveY -= this.velocidad_nave;
+    naveAux.naveY -= velocidad_nave;
   }
   if (nave_DOWN) {
-    this.naveY += this.velocidad_nave;
+    naveAux.naveY += velocidad_nave;
   }
 
-  if (this.naveY < 0) {
-    this.naveY = 0;
-  } else if (this.naveY > 340) {
-    this.naveY = 340;
+  if (naveAux.naveY < 0) {
+    naveAux.naveY = 0;
+  } else if (naveAux.naveY > 340) {
+    naveAux.naveY = 340;
   }
 
   if (vidas_nave == 3) {
@@ -280,7 +282,7 @@ function draw() {
       sonido_gameover.play();
       pausajuego();
     }
-    
+
     overlay_go.classList.add("active");
 
   }
