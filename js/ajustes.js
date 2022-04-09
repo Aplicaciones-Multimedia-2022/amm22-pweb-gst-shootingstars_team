@@ -69,7 +69,8 @@ function init() {
 
   //draw1();
 
-  draw2();
+  dibujarAltavoz();
+  borrarRayas();
 
   //para la parte de personalizacion
 
@@ -121,8 +122,8 @@ function redireccionar8() {
 function redireccionar7() {
   location.replace("../html/prejuego.html");
 }
-
-/*function draw1() {
+/**
+ * /*function draw1() {
   var imagen1 = document.getElementById("imagen1"); 
 	ctx1.drawImage(imagen1, 20, 30, 100, 100); 
 
@@ -164,7 +165,7 @@ posibles solucione: usar arrays para poner cada uno en una posicion*/
 // Select increment and decrement buttons
 
 // Select total count
-const totalCount = document.getElementById("total-count");
+/*const totalCount = document.getElementById("total-count");
 
 // Variable to track count
 var count = 0;
@@ -191,6 +192,7 @@ const handleDecrement = () => {
 };
 
 // Add click event to buttons
+var count2 = 0;
 
 function draw2() {
   //para dibujar las lineas del volumen
@@ -210,46 +212,74 @@ function draw2() {
   //con menores e iguales sale igual que en el de iguales
   //da igual como haga la logica siempre me sale lo mismo intercalo entre
   //la de 0 y la de 3 cuenta
-  /*if(count==1){
-    ctx1.clearRect(0, 0, 300, 150); 
-    ctx1.drawImage(imagen1, 20, 30, 100, 100); 
+ /* if (count == 1) {
+    ctx1.clearRect(0, 0, 300, 150);
+    ctx1.drawImage(imagen1, 20, 30, 100, 100);
     ctx1.drawImage(imagen2, 130, 27, 25, 100);
-  }else if(count==2){
-    ctx1.clearRect(0, 0, 300, 150); 
-    ctx1.drawImage(imagen1, 20, 30, 100, 100); 
+  } else if (count == 2) {
+    ctx1.clearRect(0, 0, 300, 150);
+    ctx1.drawImage(imagen1, 20, 30, 100, 100);
     ctx1.drawImage(imagen2, 130, 27, 25, 100);
     ctx1.drawImage(imagen3, 180, 27, 25, 100);
-  }else if(count==3){
-    ctx1.clearRect(0, 0, 300, 150); 
-    ctx1.drawImage(imagen1, 20, 30, 100, 100); 
+  } else if (count == 3) {
+    ctx1.clearRect(0, 0, 300, 150);
+    ctx1.drawImage(imagen1, 20, 30, 100, 100);
     ctx1.drawImage(imagen2, 130, 27, 25, 100);
     ctx1.drawImage(imagen3, 180, 27, 25, 100);
     ctx1.drawImage(imagen4, 230, 27, 25, 100);
-  }else{
+  } else {
     ctx1.clearRect(0, 0, 300, 150);
-    ctx1.drawImage(imagen1, 20, 30, 100, 100);  
-  }*/
-  switch (count2) {
-    case 1:
-      ctx1.clearRect(0, 0, 300, 150);
-      ctx1.drawImage(imagen1, 20, 30, 100, 100);
-      ctx1.drawImage(imagen2, 130, 27, 25, 100);
-
-    case 2:
-      ctx1.clearRect(0, 0, 300, 150);
-      ctx1.drawImage(imagen1, 20, 30, 100, 100);
-      ctx1.drawImage(imagen2, 130, 27, 25, 100);
-      ctx1.drawImage(imagen3, 180, 27, 25, 100);
-
-    case 3:
-      ctx1.clearRect(0, 0, 300, 150);
-      ctx1.drawImage(imagen1, 20, 30, 100, 100);
-      ctx1.drawImage(imagen2, 130, 27, 25, 100);
-      ctx1.drawImage(imagen3, 180, 27, 25, 100);
-      ctx1.drawImage(imagen4, 230, 27, 25, 100);
-
-    default:
-      ctx1.clearRect(0, 0, 300, 150);
-      ctx1.drawImage(imagen1, 20, 30, 100, 100);
+    ctx1.drawImage(imagen1, 20, 30, 100, 100);
   }
 }
+ */
+/*
+var contador = 0;
+var altavoz = document.getElementById("imagen1");
+var raya1 = document.getElementById("imagen2");
+var raya2 = document.getElementById("imagen3");
+var raya3 = document.getElementById("imagen4");
+
+var subir = localStorage.getItem("subir_");
+
+function dibujarAltavoz() {
+  ctx1.clearRect(0, 0, 300, 150);
+  ctx1.drawImage(altavoz, 20, 30, 100, 100);
+}
+
+function dibujarRaya1() {
+  ctx1.drawImage(raya1, 130, 27, 25, 100);
+}
+
+function borrarRayas(subir) {
+  ctx1.clearRect(130, 27, 300, 150);
+  if (subir == true) {
+    dibujarRaya1();
+    contador++;
+    if (contador == 1) {
+      dibujarRaya2();
+    }
+  }
+}
+
+const botonMas = document.getElementById("botonmas");
+
+function guardarVar() {
+  localStorage.setItem("subir_", true);
+}
+
+function dibujarRaya2() {
+  ctx1.drawImage(raya2, 180, 27, 25, 100);
+}
+*/
+
+barra.addEventListener("change", function (ev) {}, true);
+ev.currentTarget.value;
+var reproductor = document.getElementById("reproductor");
+barra.addEventListener(
+  "change",
+  function (ev) {
+    reproductor.volume = ev.currentTarget.value;
+  },
+  true
+);

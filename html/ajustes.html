@@ -26,12 +26,22 @@
         el volumen, y que hubiese mas o menos rayitas-->
     </div>
     <div class="control_audio">
-      <b class="boton" id="botonmenos">-</b>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      <div id="total-count"></div>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <b class="boton" id="botonmas">+</b>
-
+      <input
+        type="range"
+        min="0"
+        max="1"
+        value="0.5"
+        step="0.1"
+        id="mislider"
+      />
+      <input
+        type="range"
+        min="0"
+        max="1"
+        value="0.5"
+        step="0.1"
+        id="mislider"
+      />
       <!-- <p id="demo"></p>-->
     </div>
 
@@ -88,5 +98,4 @@ de volumen para todas las pantallas asi que tendremos que importarlo tmbn-->
   </body>
 
   <script src="../js/ajustes.js"></script>
-  <!--<script src="../js/pruebaNave.js"></script>-->
 </html>
