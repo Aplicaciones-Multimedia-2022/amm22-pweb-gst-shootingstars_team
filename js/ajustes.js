@@ -1,8 +1,8 @@
 var canvas1 = document.getElementById("ajustes_audio"); //invocar a mi canvas
 var ctx1 = canvas1.getContext("2d");
 var contador = 0;
-const botonmenos = document.getElementById("botonmenos");
-const botonmas = document.getElementById("botonmas");
+/*const botonmenos = document.getElementById("botonmenos");
+const botonmas = document.getElementById("botonmas");*/
 
 const boton1 = document.getElementById("boton1");
 const boton2 = document.getElementById("boton2");
@@ -22,10 +22,12 @@ imagen2.src = "../images/vol1.png";*/
 var canvas2 = document.getElementById("personalizacion");
 var ctx2 = canvas2.getContext("2d");
 
-const nave1 = document.getElementById("nave1");
-const nave2 = document.getElementById("nave2");
-const nave3 = document.getElementById("nave3");
-const nave4 = document.getElementById("nave4");
+
+/*miNave1 = getBase64Image(nave1);
+localStorage.setItem("miNave", miNave1);*/
+
+
+
 
 
 
@@ -57,19 +59,7 @@ boton7.addEventListener("click", function siete() {
   sonido1.play();
   espera = setTimeout(redireccionar7, 400);
 });
-botonmenos.addEventListener("click", function() {
-  sonido1.play();
-  //borrar();
-});
-botonmas.addEventListener("click", function() {
-  sonido1.play();
-  //draw2();
-});
 
-//draw1();
-
-dibujarAltavoz();
-borrarRayas();
 
 //para la parte de personalizacion
 
@@ -78,26 +68,47 @@ nave1.addEventListener("click", function() {
   ctx2.clearRect(0, 0, 500, 390);
   var nave1 = document.getElementById("imagen5");
   ctx2.drawImage(nave1, 70, 30, 150, 100);
+  /*localStorage.removeItem("miNave");
+  localStorage.setItem("miNave", nave1);*/
 });
-
 nave2.addEventListener("click", function() {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
   var nave2 = document.getElementById("imagen6");
   ctx2.drawImage(nave2, 70, 0, 170, 120);
+  localStorage.removeItem("miNave");
+  // miNave2 = getBase64Image(nave2);
+  // localStorage.setItem("miNave", miNave2);
 });
 nave3.addEventListener("click", function() {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
   var nave3 = document.getElementById("imagen7");
   ctx2.drawImage(nave3, 70, 20, 150, 100);
+  // miNave3 = getBase64Image(nave3);
+  // localStorage.setItem("miNave", miNave3);
 });
 nave4.addEventListener("click", function() {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
-  var nave4 = document.getElementById("imagen8");
+var nave4 = document.getElementById("imagen8");
   ctx2.drawImage(nave4, 50, 10, 170, 120);
+  // miNave4 = getBase64Image(nave4);
+  // localStorage.setItem("miNave", miNave4);
 });
+
+/*function getBase64Image(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+
+  var dataURL = canvas.toDataURL("image/png");
+
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}*/
 
 
 function redireccionar1() {
@@ -127,158 +138,9 @@ function redireccionar8() {
 function redireccionar7() {
   location.replace("../html/prejuego.html");
 }
-/**
- * /*function draw1() {
-  var imagen1 = document.getElementById("imagen1");
-	ctx1.drawImage(imagen1, 20, 30, 100, 100);
-
-}*/
-
-/*problema:como saber en cual estas para saber cual añadir y cual borrar de
-vulumen
-posibles solucione: usar arrays para poner cada uno en una posicion*/
-/*function draw2(){//para dibujar las lineas del volumen
-  //onClickMas();
-  //onClickMenos();
-  //document.getElementById("demo").innerHTML = contador;
-  botonmas.addEventListener("click", onClickMas);
-  botonmenos.addEventListener("click", onClickMenos);
-  var imagen2 = document.getElementById("imagen2");
-  var imagen3 = document.getElementById("imagen3");
-  var imagen4 = document.getElementById("imagen4");
-
-  if(contador==1){
-    ctx1.clearRect(0, 0, 300, 150);
-    ctx1.drawImage(imagen2, 130, 27, 25, 100);
-  }else if(contador==2){
-    ctx1.clearRect(0, 0, 300, 150);
-    ctx1.drawImage(imagen2, 130, 27, 25, 100);
-    ctx1.drawImage(imagen3, 180, 27, 25, 100);
-  }else if(contador==3){
-    ctx1.clearRect(0, 0, 300, 150);
-    ctx1.drawImage(imagen2, 130, 27, 25, 100);
-    ctx1.drawImage(imagen3, 180, 27, 25, 100);
-    ctx1.drawImage(imagen4, 230, 27, 25, 100);
-  }else{
-    ctx1.clearRect(0, 0, 300, 150);
-
-  }
 
 
-}*/
-
-// Select increment and decrement buttons
-
-// Select total count
-/*const totalCount = document.getElementById("total-count");
-
-// Variable to track count
-var count = 0;
-
-// Display initial count value
-totalCount.innerHTML = count;
-
-// Function to increment count
-const handleIncrement = () => {
-  if (count < 3) {
-    count++;
-  } else {
-  }
-  totalCount.innerHTML = count;
-};
-
-// Function to decrement count
-const handleDecrement = () => {
-  if (count > 0) {
-    count--;
-  } else {
-  }
-  totalCount.innerHTML = count;
-};
-
-// Add click event to buttons
-var count2 = 0;
-
-function draw2() {
-  //para dibujar las lineas del volumen
-  var imagen1 = document.getElementById("imagen1");
-  var imagen2 = document.getElementById("imagen2");
-  var imagen3 = document.getElementById("imagen3");
-  var imagen4 = document.getElementById("imagen4");
-  botonmas.addEventListener("click", handleIncrement);
-  botonmenos.addEventListener("click", handleDecrement);
-  count2 = document.getElementById("total-count");
-  //me la sy¡uda ya si me funciona el contador y se me imprime
-  //el microfono porque coño no se encienden las imagenes
-  //de moemnto unica hipotesis es que considera el resultado de la
-  //comparacion como false y el unico que son false todas imprime eso
-  //hipotesis comprobada, su puta madre
-  //si pones distinto de solo te sale la primera comprobado
-  //con menores e iguales sale igual que en el de iguales
-  //da igual como haga la logica siempre me sale lo mismo intercalo entre
-  //la de 0 y la de 3 cuenta
- /* if (count == 1) {
-    ctx1.clearRect(0, 0, 300, 150);
-    ctx1.drawImage(imagen1, 20, 30, 100, 100);
-    ctx1.drawImage(imagen2, 130, 27, 25, 100);
-  } else if (count == 2) {
-    ctx1.clearRect(0, 0, 300, 150);
-    ctx1.drawImage(imagen1, 20, 30, 100, 100);
-    ctx1.drawImage(imagen2, 130, 27, 25, 100);
-    ctx1.drawImage(imagen3, 180, 27, 25, 100);
-  } else if (count == 3) {
-    ctx1.clearRect(0, 0, 300, 150);
-    ctx1.drawImage(imagen1, 20, 30, 100, 100);
-    ctx1.drawImage(imagen2, 130, 27, 25, 100);
-    ctx1.drawImage(imagen3, 180, 27, 25, 100);
-    ctx1.drawImage(imagen4, 230, 27, 25, 100);
-  } else {
-    ctx1.clearRect(0, 0, 300, 150);
-    ctx1.drawImage(imagen1, 20, 30, 100, 100);
-  }
-}
- */
-/*
-var contador = 0;
-var altavoz = document.getElementById("imagen1");
-var raya1 = document.getElementById("imagen2");
-var raya2 = document.getElementById("imagen3");
-var raya3 = document.getElementById("imagen4");
-
-var subir = localStorage.getItem("subir_");
-
-function dibujarAltavoz() {
-  ctx1.clearRect(0, 0, 300, 150);
-  ctx1.drawImage(altavoz, 20, 30, 100, 100);
-}
-
-function dibujarRaya1() {
-  ctx1.drawImage(raya1, 130, 27, 25, 100);
-}
-
-function borrarRayas(subir) {
-  ctx1.clearRect(130, 27, 300, 150);
-  if (subir == true) {
-    dibujarRaya1();
-    contador++;
-    if (contador == 1) {
-      dibujarRaya2();
-    }
-  }
-}
-
-const botonMas = document.getElementById("botonmas");
-
-function guardarVar() {
-  localStorage.setItem("subir_", true);
-}
-
-function dibujarRaya2() {
-  ctx1.drawImage(raya2, 180, 27, 25, 100);
-}
-*/
-
-barra.addEventListener("change", function(ev) {}, true);
+/*barra.addEventListener("change", function(ev) {}, true);
 ev.currentTarget.value;
 var reproductor = document.getElementById("reproductor");
 barra.addEventListener(
@@ -287,4 +149,4 @@ barra.addEventListener(
     reproductor.volume = ev.currentTarget.value;
   },
   true
-);
+);*/

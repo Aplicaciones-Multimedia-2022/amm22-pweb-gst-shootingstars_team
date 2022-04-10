@@ -32,6 +32,9 @@ var Enemigo = new Image();
 
 var Nave = new Image();
 Nave.src = "../images/Ship1.png";
+/*var dataImage = localStorage.getItem("'imgData'");
+bannerImg = document.getElementById('tableBanner');
+bannerImg.src = "data:image/png;base64," + dataImage;*/
 
 var imagenBala = new Image();
 var exp = new Image();

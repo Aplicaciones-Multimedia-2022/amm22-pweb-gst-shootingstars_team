@@ -1,25 +1,32 @@
-window.onload = function() {
+$("#volume").slider({
+  min: 0,
+  max: 100,
+  value: 0,
+  range: "min",
+  animate: true,
+  slide: function(event, ui) {
+    setVolume((ui.value) / 100);
+  }
+});
 
-  var ctx = document.getElementById('canvas').getContext('2d');
-  
-  
-  
-  function draw() {
-    var img = new Image();
-    img.src = 'img/fondo.jpg';
-    img.onload = function() {
-      ctx.drawImage(img, 10, 10);
-    };
-  }
-  
-  function draw2() {
-    var img = document.getElementById("imagen"); 
-    ctx.drawImage(img, 100, 100, 200, 140); 
-  
-  }
-  
-  draw();
-  
-  draw2();
-  
-  }
+var myMedia = document.createElement('audio');
+$('#player').append(myMedia);
+myMedia.id = "myMedia";
+playAudio('http://iviewsource.com/exercises/audioslider/audio/ViewSource', 0);
+
+function playAudio(fileName, myVolume) {
+var mediaExt = (myMedia.canPlayType('audio/mp3')) ? '.mp3' 
+  : (myMedia.canPlayType('audio/ogg')) ? '.ogg' 
+  : '';
+if (mediaExt) {
+  myMedia.src = fileName + mediaExt;
+  myMedia.setAttribute('loop', 'loop');
+  setVolume(myVolume);
+  myMedia.play();
+}
+}
+
+function setVolume(myVolume) {
+  var myMedia = document.getElementById('myMedia');
+  myMedia.volume = myVolume;
+}
