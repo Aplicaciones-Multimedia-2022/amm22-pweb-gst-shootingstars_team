@@ -22,16 +22,17 @@ var puntmax = localStorage.getItem("max");
 var vidas_nave = 0;
 var overlay_go = document.getElementById("overlay_go");
 var sonido_disparo = new Audio();
-sonido_disparo.src = "../audio/SonidoDisparos/disparoNave.wav";
+
 var final_nave;
 var posEnemigoY;
 var posEnemigoX;
 var preMax;
 var balas = new Array();
 var Enemigo = new Image();
-Enemigo.src = "../images/Ship2.png";
+
 var Nave = new Image();
 Nave.src = "../images/Ship1.png";
+
 var imagenBala = new Image();
 var exp = new Image();
 var shoots = [];
@@ -41,8 +42,8 @@ var generar_enemigo = 1500;
 var contador2 = 0;
 var sonido_explosion = new Audio();
 var fin_juego = false;
-var sonido_gameover = new Audio("../audio/sonidoGO.wav");
-var sonido_explosion_canvas = new Audio("../audio/explosion_contra_canvas.wav");
+var sonido_gameover = new Audio();
+var sonido_explosion_canvas = new Audio();
 var estX;
 var estY;
 var Estrella = new Image();
@@ -53,23 +54,27 @@ var namep = localStorage.getItem('nombre');
 document.getElementById("usuario").innerHTML = namep;
 localStorage.removeItem("namep");
 
-naveAux = new nave(naveX, naveY, Nave);
 
+naveAux = new nave(naveX, naveY, Nave);
 window.onload = init;
 
 //Funcion para inicializar el programa{}
 function init() {
+
+  Enemigo.src = "../images/Ship2.png";
+
+
+  sonido_disparo.src = "../audio/SonidoDisparos/disparoNave.wav";
+  sonido_gameover.src = "../audio/sonidoGO.wav";
+  sonido_explosion_canvas.src = "../audio/explosion_contra_canvas.wav";
+
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
-  pintarBala();
-  pintarNave(); //llamamos a la funcion pintarNave
   final_nave = game.height - borde - alturanave;
+  elegir_dificultad(df);
 
-  //if(muerte==1){
-  //ctx_2.clearRect(0, 0);
-  //}
 }
-elegir_dificultad(df);
+
 ////////////////////////////
 
 function estrella(estX, estY) {
@@ -316,7 +321,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -365,7 +370,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
