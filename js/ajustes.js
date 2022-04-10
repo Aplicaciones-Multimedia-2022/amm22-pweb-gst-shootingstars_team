@@ -27,105 +27,110 @@ const nave2 = document.getElementById("nave2");
 const nave3 = document.getElementById("nave3");
 const nave4 = document.getElementById("nave4");
 
-window.onload = init;
 
-function init() {
-  boton1.addEventListener("click", function uno() {
-    sonido1.play();
-    espera = setTimeout(redireccionar1, 400);
-  });
-  boton2.addEventListener("click", function dos() {
-    sonido1.play();
-    espera = setTimeout(redireccionar2, 400);
-  });
-  boton3.addEventListener("click", function tres() {
-    sonido1.play();
-    espera = setTimeout(redireccionar3, 400);
-  });
-  boton4.addEventListener("click", function cuatro() {
-    sonido1.play();
-    espera = setTimeout(redireccionar4, 400);
-  });
-  boton5.addEventListener("click", function cinco() {
-    sonido1.play();
-    espera = setTimeout(redireccionar5, 400);
-  });
-  boton8.addEventListener("click", function ocho() {
-    sonido1.play();
-    espera = setTimeout(redireccionar8, 400);
-  });
-  boton7.addEventListener("click", function siete() {
-    sonido1.play();
-    espera = setTimeout(redireccionar7, 400);
-  });
-  botonmenos.addEventListener("click", function () {
-    sonido1.play();
-    //borrar();
-  });
-  botonmas.addEventListener("click", function () {
-    sonido1.play();
-    //draw2();
-  });
 
-  //draw1();
+boton1.addEventListener("click", function uno() {
+  sonido1.play();
+  espera = setTimeout(redireccionar1, 400);
+});
+boton2.addEventListener("click", function dos() {
+  sonido1.play();
+  espera = setTimeout(redireccionar2, 400);
+});
+boton3.addEventListener("click", function tres() {
+  sonido1.play();
+  espera = setTimeout(redireccionar3, 400);
+});
+boton4.addEventListener("click", function cuatro() {
+  sonido1.play();
+  espera = setTimeout(redireccionar4, 400);
+});
+boton5.addEventListener("click", function cinco() {
+  sonido1.play();
+  espera = setTimeout(redireccionar5, 400);
+});
+boton8.addEventListener("click", function ocho() {
+  sonido1.play();
+  espera = setTimeout(redireccionar8, 400);
+});
+boton7.addEventListener("click", function siete() {
+  sonido1.play();
+  espera = setTimeout(redireccionar7, 400);
+});
+botonmenos.addEventListener("click", function() {
+  sonido1.play();
+  //borrar();
+});
+botonmas.addEventListener("click", function() {
+  sonido1.play();
+  //draw2();
+});
 
-  dibujarAltavoz();
-  borrarRayas();
+//draw1();
 
-  //para la parte de personalizacion
+dibujarAltavoz();
+borrarRayas();
 
-  nave1.addEventListener("click", function () {
-    sonido1.play();
-    ctx2.clearRect(0, 0, 500, 390);
-    var nave1 = document.getElementById("imagen5");
-    ctx2.drawImage(nave1, 70, 30, 150, 100);
-  });
+//para la parte de personalizacion
 
-  nave2.addEventListener("click", function () {
-    sonido1.play();
-    ctx2.clearRect(0, 0, 500, 390);
-    var nave2 = document.getElementById("imagen6");
-    ctx2.drawImage(nave2, 70, 0, 170, 120);
-  });
-  nave3.addEventListener("click", function () {
-    sonido1.play();
-    ctx2.clearRect(0, 0, 500, 390);
-    var nave3 = document.getElementById("imagen7");
-    ctx2.drawImage(nave3, 70, 20, 150, 100);
-  });
-  nave4.addEventListener("click", function () {
-    sonido1.play();
-    ctx2.clearRect(0, 0, 500, 390);
-    var nave4 = document.getElementById("imagen8");
-    ctx2.drawImage(nave4, 50, 10, 170, 120);
-  });
-}
+nave1.addEventListener("click", function() {
+  sonido1.play();
+  ctx2.clearRect(0, 0, 500, 390);
+  var nave1 = document.getElementById("imagen5");
+  ctx2.drawImage(nave1, 70, 30, 150, 100);
+});
+
+nave2.addEventListener("click", function() {
+  sonido1.play();
+  ctx2.clearRect(0, 0, 500, 390);
+  var nave2 = document.getElementById("imagen6");
+  ctx2.drawImage(nave2, 70, 0, 170, 120);
+});
+nave3.addEventListener("click", function() {
+  sonido1.play();
+  ctx2.clearRect(0, 0, 500, 390);
+  var nave3 = document.getElementById("imagen7");
+  ctx2.drawImage(nave3, 70, 20, 150, 100);
+});
+nave4.addEventListener("click", function() {
+  sonido1.play();
+  ctx2.clearRect(0, 0, 500, 390);
+  var nave4 = document.getElementById("imagen8");
+  ctx2.drawImage(nave4, 50, 10, 170, 120);
+});
+
 
 function redireccionar1() {
   location.replace("../html/ComoJugar.html");
 }
+
 function redireccionar2() {
   location.replace("../html/autores.html");
 }
+
 function redireccionar3() {
   location.replace("../html/multimedia.html");
 }
+
 function redireccionar4() {
   location.replace("../html/desarrollo.html");
 }
+
 function redireccionar5() {
   location.replace("../html/referencias.html");
 }
+
 function redireccionar8() {
   location.replace("../html/portada.html");
 }
+
 function redireccionar7() {
   location.replace("../html/prejuego.html");
 }
 /**
  * /*function draw1() {
-  var imagen1 = document.getElementById("imagen1"); 
-	ctx1.drawImage(imagen1, 20, 30, 100, 100); 
+  var imagen1 = document.getElementById("imagen1");
+	ctx1.drawImage(imagen1, 20, 30, 100, 100);
 
 }*/
 
@@ -143,22 +148,22 @@ posibles solucione: usar arrays para poner cada uno en una posicion*/
   var imagen4 = document.getElementById("imagen4");
 
   if(contador==1){
-    ctx1.clearRect(0, 0, 300, 150); 
+    ctx1.clearRect(0, 0, 300, 150);
     ctx1.drawImage(imagen2, 130, 27, 25, 100);
   }else if(contador==2){
-    ctx1.clearRect(0, 0, 300, 150); 
+    ctx1.clearRect(0, 0, 300, 150);
     ctx1.drawImage(imagen2, 130, 27, 25, 100);
     ctx1.drawImage(imagen3, 180, 27, 25, 100);
   }else if(contador==3){
-    ctx1.clearRect(0, 0, 300, 150); 
+    ctx1.clearRect(0, 0, 300, 150);
     ctx1.drawImage(imagen2, 130, 27, 25, 100);
     ctx1.drawImage(imagen3, 180, 27, 25, 100);
     ctx1.drawImage(imagen4, 230, 27, 25, 100);
   }else{
-    ctx1.clearRect(0, 0, 300, 150); 
+    ctx1.clearRect(0, 0, 300, 150);
 
   }
-  
+
 
 }*/
 
@@ -273,12 +278,12 @@ function dibujarRaya2() {
 }
 */
 
-barra.addEventListener("change", function (ev) {}, true);
+barra.addEventListener("change", function(ev) {}, true);
 ev.currentTarget.value;
 var reproductor = document.getElementById("reproductor");
 barra.addEventListener(
   "change",
-  function (ev) {
+  function(ev) {
     reproductor.volume = ev.currentTarget.value;
   },
   true

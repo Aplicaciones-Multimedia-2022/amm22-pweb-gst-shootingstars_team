@@ -9,9 +9,7 @@ let sonido1 = new Audio();
 let espera;
 sonido1.src="../audio/click/39562__the-bizniss__mouse-click.wav";
 
-window.onload=init;
 
-function init(){  
     boton1.addEventListener("click",function uno(){
         sonido1.play();
         espera = setTimeout(redireccionar1, 400);
@@ -19,11 +17,11 @@ function init(){
     boton3.addEventListener('click',function tres(){
       sonido1.play();
       espera = setTimeout(redireccionar3, 400);
-    }); 
+    });
     boton4.addEventListener('click',function cuatro(){
       sonido1.play();
       espera = setTimeout(redireccionar4, 400);
-    }); 
+    });
     boton5.addEventListener('click',function cinco(){
       sonido1.play();
       espera = setTimeout(redireccionar5, 400);
@@ -41,7 +39,7 @@ function init(){
       espera = setTimeout(redireccionar9, 400);
     });
 
-}
+
 
 
 function redireccionar1(){
@@ -65,9 +63,3 @@ function redireccionar8(){
 function redireccionar9(){
   location.replace("../html/prejuego.html")
 }
-
-
-
-
-
-
