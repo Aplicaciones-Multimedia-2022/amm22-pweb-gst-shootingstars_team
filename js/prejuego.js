@@ -162,6 +162,11 @@ function redireccionarDificil(){
   localStorage.setItem('dificultad', '3');
 }
 
+function sub(){
+  var n = document.getElementById("nombreuser").value;
+  localStorage.setItem('nombre' , n);
+}
+
 
 
 setInterval(draw_izq, 10);

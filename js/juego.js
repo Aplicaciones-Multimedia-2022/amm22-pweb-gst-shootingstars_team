@@ -48,6 +48,10 @@ var estY;
 var Estrella = new Image();
 
 var df = localStorage.getItem("dificultad");
+var namep = localStorage.getItem('nombre');
+
+document.getElementById("usuario").innerHTML = namep;
+localStorage.removeItem("namep");
 
 naveAux = new nave(naveX, naveY, Nave);
 
