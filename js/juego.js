@@ -33,7 +33,7 @@ var Enemigo = new Image();
 var Nave = new Image();
 Nave.src = "../images/Ship1.png";
 var fondo = new Image();
-fondo.src = "../images/FondoCanvas3.png";
+fondo.src = "../images/FondoCanvas2.png";
 /*var dataImage = localStorage.getItem("'imgData'");
 bannerImg = document.getElementById('tableBanner');
 bannerImg.src = "data:image/png;base64," + dataImage;*/
@@ -245,7 +245,7 @@ function detener_fondo() {
 
 function dibujar_fondo() {
   ctx.drawImage(fondo, tiempo, 0);
-  ctx.drawImage(fondo, tiempo - 800, 0);
+  ctx.drawImage(fondo, tiempo - 900, 0);
 
   tiempo--;
   if (tiempo < 0) {
