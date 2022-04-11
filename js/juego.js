@@ -233,15 +233,7 @@ function pintarBala() {
   }
 }
 
-function comenzar_fondo() {
-  clearTimeout(stop);
-  stop = setTimeout(comenzar_fondo, 1);
-  draw();
-}
 
-function detener_fondo() {
-  clearTimeout(stop);
-}
 
 function dibujar_fondo() {
   ctx.drawImage(fondo, tiempo, 0);
