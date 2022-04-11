@@ -15,8 +15,36 @@ const boton8 = document.getElementById("boton8");
 let sonido1 = new Audio();
 let espera;
 sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
+
+
 let sonido2= new Audio();
 sonido2.src="../audio/cancion1.mp3";
+//prueba
+var play =document.getElementById("play");
+var barra =document.getElementById("mislider");
+var pasar1=document.getElementsByClassName("encabezado");
+var pasar2=document.getElementsByClassName("divaucio");
+var pasar3=document.getElementsByClassName("encabezado");
+var pasar4=document.getElementsByClassName("encabezado");
+var htmele = document.getElementsByTagName('html');
+
+
+// htmele.addEventListener("mouseover", function rep(event) {
+//   event.sonido2.play();
+// });
+play.addEventListener("click", function(){
+  sonido2.play();
+});
+
+barra.addEventListener("change", function(ev) {}, true);
+barra.addEventListener(
+    "change",
+    function(ev) {
+    sonido2.volume = ev.currentTarget.value;
+    },
+    true
+);
+
 
 /*var imagen2 = new Image();
 imagen2.src = "../images/vol1.png";*/
@@ -161,16 +189,6 @@ function redireccionar7() {
 }
 
 
-/*barra.addEventListener("change", function(ev) {}, true);
-ev.currentTarget.value;
-var reproductor = document.getElementById("reproductor");
-barra.addEventListener(
-  "change",
-  function(ev) {
-    reproductor.volume = ev.currentTarget.value;
-  },
-  true
-);*/
 
 
 
