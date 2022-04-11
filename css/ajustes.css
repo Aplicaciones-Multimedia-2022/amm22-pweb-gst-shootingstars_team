@@ -10,22 +10,7 @@
   border-left: 10px solid #ffc107;
 }
 
-.control_audio {
-  border: 0px;
-  font-family: retro;
-  display: flex;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  font-size: 17px;
-  text-decoration: none;
-  background-color: #ffc107;
-  cursor: pointer;
-  margin-left: 42%;
-  margin-right: 42%;
-  justify-content: space-around;
-  margin-top: 0%;
-}
+
 
 .divpersonalizacion {
   height: 450;
@@ -71,3 +56,35 @@
   border-spacing: 10px;
   margin: auto;
 }
+
+.control_audio {
+  border: 0px;
+  font-family: retro;
+  display: flex;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  text-decoration: none;
+  background-color: #ffc107;
+  cursor: pointer;
+  margin-left: 42%;
+  margin-right: 42%;
+  justify-content: space-around;
+  margin-top: 0%;
+}
+
+
+/*falta hacer el css de la barrita, que en internet lo hacen muy chungo 
+y no l entiendo con lo de webkit appereance y esas movidas*/
+/*
+#map-slider{
+  background-color: black;
+
+}
+
+.slider{
+  background-color: black;
+  appearance: black;
+}*/
+

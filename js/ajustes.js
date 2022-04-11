@@ -15,6 +15,8 @@ const boton8 = document.getElementById("boton8");
 let sonido1 = new Audio();
 let espera;
 sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
+let sonido2= new Audio();
+sonido2.src="../audio/cancion1.mp3";
 
 /*var imagen2 = new Image();
 imagen2.src = "../images/vol1.png";*/
@@ -27,6 +29,25 @@ var ctx2 = canvas2.getContext("2d");
 localStorage.setItem("miNave", miNave1);*/
 
 
+
+/*descartando cosas
+el de eventos para hacer autoplay no me va con ninguno de los loads
+creo que voy a hecer hover sobre los iconos y luego que se guarde
+y para los otros lo mismo creo
+o mejor hacer un hover sobre toda la pagina asi hay mas posibilidades de 
+que se reproduzca
+
+
+
+luego para guradar la variable de la eleccion de nave parece que con el 
+metodo que vi en internet para guardar en el lov¡cal storage no me funciona
+con lo de 64, parece que luego al abrirlo no puede cargarlo como imagen*/
+
+
+// window.addEventListener("load", function(event) {
+//   sonido2.loop = true;
+//   sonido2.play();
+// }); NO FUNCIONAAAAA
 
 
 
@@ -108,7 +129,7 @@ var nave4 = document.getElementById("imagen8");
   var dataURL = canvas.toDataURL("image/png");
 
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}*/
+} NO FUNCINAAAA*/ 
 
 
 function redireccionar1() {
@@ -150,3 +171,6 @@ barra.addEventListener(
   },
   true
 );*/
+
+
+
