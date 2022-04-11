@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-  background-image: url(../images/FondoCanvas.png);
+  /*background-image: url(../images/FondoCanvas.png);*/
 
   border-top: 10px solid rgba(255, 193, 7, 255);
   border-left: 10px solid rgba(255, 193, 7, 255);

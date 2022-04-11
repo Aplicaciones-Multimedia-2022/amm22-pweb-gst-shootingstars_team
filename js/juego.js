@@ -22,7 +22,7 @@ var puntmax = localStorage.getItem("max");
 var vidas_nave = 0;
 var overlay_go = document.getElementById("overlay_go");
 var sonido_disparo = new Audio();
-
+var tiempo = 0;
 var final_nave;
 var posEnemigoY;
 var posEnemigoX;
@@ -32,10 +32,12 @@ var Enemigo = new Image();
 
 var Nave = new Image();
 Nave.src = "../images/Ship1.png";
+var fondo = new Image();
+fondo.src = "../images/FondoCanvas3.png";
 /*var dataImage = localStorage.getItem("'imgData'");
 bannerImg = document.getElementById('tableBanner');
 bannerImg.src = "data:image/png;base64," + dataImage;*/
-
+var stop;
 var imagenBala = new Image();
 var exp = new Image();
 var shoots = [];
@@ -75,6 +77,7 @@ function init() {
   posEnemigoX = mycanvas.width;
   final_nave = game.height - borde - alturanave;
   elegir_dificultad(df);
+  //comenzar_fondo();
 
 }
 
@@ -230,6 +233,27 @@ function pintarBala() {
   }
 }
 
+function comenzar_fondo() {
+  clearTimeout(stop);
+  stop = setTimeout(comenzar_fondo, 1);
+  draw();
+}
+
+function detener_fondo() {
+  clearTimeout(stop);
+}
+
+function dibujar_fondo() {
+  ctx.drawImage(fondo, tiempo, 0);
+  ctx.drawImage(fondo, tiempo - 800, 0);
+
+  tiempo--;
+  if (tiempo < 0) {
+    tiempo = tiempo + 900;
+  }
+}
+
+
 function muerte() {
   for (var l = 0; l < enemies.length; l++) {
     if (fin_juego == false) {
@@ -250,6 +274,7 @@ function pausajuego() {
 //Utilizamos esta funcion para dibujar el movimiento
 function draw() {
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
+  dibujar_fondo();
   pintarNave(); //llamamos a la funcion pintarNave
   if (enemies.length != 0) {
     pintarEnemigo();
