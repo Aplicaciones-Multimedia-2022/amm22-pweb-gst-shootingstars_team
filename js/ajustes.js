@@ -117,28 +117,28 @@ nave1.addEventListener("click", function() {
   ctx2.clearRect(0, 0, 500, 390);
   var nave1 = document.getElementById("imagen5");
   ctx2.drawImage(nave1, 70, 30, 150, 100);
+  ruta = "nave3.png";
+  localStorage.setItem("miNave", ruta);
 
-  localStorage.setItem("miNave", nave1);
 });
 nave2.addEventListener("click", function() {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
   var nave2 = document.getElementById("imagen6");
   ctx2.drawImage(nave2, 70, 0, 170, 120);
-  ruta = "Ship1.png";
+  ruta = "Ship2.png";
+
   localStorage.setItem("miNave", ruta);
-  // miNave2 = getBase64Image(nave2);
-  // localStorage.setItem("miNave", miNave2);
 });
 nave3.addEventListener("click", function() {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
   var nave3 = document.getElementById("imagen7");
   ctx2.drawImage(nave3, 70, 20, 150, 100);
-  ruta = "Ship3.png";
+  ruta = "Ship1.png";
   localStorage.setItem("miNave", ruta);
-  // miNave3 = getBase64Image(nave3);
-  // localStorage.setItem("miNave", miNave3);
+
+
 });
 nave4.addEventListener("click", function() {
   sonido1.play();
@@ -146,9 +146,8 @@ nave4.addEventListener("click", function() {
 var nave4 = document.getElementById("imagen8");
   ctx2.drawImage(nave4, 50, 10, 170, 120);
   ruta = "Ship4.png";
+
   localStorage.setItem("miNave", ruta);
-  // miNave4 = getBase64Image(nave4);
-  // localStorage.setItem("miNave", miNave4);
 });
 
 /*function getBase64Image(img) {

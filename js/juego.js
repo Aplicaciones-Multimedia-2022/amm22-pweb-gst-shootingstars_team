@@ -29,7 +29,7 @@ var posEnemigoX;
 var preMax;
 var balas = new Array();
 var Enemigo = new Image();
-var ruta_nave ;
+var ruta_nave;
 elegir_nave();
 var Nave = new Image();
 Nave.src = ruta_nave;
