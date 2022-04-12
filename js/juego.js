@@ -284,18 +284,18 @@ function draw() {
     }
   }
 
-  if (nave_UP) {
+  if (nave_UP && naveAux.naveY > 0) {
     naveAux.naveY -= naveAux.velocidad_nave;
   }
-  if (nave_DOWN) {
+  if (nave_DOWN && naveAux.naveY < game.height - naveAux.imagenNave.height) {
     naveAux.naveY += naveAux.velocidad_nave;
   }
 
-  if (naveAux.naveY < 0) {
+/*  if (naveAux.naveY < 0) {
     naveAux.naveY = 0;
   } else if (naveAux.naveY > 340) {
     naveAux.naveY = 340;
-  }
+  }*/
 
   if (vidas_nave == 3) {
     if (fin_juego == false) {
