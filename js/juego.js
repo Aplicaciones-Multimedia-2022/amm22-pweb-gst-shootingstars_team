@@ -29,9 +29,10 @@ var posEnemigoX;
 var preMax;
 var balas = new Array();
 var Enemigo = new Image();
-
+var ruta_nave ;
+elegir_nave();
 var Nave = new Image();
-Nave.src = "../images/Ship1.png";
+Nave.src = ruta_nave;
 var fondo = new Image();
 fondo.src = "../images/FondoCanvas2.png";
 /*var dataImage = localStorage.getItem("'imgData'");
@@ -79,6 +80,9 @@ function init() {
   elegir_dificultad(df);
   //comenzar_fondo();
 
+}
+function elegir_nave() {
+  ruta_nave = "../images/" + localStorage.getItem('miNave');
 }
 
 ////////////////////////////

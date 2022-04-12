@@ -16,7 +16,7 @@ let sonido1 = new Audio();
 let espera;
 sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
 
-
+var ruta;
 let sonido2= new Audio();
 sonido2.src="../audio/cancion1.mp3";
 //prueba
@@ -62,12 +62,12 @@ localStorage.setItem("miNave", miNave1);*/
 el de eventos para hacer autoplay no me va con ninguno de los loads
 creo que voy a hecer hover sobre los iconos y luego que se guarde
 y para los otros lo mismo creo
-o mejor hacer un hover sobre toda la pagina asi hay mas posibilidades de 
+o mejor hacer un hover sobre toda la pagina asi hay mas posibilidades de
 que se reproduzca
 
 
 
-luego para guradar la variable de la eleccion de nave parece que con el 
+luego para guradar la variable de la eleccion de nave parece que con el
 metodo que vi en internet para guardar en el lov¡cal storage no me funciona
 con lo de 64, parece que luego al abrirlo no puede cargarlo como imagen*/
 
@@ -117,15 +117,16 @@ nave1.addEventListener("click", function() {
   ctx2.clearRect(0, 0, 500, 390);
   var nave1 = document.getElementById("imagen5");
   ctx2.drawImage(nave1, 70, 30, 150, 100);
-  /*localStorage.removeItem("miNave");
-  localStorage.setItem("miNave", nave1);*/
+
+  localStorage.setItem("miNave", nave1);
 });
 nave2.addEventListener("click", function() {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
   var nave2 = document.getElementById("imagen6");
   ctx2.drawImage(nave2, 70, 0, 170, 120);
-  localStorage.removeItem("miNave");
+  ruta = "Ship1.png";
+  localStorage.setItem("miNave", ruta);
   // miNave2 = getBase64Image(nave2);
   // localStorage.setItem("miNave", miNave2);
 });
@@ -134,6 +135,8 @@ nave3.addEventListener("click", function() {
   ctx2.clearRect(0, 0, 500, 390);
   var nave3 = document.getElementById("imagen7");
   ctx2.drawImage(nave3, 70, 20, 150, 100);
+  ruta = "Ship3.png";
+  localStorage.setItem("miNave", ruta);
   // miNave3 = getBase64Image(nave3);
   // localStorage.setItem("miNave", miNave3);
 });
@@ -142,6 +145,8 @@ nave4.addEventListener("click", function() {
   ctx2.clearRect(0, 0, 500, 390);
 var nave4 = document.getElementById("imagen8");
   ctx2.drawImage(nave4, 50, 10, 170, 120);
+  ruta = "Ship4.png";
+  localStorage.setItem("miNave", ruta);
   // miNave4 = getBase64Image(nave4);
   // localStorage.setItem("miNave", miNave4);
 });
@@ -157,7 +162,7 @@ var nave4 = document.getElementById("imagen8");
   var dataURL = canvas.toDataURL("image/png");
 
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-} NO FUNCINAAAA*/ 
+} NO FUNCINAAAA*/
 
 
 function redireccionar1() {
@@ -187,8 +192,3 @@ function redireccionar8() {
 function redireccionar7() {
   location.replace("../html/prejuego.html");
 }
-
-
-
-
-
