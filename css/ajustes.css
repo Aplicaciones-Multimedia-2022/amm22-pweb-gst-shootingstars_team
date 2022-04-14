@@ -10,11 +10,8 @@
   border-left: 10px solid #ffc107;
 }
 
-
-
 .divpersonalizacion {
   height: 450;
-  align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +71,6 @@
   margin-top: 0%;
 }
 
-
 /*falta hacer el css de la barrita, que en internet lo hacen muy chungo 
 y no l entiendo con lo de webkit appereance y esas movidas*/
 /*
@@ -87,4 +83,3 @@ y no l entiendo con lo de webkit appereance y esas movidas*/
   background-color: black;
   appearance: black;
 }*/
-
