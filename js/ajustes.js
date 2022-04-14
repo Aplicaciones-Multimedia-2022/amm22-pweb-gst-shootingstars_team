@@ -16,30 +16,26 @@ let espera;
 sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
 
 var ruta;
+var vol;
 let sonido2= new Audio();
 sonido2.src="../audio/cancion1.mp3";
-//prueba
-var play =document.getElementById("play");
-var barra =document.getElementById("mislider");
-var pasar1=document.getElementsByClassName("encabezado");
-var pasar2=document.getElementsByClassName("divaucio");
-var pasar3=document.getElementsByClassName("encabezado");
-var pasar4=document.getElementsByClassName("encabezado");
-var htmele = document.getElementsByTagName('html');
+
 
 
 // htmele.addEventListener("mouseover", function rep(event) {
 //   event.sonido2.play();
 // });
-play.addEventListener("click", function(){
-  sonido2.play();
-});
+// play.addEventListener("click", function(){
+//   sonido2.play();
+// });
 
 barra.addEventListener("change", function(ev) {}, true);
 barra.addEventListener(
     "change",
     function(ev) {
     sonido2.volume = ev.currentTarget.value;
+    vol=ev.currentTarget.value;
+    localStorage.setItem("miVolumen", vol);
     },
     true
 );
