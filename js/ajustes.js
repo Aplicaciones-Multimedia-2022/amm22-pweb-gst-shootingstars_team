@@ -1,5 +1,4 @@
-var canvas1 = document.getElementById("ajustes_audio"); //invocar a mi canvas
-var ctx1 = canvas1.getContext("2d");
+
 var contador = 0;
 /*const botonmenos = document.getElementById("botonmenos");
 const botonmas = document.getElementById("botonmas");*/
