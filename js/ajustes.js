@@ -1,4 +1,3 @@
-
 var contador = 0;
 /*const botonmenos = document.getElementById("botonmenos");
 const botonmas = document.getElementById("botonmas");*/
@@ -144,7 +143,7 @@ nave4.addEventListener("click", function () {
   var dataURL = canvas.toDataURL("image/png");
 
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-} NO FUNCINAAAA*/
+} NO FUNCIONAAAA*/
 
 function redireccionar1() {
   location.replace("../html/ComoJugar.html");
