@@ -18,10 +18,8 @@ sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
 var ruta;
 var vol;
 var volu;
-let sonido2= new Audio();
-sonido2.src="../audio/cancion1.mp3";
-
-
+let sonido2 = new Audio();
+sonido2.src = "../audio/cancion1.mp3";
 
 // htmele.addEventListener("mouseover", function rep(event) {
 //   event.sonido2.play();
@@ -32,16 +30,15 @@ sonido2.src="../audio/cancion1.mp3";
 
 //barra.addEventListener("change", function(ev) {}, true);
 barra.addEventListener(
-    "change",
-    function(ev) {
+  "change",
+  function (ev) {
     sonido2.volume = ev.currentTarget.value;
-    vol=sonido2.volume;
-    volu= vol.toString();
+    vol = sonido2.volume;
+    volu = vol.toString();
     localStorage.setItem("miVolumen", volu);
-    },
-    true
+  },
+  true
 );
-
 
 /*var imagen2 = new Image();
 imagen2.src = "../images/vol1.png";*/
@@ -49,11 +46,8 @@ imagen2.src = "../images/vol1.png";*/
 var canvas2 = document.getElementById("personalizacion");
 var ctx2 = canvas2.getContext("2d");
 
-
 /*miNave1 = getBase64Image(nave1);
 localStorage.setItem("miNave", miNave1);*/
-
-
 
 /*descartando cosas
 el de eventos para hacer autoplay no me va con ninguno de los loads
@@ -68,14 +62,10 @@ luego para guradar la variable de la eleccion de nave parece que con el
 metodo que vi en internet para guardar en el lov¡cal storage no me funciona
 con lo de 64, parece que luego al abrirlo no puede cargarlo como imagen*/
 
-
 // window.addEventListener("load", function(event) {
 //   sonido2.loop = true;
 //   sonido2.play();
 // }); NO FUNCIONAAAAA
-
-
-
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();
@@ -106,19 +96,17 @@ boton7.addEventListener("click", function siete() {
   espera = setTimeout(redireccionar7, 400);
 });
 
-
 //para la parte de personalizacion
 
-nave1.addEventListener("click", function() {
+nave1.addEventListener("click", function () {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
   var nave1 = document.getElementById("imagen5");
   ctx2.drawImage(nave1, 70, 30, 150, 100);
   ruta = "nave3.png";
   localStorage.setItem("miNave", ruta);
-
 });
-nave2.addEventListener("click", function() {
+nave2.addEventListener("click", function () {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
   var nave2 = document.getElementById("imagen6");
@@ -127,20 +115,18 @@ nave2.addEventListener("click", function() {
 
   localStorage.setItem("miNave", ruta);
 });
-nave3.addEventListener("click", function() {
+nave3.addEventListener("click", function () {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
   var nave3 = document.getElementById("imagen7");
   ctx2.drawImage(nave3, 70, 20, 150, 100);
   ruta = "Ship1.png";
   localStorage.setItem("miNave", ruta);
-
-
 });
-nave4.addEventListener("click", function() {
+nave4.addEventListener("click", function () {
   sonido1.play();
   ctx2.clearRect(0, 0, 500, 390);
-var nave4 = document.getElementById("imagen8");
+  var nave4 = document.getElementById("imagen8");
   ctx2.drawImage(nave4, 50, 10, 170, 120);
   ruta = "Ship4.png";
 
@@ -159,7 +145,6 @@ var nave4 = document.getElementById("imagen8");
 
   return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 } NO FUNCINAAAA*/
-
 
 function redireccionar1() {
   location.replace("../html/ComoJugar.html");
@@ -188,3 +173,4 @@ function redireccionar8() {
 function redireccionar7() {
   location.replace("../html/prejuego.html");
 }
+

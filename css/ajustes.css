@@ -133,7 +133,7 @@
 }
 
 #mislider::-ms-fill-lower {
-  /*parte anterior del cursor*/
+  /*parte anterior del cursor solo en internet explorer*/
   background-color: darkgoldenrod;
 }
 
@@ -141,3 +141,4 @@
   /*parte posterior del cursor*/
   background-color: white;
 }
+
