@@ -17,6 +17,7 @@ sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
 
 var ruta;
 var vol;
+var volu;
 let sonido2= new Audio();
 sonido2.src="../audio/cancion1.mp3";
 
@@ -29,13 +30,14 @@ sonido2.src="../audio/cancion1.mp3";
 //   sonido2.play();
 // });
 
-barra.addEventListener("change", function(ev) {}, true);
+//barra.addEventListener("change", function(ev) {}, true);
 barra.addEventListener(
     "change",
     function(ev) {
     sonido2.volume = ev.currentTarget.value;
-    vol=ev.currentTarget.value;
-    localStorage.setItem("miVolumen", vol);
+    vol=sonido2.volume;
+    volu= vol.toString();
+    localStorage.setItem("miVolumen", volu);
     },
     true
 );

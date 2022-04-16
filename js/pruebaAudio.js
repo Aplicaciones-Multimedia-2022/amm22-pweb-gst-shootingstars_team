@@ -1,8 +1,8 @@
 
-const botones = document.getElementById('boton1');
-const controles = document.getElementById('unorderedList');
+
 
 var volumenGeneral;
+var volgen;
 let sonido2= new Audio();
 sonido2.src="../audio/cancion1.mp3";
 
@@ -11,8 +11,9 @@ sonido2.src="../audio/cancion1.mp3";
 // });
 
 document.body.addEventListener('click', function a(){
-  volumenGeneral = parseInt(localStorage.getItem("miVolumen"));
-  sonido2.volume= volumenGeneral;
+  volumenGeneral = localStorage.getItem("miVolumen");
+  volgen=parseInt(volumenGeneral);
+  sonido2.volume= Math.floor(volgen);
   sonido2.play();
 });
 // document.body.addEventListener('click', function b(){
