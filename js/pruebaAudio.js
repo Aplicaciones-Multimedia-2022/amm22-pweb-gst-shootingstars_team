@@ -11,9 +11,10 @@ sonido2.src="../audio/cancion1.mp3";
 // });
 
 document.body.addEventListener('click', function a(){
-  volumenGeneral = localStorage.getItem("miVolumen");
-  volgen=parseInt(volumenGeneral);
-  sonido2.volume= Math.floor(volgen);
+  volumenGeneral = number(localStorage.getItem("miVolumen"));
+  sonido2.volume=volumenGeneral;
+  // volgen=parseInt(volumenGeneral);
+  // sonido2.volume= Math.floor(volgen);
   sonido2.play();
 });
 // document.body.addEventListener('click', function b(){
