@@ -20,6 +20,8 @@ var volu;
 let sonido2 = new Audio();
 sonido2.src = "../audio/cancion1.mp3";
 
+const barra= document.getElementById("mislider");
+
 // htmele.addEventListener("mouseover", function rep(event) {
 //   event.sonido2.play();
 // });

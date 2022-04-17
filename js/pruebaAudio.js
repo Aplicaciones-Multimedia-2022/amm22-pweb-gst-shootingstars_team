@@ -11,7 +11,7 @@ sonido2.src="../audio/cancion1.mp3";
 // });
 
 document.body.addEventListener('click', function a(){
-  volumenGeneral = number(localStorage.getItem("miVolumen"));
+  volumenGeneral = Number(localStorage.getItem("miVolumen"));
   sonido2.volume=volumenGeneral;
   // volgen=parseInt(volumenGeneral);
   // sonido2.volume= Math.floor(volgen);
