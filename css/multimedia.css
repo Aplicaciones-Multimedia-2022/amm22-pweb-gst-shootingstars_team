@@ -1,0 +1,19 @@
+.date {
+  color: black;
+  font-family: retro;
+  border: transparent;
+  position: absolute;
+  left: auto;
+  font-size: 15px;
+  bottom: 35%;
+}
+
+.clock {
+  color: black;
+  font-family: retro;
+  border: transparent;
+  position: absolute;
+  left: 0%;
+  font-size: 15px;
+  bottom: 0%;
+}

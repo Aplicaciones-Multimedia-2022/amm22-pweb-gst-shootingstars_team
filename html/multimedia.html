@@ -1,8 +1,9 @@
 <html>
   <head>
-    <link href="../css/juego.css" rel="stylesheet" type="text/css" />
+    <link href="../css/multimedia.css" rel="stylesheet" type="text/css" />
     <link href="../css/global.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="../images/icon.png" height="50" weight="50" />
+    <link href="../resources/reloj.php" rel="stylesheet" type="text/css" />
     <title>Multimedia | Shooting Stars</title>
   </head>
   <header>
@@ -19,6 +20,17 @@
   </header>
   <body>
     <div class="navbar">
+      <div class="date">
+        <span id="weekDay" class="weekDay"></span>,
+        <span id="day" class="day"></span> de
+        <span id="month" class="month"></span> del
+        <span id="year" class="year"></span>
+      </div>
+      <div class="clock">
+        <span id="hours" class="hours"></span> :
+        <span id="minutes" class="minutes"></span> :
+        <span id="seconds" class="seconds"></span>
+      </div>
       <a class="boton" id="boton8">Portada</a>
       <a class="boton" id="bprejuego">Jugar</a>
       <a class="boton" id="boton1">Cómo jugar</a>
