@@ -56,3 +56,44 @@ p {
   border: solid 5px rgba(255, 193, 7, 255);
   text-align: center;
 }
+
+.planificacion {
+  color: rgba(255, 193, 7, 255);
+  font-size: 15px;
+  text-align: justify;
+  font-family: retro;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.planificacion li {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+b {
+  text-decoration: underline;
+}
+
+.problemaslista {
+  color: rgba(255, 193, 7, 255);
+  font-size: 15px;
+  text-align: justify;
+  font-family: retro;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.problemaslista li {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.solucion {
+  color: rgb(190, 190, 190);
+  font-size: 15px;
+  text-align: justify;
+  font-family: retro;
+  padding: 0%;
+  margin: 0%;
+}

@@ -121,7 +121,7 @@ function elegir_dificultad(dificultad) {
     velocidad_enemigos = 4;
     generar_enemigo = 1500;
   } else if (dificultad == 2) {
-    velocidad_enemigos = 5;
+    velocidad_enemigos = 6;
     generar_enemigo = 1000;
   } else if (dificultad == 3) {
     velocidad_enemigos = 10;

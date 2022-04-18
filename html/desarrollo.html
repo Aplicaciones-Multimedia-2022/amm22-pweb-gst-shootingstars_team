@@ -56,13 +56,60 @@
       <h3 id="Problemas">Problemas</h3>
     </div>
     <div class="apartado">
-      <p>
-        - Al colocar la barra de navegación fija en todas las pantallas, parte
-        de la pantalla se quedaba oculta. <br />Solución: añadir un margen extra
-        en el body para que no se quedase oculta ninguna parte de la pantalla. -
-        Me morí con la puta barra del volumen. Solucion: romper un jarron y
-        tranquilizarme
-      </p>
+      <ul class="problemaslista">
+        <li>
+          <b>PROBLEMA 1:</b>
+          Al colocar la barra de navegación fija en todas las pantallas, parte
+          de la pantalla se quedaba oculta. <br />
+          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          Añadir un margen extra en el body para que no se quedase oculta
+          ninguna parte de la pantalla.
+        </li>
+        <li>
+          <b>PROBLEMA 2:</b> No conseguíamos que saliesen más de una bala ni
+          naves enemigas en el canvas.
+          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          Mediante la programación orientada a objetos podemos crear objetos
+          bala y objetos naves, meterlos en un array y de ahí que vaya
+          imprimiéndolos uno a uno gracias a un bucle.
+        </li>
+        <li>
+          <b>PROBLEMA 3:</b> El sonido de las balas y explosiones no se ecuchaba
+          bien, ya que no sonaba cada vez que disparaba ni cada vez que
+          chocabas.
+          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          La pista de audio era más larga de lo que pensábamos por lo que
+          recargamos el sonido mediante la función load antes de disparar.
+        </li>
+        <li>
+          <b>PROBLEMA 4:</b> No éramos capaces de pasar una variable de un
+          JavaScript a otro, en el caso de elegir la nave o la dificultad del
+          nivel.
+          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          Mediante la herramienta de LocalStorage conseguimos guardar estos
+          datoselegidos. Luego en el juego hemos trabajado con estos datos
+          almacenados.
+        </li>
+        <li>
+          <b>PROBLEMA 6:</b> Tuvimos problemas con las colisiones ya que no
+          detectaba correctamente cuando la bala chocaba con una nave.
+          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          Replantear bien las condiciones que tenía que cumplir para que la bala
+          estuviese en el rango adecuado.
+        </li>
+        <li>
+          <b>PROBLEMA 5:</b>
+          <p class="solucion"><b>SOLUCIÓN:</b></p>
+        </li>
+        <li>
+          <b>PROBLEMA 5:</b>
+          <p class="solucion"><b>SOLUCIÓN:</b></p>
+        </li>
+        <li>
+          <b>PROBLEMA 5:</b>
+          <p class="solucion"><b>SOLUCIÓN:</b></p>
+        </li>
+      </ul>
     </div>
 
     <div class="tituloapartados">
@@ -84,27 +131,79 @@
     </div>
     <div class="apartado">
       <p>
-        En primer lugar, en la pantalla de inicio, hemos tratado los eventos
-        multimedia 'ended' de manera que al acabar el vídeo, nos lleva
-        directamente a la pantalla de juego. En la página de instrucciones,
-        hemos incluido una demo interactiva, implementada en javascript, para
-        que el usuario aprenda a jugar de una manera sencilla. Por otro lado, en
-        la página del juego, hemos hecho uso de formularios para recoger
-        información del jugador, donde además comprobamos la entrada de
-        caracteres válidos para poder empezar el juego; también hemos
-        implementado una base de datos indexedDB para poder guardar las
-        puntuaciones del usuario y hemos implementado diferentes sonidos a lo
-        largo de la partida con posibilidad de silenciarlos. En esta misma
-        pantalla existen varios botones; el de pausa, el de puntuaciones, donde
-        si pulsas te muestra tu historial de puntuaciones y, cuando acaba el
-        juego, el botón de reinciar la partida. Por otro lado, en la página de
-        desarrollo, para dinamizar la lectura hemos utilizado la funcionalidad
-        sticky para que la tabla de contenidos te siga a medida que avanzas por
-        la página y la funcionalidad 'ancla' con scroll-behavior tipo smooth,
-        para poder navegar más cómodamente.Por último,en la página de
-        referencias hemos hecho uso de CSS grid para ajustar el tamaño de las
-        pantallas de manera autómatica.
+        Para este proyecto, lo primero que hicimos fue una lluvia de ideas sobre
+        la temática y el diseño de nuestra página web. Tras varias ideas de
+        tipos de juego y organización de las páginas, hicimos un boceto sobre
+        nuestra idea principal. Una vez teníamos el esquema de las páginas nos
+        repartimos las tareas y las responsabilidades de cada miembro del grupo
+        y así avanzar a la vez. <br />
+        En primer momento, calculamos que para este trabajo sería necesaria una
+        dedicación de aproximadamente 100 horas. Pero finalmente, cada miembro
+        le ha dedicado alrededor de 135 horas al proyecto. <br />
+        Cada semana nos reuníamos para ver cómo iba la página web, aportar
+        sugerencias, cambios o cosas imprescindibles a realizar para la próxima
+        semana, a parte de estar en contacto constante para solucionar cualquier
+        problema que ocurriese. <br />
       </p>
+      <ul class="planificacion">
+        <li>
+          <b>SEMANA 1:</b> En primer lugar, tras decidir el nombre, ideas
+          básicas del diseño e implementación del juego, distribuimos las
+          funciones que realizaría cada persona. Para mantener una correcta
+          organización, compartimos los archivos tanto por Drive como por
+          GitHub. A partir de ahí, se decidió empezar por la implementación de
+          la portada y la programación básica del movimiento de la nave
+          principal y la aparición de las navez enemigas. Además, se empezó a
+          investigar sobre cómo integrar el audio en la página web.
+        </li>
+        <li>
+          <b>SEMANA 2:</b> En cuanto al JavaScript de juego, se impletó todo
+          mediante objetos además del fondo del canvas. Referente al diseño de
+          la página web, añadimos una barra de navegación al resto de páginas
+          situada en la parte inferior de cada página. Empezamos con el
+          desarrollo de la página de 'autores'.
+        </li>
+        <li>
+          <b>SEMANA 3:</b> Durante esta semana, tras la reunión y tras marcar
+          los objetivos claves a realizar, incluimos la detección de las
+          colisiones con las naves y guardar en un contador el número de las
+          mismas. Según se iban utilizando diferentes recursos, se fueron
+          añadiendo los links a la página de 'referencias'. En cuanto a la
+          página de 'ajustes', se fue añadiendo apartados para la elección de la
+          nave y para ajustar el sonido.
+        </li>
+        <li>
+          <b>SEMANA 4:</b> Tras cubrir alguno de los objetivos marcados, fuimos
+          completando apartados como el texto que aparece en la página de
+          'autores', 'cómo jugar' o 'desarrollo'. En cuanto al juego, añadimos
+          que se produjese una explosión cuando se produjese una colisión.
+          También nos informamos de cómo introducir varios niveles al juego. Se
+          realizó la página previa del juego donde se elige el nivel y se
+          introduce el nombre del jugador, además de la página de 'game over'.
+        </li>
+        <li>
+          <b>SEMANA 5:</b> Añadimos las imágenes de cada uno de nosotros en la
+          página de 'autores', realizada a partir del programa PixelArt, al
+          igual que la mayoría de imágenes de la página web. Se completó la
+          página de 'cómo jugar', añadiendo un gif para complementar la
+          explicación de los comandos. Se buscaron sonidos sin derechos de autor
+          para las colisiones y para que sonasen cuando se pulsase al botón.
+          También se guardó la puntuación máxima y el nombre del jugador para
+          que apareciese en la página de juego.
+        </li>
+        <li>
+          <b>SEMANA 6:</b> En esta semana, al tener todo casi terminado se
+          dedicó a la mejora de pequeños detalles, a completar la página de
+          desarrollo y a ajustar el audio del juego, además de arreglar
+          cualquier error que surgiese.
+        </li>
+        <li>
+          <b>SEMANA 7:</b> La última semana se dedicó a verificar que cumplíamos
+          los requisitos mínimos y que todo funcionase correctamente. Se
+          añadieron mejoras como el icono en la página, la limpieza del código o
+          widgets.
+        </li>
+      </ul>
     </div>
   </div>
   <div class="navbar">
