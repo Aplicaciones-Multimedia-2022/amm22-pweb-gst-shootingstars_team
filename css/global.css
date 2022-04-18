@@ -170,3 +170,16 @@ th {
   padding: 0 40px;
   margin-top: 150;
 }
+/*listas*/
+ul {
+  color: rgba(255, 193, 7, 255);
+  font-size: 15px;
+  text-align: justify;
+  font-family: retro;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}

@@ -29,28 +29,104 @@
     </div>
     <div class="apartado">
       <p>
-        En primer lugar, en la pantalla de inicio, hemos colocado botones que
-        nos dirigen a las diferentes partes de la página web, incluido un enlace
-        a ajustes para poder modificarlos a nuestro gusto. <br />
-        <br />
-        En la página de ajustes se puede [...] <br />
-        <br />
-        En la página de 'Cómo jugar' encontraremos las instrucciones de los
-        comandos que se utilizan para poder jugar correctamente junto a una
-        descripción gráfica realizada mediante gifs. <br />
-        <br />
-        En la página de 'Autores' encontramos la descripción de los integrantes
-        del grupo que han realizado el trabajo. <br />
-        <br />
-        En la página de 'Referencias' encontramos los enlaces a los links de las
-        páginas que hemos utilizado de ayuda para la realización del proyecto.
+        En este apartado vamos a explicar las responsabilidades de cada persona
+        dividido según las diferentes páginas.
       </p>
+      <ul class="responsabilidadeslista">
+        <li>
+          <b>PORTADA</b><br />
+          Entre todos los componente hemos hecho el boceto de la página de la
+          portada. Nacho se encargó de buscar las imágenes referentes al fondo,
+          naves y a dibujar el logo principal. Irene se ha encargado de la
+          implementación de toda la pantalla, colocando los botones centrados,
+          con sus respectivas interraciones y transiciones, y la colocoación del
+          botón de ajustes, realizado por Alicia.
+        </li>
+        <li>
+          <b>AJUSTES</b><br />Alicia se encargó de la implementación de esta
+          página, con la ayuda de Irene en algunos aspectos de html y css. Tras
+          la división de la página en ajustes de audio y la elección de la nave,
+          Alicia desarrolló un código para que la elección de la nave fuese
+          efectiva, además de configurar los niveles de audio del juego.
+        </li>
+        <li>
+          <b>CÓMO JUGAR</b><br />Nacho e Irene realizaron la implementación de
+          esta página, donde el objetivo era mostrar el objetivo del juego y los
+          controles. Para ello, Nacho dibujó las flechas y la barra espaciadora,
+          con sus indicaciones correspondientes para, posteriormente, Irene
+          realizar una descripción gráfica del uso de los controles.
+        </li>
+        <li>
+          <b>JUEGO</b><br />El diseño de esta página lo hizo Irene, con ayuda de
+          Paula. Una vez colocado el canvas y el recuadro de puntuación, Paula
+          colocó las vidas y desarrolló un código para que se eliminasen cuando
+          una nave no era eliminada. Nacho y Paula se encargaron del desarrollo
+          de todo el juego, implementación de la nave, los enemigos, el fondo,
+          colisiones, puntuación y el correcto funcionamiento de todo. Alicia se
+          encargó del sonido que se produce al colisionar una nave con una bala
+          y al disparar. <br />
+          La página que aparece antes del juego, donde se introduce el nombre y
+          se elige el nivel, fue implementada por Paula e Irene. El desarrollo
+          del código para almacenar el nombre y el nivel, fue realizado por
+          Paula; mientras que el diseño de la página fue realizado por Irene.
+          <br />
+          La página de 'game over' fue realizada por Irene y por Paula, tanto la
+          aparición de la puntuación como el redireccionamiento a otras páginas.
+        </li>
+        <li>
+          <b>AUTORES</b><br />Esta página la realizó Paula, diseñando las tablas
+          donde cada uno escribió la descripción. Alicia se encargó de realizar
+          los dibujos de cada uno, siguiendo la estética del diseño de la
+          página.
+        </li>
+        <li>
+          <b>DESARROLLO</b><br />
+          Esta página fue implementada por Irene, tras decidir entre todos hacer
+          una StickyBar con el fin de acceder a los apartados más fácilmente.
+        </li>
+        <li>
+          <b>REFERENCIAS</b><br />Siguiendo el diseño que tenía la página de
+          'autores', esta página la implementó Irene. A partir de estar hecha la
+          tabla, cada integrante del grupo añadió los enlaces que fueron
+          utilizando a lo largo del proyecto.
+        </li>
+        <li>
+          <b>OTROS</b><br />El menú que aparece en la parte inferior de todas
+          las páginas, para navegar hacia otras páginas fue realizado por
+          Alicia. El símbolo de GitHub con el enlace al repositorio, fue
+          dibujado e implementado por Irene. Cada vez que se pulsa un botón, en
+          cualquier página del proyecto, se escucha un sonido, esta
+          funcionalidad la realizó Alicia.
+        </li>
+      </ul>
     </div>
+
     <div class="tituloapartados">
       <h3 id="Técnicas y tecnologías">Técnicas y tecnologías</h3>
     </div>
     <div class="apartado">
-      <p>hola</p>
+      <ul class="tecnicaslistas">
+        <li>
+          En primer lugar, en la pantalla de inicio, hemos colocado botones que
+          nos dirigen a las diferentes partes de la página web, incluido un
+          enlace a ajustes para poder modificarlos a nuestro gusto.
+        </li>
+        <li>En la página de ajustes se puede [...]</li>
+        <li>
+          En la página de 'Cómo jugar' encontraremos las instrucciones de los
+          comandos que se utilizan para poder jugar correctamente junto a una
+          descripción gráfica realizada mediante gifs.
+        </li>
+        <li>
+          En la página de 'Autores' encontramos la descripción de los
+          integrantes del grupo que han realizado el trabajo.
+        </li>
+        <li>
+          En la página de 'Referencias' encontramos los enlaces a los links de
+          las páginas que hemos utilizado de ayuda para la realización del
+          proyecto.
+        </li>
+      </ul>
     </div>
     <div class="tituloapartados">
       <h3 id="Problemas">Problemas</h3>
@@ -58,56 +134,56 @@
     <div class="apartado">
       <ul class="problemaslista">
         <li>
-          <b>PROBLEMA 1:</b>
+          <b>PROBLEMA 1</b><br />
           Al colocar la barra de navegación fija en todas las pantallas, parte
           de la pantalla se quedaba oculta. <br />
-          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          <p class="solucion"><b>SOLUCIÓN</b></p>
           Añadir un margen extra en el body para que no se quedase oculta
           ninguna parte de la pantalla.
         </li>
         <li>
-          <b>PROBLEMA 2:</b> No conseguíamos que saliesen más de una bala ni
-          naves enemigas en el canvas.
-          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          <b>PROBLEMA 2</b> <br />No conseguíamos que saliesen más de una bala
+          ni naves enemigas en el canvas.
+          <p class="solucion"><b>SOLUCIÓN</b></p>
           Mediante la programación orientada a objetos podemos crear objetos
           bala y objetos naves, meterlos en un array y de ahí que vaya
           imprimiéndolos uno a uno gracias a un bucle.
         </li>
         <li>
-          <b>PROBLEMA 3:</b> El sonido de las balas y explosiones no se ecuchaba
-          bien, ya que no sonaba cada vez que disparaba ni cada vez que
-          chocabas.
-          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          <b>PROBLEMA 3</b><br />
+          El sonido de las balas y explosiones no se ecuchaba bien, ya que no
+          sonaba cada vez que disparaba ni cada vez que chocabas.
+          <p class="solucion"><b>SOLUCIÓN</b></p>
           La pista de audio era más larga de lo que pensábamos por lo que
           recargamos el sonido mediante la función load antes de disparar.
         </li>
         <li>
-          <b>PROBLEMA 4:</b> No éramos capaces de pasar una variable de un
+          <b>PROBLEMA 4</b> <br />No éramos capaces de pasar una variable de un
           JavaScript a otro, en el caso de elegir la nave o la dificultad del
           nivel.
-          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          <p class="solucion"><b>SOLUCIÓN</b></p>
           Mediante la herramienta de LocalStorage conseguimos guardar estos
           datoselegidos. Luego en el juego hemos trabajado con estos datos
           almacenados.
         </li>
         <li>
-          <b>PROBLEMA 6:</b> Tuvimos problemas con las colisiones ya que no
+          <b>PROBLEMA 6</b> <br />Tuvimos problemas con las colisiones ya que no
           detectaba correctamente cuando la bala chocaba con una nave.
-          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          <p class="solucion"><b>SOLUCIÓN</b></p>
           Replantear bien las condiciones que tenía que cumplir para que la bala
           estuviese en el rango adecuado.
         </li>
         <li>
-          <b>PROBLEMA 5:</b>
-          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          <b>PROBLEMA 5</b><br />
+          <p class="solucion"><b>SOLUCIÓN</b></p>
         </li>
         <li>
-          <b>PROBLEMA 5:</b>
-          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          <b>PROBLEMA 5</b><br />
+          <p class="solucion"><b>SOLUCIÓN</b></p>
         </li>
         <li>
-          <b>PROBLEMA 5:</b>
-          <p class="solucion"><b>SOLUCIÓN:</b></p>
+          <b>PROBLEMA 5</b><br />
+          <p class="solucion"><b>SOLUCIÓN</b></p>
         </li>
       </ul>
     </div>
@@ -116,14 +192,17 @@
       <h3 id="Puntos fuertes">Puntos fuertes</h3>
     </div>
     <div class="apartado">
-      <p>
-        - Hemos añadido un Sticky NavBar, que es una barra que se queda fija en
-        la parte superior de la pantalla mientras navegas a través de ella hasta
-        cierto punto.
-        <br />
-        - Hemos añadido un sonido para cada vez que se pulse una botón en el
-        juego.
-      </p>
+      <ul class="puntoslistas">
+        <li>
+          Hemos añadido un Sticky NavBar, que es una barra que se queda fija en
+          la parte superior de la pantalla mientras navegas a través de ella
+          hasta cierto punto.
+        </li>
+        <li>
+          Hemos añadido un sonido para cada vez que se pulse una botón en el
+          juego.
+        </li>
+      </ul>
     </div>
 
     <div class="tituloapartados">
