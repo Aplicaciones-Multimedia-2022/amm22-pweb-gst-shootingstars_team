@@ -20,6 +20,7 @@ var puntmax = localStorage.getItem("max"); //Variable donde guardamos la puntuac
 var vidas_nave = 0; //Contador que evalua cuantas veces una nave enemiga choca contra el canvas, para saber las vidas que tenemos
 var overlay_go = document.getElementById("overlay_go"); //Variable para controlar la ventana emergente de GAME OVER
 var sonido_disparo = new Audio(); //Sonido del disparo, es decir, cada vez que disparamos una bala
+sonido_diaparo.volume=0.3;
 var tiempo = 0;
 var final_nave;
 var posEnemigoY; //Coordenada en el eje X de la nave enemiga
@@ -44,9 +45,12 @@ var velocidad_enemigos = 5;
 var generar_enemigo = 1500;
 var contador2 = 0;
 var sonido_explosion = new Audio();
+sonido_explosion.volume=0.3;
 var fin_juego = false;
 var sonido_gameover = new Audio();
+sonido_gameover.volume=0.3;
 var sonido_explosion_canvas = new Audio();
+sonido_explosion_canvas.volume=0.3;
 var estX;
 var estY;
 var Estrella = new Image();
