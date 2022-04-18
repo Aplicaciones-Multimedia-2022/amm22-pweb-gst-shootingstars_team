@@ -22,14 +22,12 @@ sonido2.src = "../audio/cancion1.mp3";
 
 const barra= document.getElementById("mislider");
 
-// htmele.addEventListener("mouseover", function rep(event) {
-//   event.sonido2.play();
-// });
+
 // play.addEventListener("click", function(){
 //   sonido2.play();
 // });
 
-//barra.addEventListener("change", function(ev) {}, true);
+
 barra.addEventListener(
   "change",
   function (ev) {
@@ -41,8 +39,6 @@ barra.addEventListener(
   true
 );
 
-/*var imagen2 = new Image();
-imagen2.src = "../images/vol1.png";*/
 
 
 
