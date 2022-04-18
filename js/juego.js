@@ -40,7 +40,6 @@ bannerImg = document.getElementById('tableBanner');
 bannerImg.src = "data:image/png;base64," + dataImage;*/
 var stop;
 var imagenBala = new Image();
-var exp = new Image();
 var shoots = [];
 var enemies = [];
 var velocidad_enemigos = 5;
@@ -53,6 +52,7 @@ var sonido_explosion_canvas = new Audio();
 var estX;
 var estY;
 var Estrella = new Image();
+
 
 var df = localStorage.getItem("dificultad");
 var namep = localStorage.getItem('nombre');
@@ -153,6 +153,13 @@ function Explosion(posExpX, posExpY) {
   this.posExpY = posExpY;
 }
 
+function pintarExp(x, y) {
+  var exp = new Image();
+  //expAux = new Explosion(x, y);
+  exp.src = "../images/explosion_m.png";
+  ctx.drawImage(exp, x, y);
+}
+
 //funcion pintar enemigo
 function pintarEnemigo() {
   for (var j = 0; j < enemies.length; j++) {
@@ -176,15 +183,15 @@ function detectarColision() {
           shoots[k].bol_disparoY > enemies[l].posEnemigoY &&
           shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74
         ) {
+          pintarExp(shoots[k].bol_disparoX,shoots[k].bol_disparoY);
           sonido_explosion.src = "../audio/sonidoExplosion.wav";
           sonido_explosion.load();
-          pintarExp(shoots[k].bol_disparoX, shoots[k].bol_disparoY);
           contador++;
           contador1 = contador;
-
           enemies.splice(l, 1);
           shoots.splice(k, 1);
           sonido_explosion.play();
+
         }
       }
     }
@@ -214,11 +221,7 @@ function pintarNave() {
   ctx.drawImage(naveAux.imagenNave, naveAux.naveX, naveAux.naveY);
 }
 
-function pintarExp(x, y) {
-  expAux = new Explosion(x, y);
-  exp.src = "../images/explosion_m.png";
-  ctx.drawImage(exp, expAux.posExpX, expAux.posExpY);
-}
+
 
 //Pintamos la bala con la que dispara
 function pintarBala() {
