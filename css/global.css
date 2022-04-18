@@ -10,8 +10,9 @@
 /* Para el margen inferior de la página*/
 body {
   background-image: url("../images/Webp.net-gifmaker.gif");
-  background-size: 100% 100%;
+  background-size: 1519px 753px;
   margin-bottom: 5%;
+  background-repeat:  repeat-y;
 }
 
 /*Segundos títulos*/
