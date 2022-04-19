@@ -34,7 +34,7 @@ dt {
   font-family: retro;
   display: flex;
   justify-content: space-evenly;
-  font-size: 25px;
+  margin-top: 5%;
 }
 
 .menu a {
@@ -51,7 +51,7 @@ dt {
 }
 
 .dropdown .dropbtn {
-  font-size: 25px;
+  font-size: 40px;
   border: none;
   outline: none;
   color: white;
@@ -70,11 +70,8 @@ dt {
 .dropdown-content {
   display: none;
   position: absolute;
-  max-width: 250px;
-  max-block-size: 400px;
-  z-index: 1;
-  color: black;
-  margin-bottom: 10%;
+  max-width: 300px;
+  z-index: 5;
 }
 
 .dropdown-content a {
@@ -83,6 +80,7 @@ dt {
   padding: 12px 16px;
   display: block;
   text-align: left;
+  margin-bottom: 5%;
 }
 
 .dropdown-content a:hover {
@@ -93,4 +91,5 @@ dt {
 
 .dropdown:hover .dropdown-content {
   display: block;
+  margin-bottom: 5%;
 }
