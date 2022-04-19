@@ -552,15 +552,19 @@ sonido2.src = "../media/cancion2.mp3";
 
 
 
-document.body.addEventListener("click", function a() {
+const suena = document.getElementById("logo_prin");
+
+
+
+suena.addEventListener("click", function a() {
   volumenGeneral = Number(localStorage.getItem("miVolumen"));
   sonido2.volume = volumenGeneral;
   if(sonido2.paused){
     sonido2.play();
-
+    
   } else {
     sonido2.pause();
-
+   
   }
 
 });
