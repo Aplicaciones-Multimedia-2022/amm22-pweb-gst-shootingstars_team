@@ -356,6 +356,7 @@ function draw() {
 
   if (vidas_nave == 3) {
     if (fin_juego == false) {
+      sonido2.pause();
       sonido_gameover.play();
       pausajuego();
     }
