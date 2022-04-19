@@ -36,8 +36,7 @@ barra.addEventListener(
 
 var volumenGeneral;
 var volgen;
-let sonido2 = new Audio();
-sonido2.src = "../media/cancion1.mp3";
+
 
 
 
