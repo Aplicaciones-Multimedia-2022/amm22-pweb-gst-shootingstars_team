@@ -355,7 +355,7 @@ function draw() {
   if (nave_DOWN && naveAux.naveY < game.height - naveAux.imagenNave.height) {
     naveAux.naveY += naveAux.velocidad_nave;
   }
-  //Comprueba si se han acabado las vidas de la nave 
+  //Comprueba si se han acabado las vidas de la nave
   if (vidas_nave == 3) {
     if (fin_juego == false) {
       sonido2.pause();
@@ -572,7 +572,7 @@ var udateTime = function () {
     minutes = currentDate.getMinutes(),
     seconds = currentDate.getSeconds(),
     weekDay = currentDate.getDay(),
-    day = currentDate.getDay(),
+    day = currentDate.getDate(),
     month = currentDate.getMonth(),
     year = currentDate.getFullYear();
 

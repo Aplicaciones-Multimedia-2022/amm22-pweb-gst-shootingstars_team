@@ -1,6 +1,5 @@
 var contador = 0;
 
-
 const boton1 = document.getElementById("boton1");
 const boton2 = document.getElementById("boton2");
 const boton3 = document.getElementById("boton3");
@@ -22,7 +21,6 @@ sonido2.src = "../media/cancion1.mp3";
 const barra = document.getElementById("mislider");
 const play = document.getElementById("play");
 
-
 barra.addEventListener(
   "change",
   function (ev) {
@@ -37,22 +35,15 @@ barra.addEventListener(
 var volumenGeneral;
 var volgen;
 
-
-
-
 play.addEventListener("click", function a() {
   volumenGeneral = Number(localStorage.getItem("miVolumen"));
   sonido2.volume = volumenGeneral;
-  if(sonido2.paused){
+  if (sonido2.paused) {
     sonido2.play();
-    
   } else {
     sonido2.pause();
-   
   }
-
 });
-
 
 var udateTime = function () {
   let currentDate = new Date(),
@@ -60,7 +51,7 @@ var udateTime = function () {
     minutes = currentDate.getMinutes(),
     seconds = currentDate.getSeconds(),
     weekDay = currentDate.getDay(),
-    day = currentDate.getDay(),
+    day = currentDate.getDate(),
     month = currentDate.getMonth(),
     year = currentDate.getFullYear();
 

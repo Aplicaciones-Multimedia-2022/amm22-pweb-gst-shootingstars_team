@@ -66,21 +66,15 @@ let sonido2 = new Audio();
 sonido2.src = "../media/cancion1.mp3";
 const suena = document.getElementById("logo_prin");
 
-
-
 suena.addEventListener("click", function a() {
   volumenGeneral = Number(localStorage.getItem("miVolumen"));
   sonido2.volume = volumenGeneral;
-  if(sonido2.paused){
+  if (sonido2.paused) {
     sonido2.play();
-    
   } else {
     sonido2.pause();
-   
   }
-
 });
-
 
 var udateTime = function () {
   let currentDate = new Date(),
@@ -88,7 +82,7 @@ var udateTime = function () {
     minutes = currentDate.getMinutes(),
     seconds = currentDate.getSeconds(),
     weekDay = currentDate.getDay(),
-    day = currentDate.getDay(),
+    day = currentDate.getDate(),
     month = currentDate.getMonth(),
     year = currentDate.getFullYear();
 
