@@ -205,3 +205,10 @@ li {
   font-size: 15px;
   margin-top: 6%;
 }
+
+
+.warning{
+  font-family: retro;
+  color: rgb(154, 154, 154);
+  text-align: center;
+}
