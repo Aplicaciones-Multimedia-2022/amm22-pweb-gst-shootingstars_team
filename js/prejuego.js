@@ -64,7 +64,7 @@ let sonido1 = new Audio(); // SONIDO DEL CLICK AL INTERACTUAR CON EL MAUSE
 let espera; 
 sonido1.src = "../media/click/mouse-click.wav"; 
 
-// FUNCIONES PARA HACER QUE SUENE AL PULSAR Y REDIRECCIONAR CADA BOTON
+// FUNCIONES PARA HACER QUE SUENE AL PULSAR Y HACER UNA PEQUEÑA ESPERA
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();
@@ -156,6 +156,8 @@ function draw_dcha() {
 //                                      //
 //////////////////////////////////////////
 
+// FUNCIONES PARA DREDIRECCIONAR LOS BOTONES
+
 function redireccionar1() {
   location.replace("../html/ComoJugar.html");
 }
@@ -203,9 +205,14 @@ function sub() {
   localStorage.setItem("nombre", n); // UTILIZAMOS LOCAL STORAGE PARA PODER GUARDAR LA VARIABLE Y UTILIZARLA EN OTRO JS
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
+//////////////////////////////////////////
+//                                      //
+//  FUNCIONES PARA LA MUSICA DE FONDO   //
+//                                      //
+//////////////////////////////////////////
 
 var volumenGeneral;
 var volgen;
@@ -228,7 +235,15 @@ suena.addEventListener("click", function a() {
 
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////
+//                                      //
+//       FUNCIONES SET INTERVAL         //
+//                                      //
+//////////////////////////////////////////
+
+// ESTAS FUNCIONES ES PARA DIBUJAR CADA 10 MS LAS IMAGENES DE LOS BAY YODA
 
 setInterval(draw_izq, 10);
 setInterval(draw_dcha, 10);
