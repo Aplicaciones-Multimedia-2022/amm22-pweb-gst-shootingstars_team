@@ -330,8 +330,9 @@ function pausajuego() {
 //////////////////////////////////////////
 
 function draw() {
-  //Utilizamos esta funcion para dibujar el movimiento
-  ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
+  //UTILIZAMOS ESTA FUNCION PARA DIBUJAR EL MOVIMIENTO
+
+  ctx.clearRect(0, 0, game.width, game.height); // LIMPIAMOS EL LIENZO EN EL CUAL SE DESARROLLA EL JUEGO
   dibujar_fondo();
   pintarNave(); //llamamos a la funcion pintarNave
   if (enemies.length != 0) {
