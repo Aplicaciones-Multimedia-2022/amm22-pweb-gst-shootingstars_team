@@ -76,8 +76,18 @@ p {
   font-family: retro;
   color: rgba(255, 193, 7, 255);
   font-size: 12vh;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
+@keyframes example {
+  0%   {left:-200px; top:0px;}
+  50%  {left:200px; top:0px;}
+  100% { left:-200px; top:0px;}
+
+}
 #contador1 {
   font-family: retro;
   color: white;

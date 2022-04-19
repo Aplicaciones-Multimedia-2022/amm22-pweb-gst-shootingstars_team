@@ -66,6 +66,19 @@ h3 {
 
 /*Para el boton de ajustes*/
 
+@keyframes rotate {from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}}
+@-webkit-keyframes rotate {from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}}
+
+.ad{
+  -webkit-animation: 3s rotate linear infinite;
+    animation: 3s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+}
+
 .divajustes {
   margin: 2%;
   position: absolute;
@@ -78,6 +91,7 @@ h3 {
   display: block;
   cursor: pointer;
 }
+
 
 /*Para las tablas de las páginas autores y referencias*/
 
