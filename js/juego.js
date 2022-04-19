@@ -215,7 +215,9 @@ function pintarBala() {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////
+//                                    //
 // FUNCION PARA DIBUJAR FONDO ANIMADO //
+//                                    //
 ////////////////////////////////////////
 
 function dibujar_fondo() {
@@ -346,14 +348,14 @@ function draw() {
       pintarBala();
     }
   }
-
+  //Movimiento de arriba o abajo de la nave
   if (nave_UP && naveAux.naveY > 0) {
     naveAux.naveY -= naveAux.velocidad_nave;
   }
   if (nave_DOWN && naveAux.naveY < game.height - naveAux.imagenNave.height) {
     naveAux.naveY += naveAux.velocidad_nave;
   }
-
+  //Comprueba si se han acabado las vidas de la nave 
   if (vidas_nave == 3) {
     if (fin_juego == false) {
       sonido2.pause();
