@@ -539,6 +539,27 @@ function redireccionar10() {
   location.replace("../html/portada.html");
 }
 
+
+var volumenGeneral;
+var volgen;
+let sonido2 = new Audio();
+sonido2.src = "../media/cancion2.mp3";
+
+
+
+document.body.addEventListener("click", function a() {
+  volumenGeneral = Number(localStorage.getItem("miVolumen"));
+  sonido2.volume = volumenGeneral;
+  if(sonido2.paused){
+    sonido2.play();
+    
+  } else {
+    sonido2.pause();
+   
+  }
+
+});
+
 ////////// Código para mostrar la hora
 
 var udateTime = function () {
