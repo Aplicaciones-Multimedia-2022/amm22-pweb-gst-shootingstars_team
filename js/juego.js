@@ -135,7 +135,7 @@ function elegir_dificultad(dificultad) {
     velocidad_enemigos = 9;
     generar_enemigo = 1500;
   } else if (dificultad == 2) {
-    velocidad_enemigos = 11;
+    velocidad_enemigos = 10;
     generar_enemigo = 1000;
   } else if (dificultad == 3) {
     velocidad_enemigos = 15;
@@ -176,7 +176,6 @@ function Bala(bol_disparoX, bol_disparoY, imagenBala) {
 //           PINTAR IMAGENES            //
 //                                      //
 //////////////////////////////////////////
-
 
 function pintarEnemigo() {
   // PINTAMOS LAS NAVES ENEMIGAS
@@ -545,29 +544,21 @@ function redireccionar10() {
   location.replace("../html/portada.html");
 }
 
-
 var volumenGeneral;
 var volgen;
 let sonido2 = new Audio();
 sonido2.src = "../media/cancion2.mp3";
 
-
-
 const suena = document.getElementById("logo_prin");
-
-
 
 suena.addEventListener("click", function a() {
   volumenGeneral = Number(localStorage.getItem("miVolumen"));
   sonido2.volume = volumenGeneral;
-  if(sonido2.paused){
+  if (sonido2.paused) {
     sonido2.play();
-    
   } else {
     sonido2.pause();
-   
   }
-
 });
 
 ////////// Código para mostrar la hora
