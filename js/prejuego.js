@@ -27,8 +27,7 @@ var dy = -2; // VELOCIDAD DE LOS BABY YODA
 // VENTANA EMERGENTE QUE TE INDICA INFORMACION DE LOS NIVELES
 
 var btn_abrir_easy = document.getElementById("btn"); // REFERENCIAMOS EN UNA VARIABLE EL BOTON ABRIR LA VENTANA EMERGENTE
-var overlay = document.getElementById("overlay");
-var ventana_easy = document.getElementById("ventana_easy");
+var overlay = document.getElementById("overlay"); // ASI REFERIMOS A LA VENTANA EMERGENTE
 var btn_cerrar = document.getElementById("btn_cerrar"); // REFERENCIAMOS EN UNA VARIABLE EL BOTON CERRAR LA VENTANA EMERGENTE
 
 btn_abrir_easy.addEventListener("click", function () {
@@ -49,6 +48,8 @@ btn_cerrar.addEventListener("click", function () {
 //                                      //
 //////////////////////////////////////////
 
+//BOTONES 1,2,3,4,5,6,8 SON LOS BOTONES DE AJUSTES Y LA NAV BAR
+
 const boton1 = document.getElementById("boton1");
 const boton2 = document.getElementById("boton2");
 const boton3 = document.getElementById("boton3");
@@ -56,13 +57,14 @@ const boton4 = document.getElementById("boton4");
 const boton5 = document.getElementById("boton5");
 const boton6 = document.getElementById("bajustes");
 const boton8 = document.getElementById("boton8");
-const botonFacil = document.getElementById("botonFacil");
-const botonMedio = document.getElementById("botonMedio");
-const botonDificil = document.getElementById("botonDificil");
-let sonido1 = new Audio();
-let espera;
-sonido1.src = "../media/click/mouse-click.wav";
+const botonFacil = document.getElementById("botonFacil"); // BOTON REFERIDO AL NIVEL FACIL
+const botonMedio = document.getElementById("botonMedio"); // BOTON REFERIDO AL NIVEL MEDIO
+const botonDificil = document.getElementById("botonDificil"); // BOTON REFERIDO AL NIVEL DIFICIL
+let sonido1 = new Audio(); // SONIDO DEL CLICK AL INTERACTUAR CON EL MAUSE
+let espera; 
+sonido1.src = "../media/click/mouse-click.wav"; 
 
+// FUNCIONES PARA HACER QUE SUENE AL PULSAR Y REDIRECCIONAR CADA BOTON
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();
@@ -125,13 +127,14 @@ function pintar_cosa_drch() {
 
 // CON LAS FUNCIONES DRAW DIBUJAMOS EL MOVIMIENTOS DE NUESTROS BABY YODAS
 function draw_izq() {
-  ctx.clearRect(0, 0, div_izq.width, div_izq.height);
-  pintar_cosa_izq();
+  ctx.clearRect(0, 0, div_izq.width, div_izq.height); // LIMPAIMOS EL LIENZO IZQUIERDO
+  pintar_cosa_izq(); // DIBUJAMOS A BABY YODA
 
-  metY += dy;
+  metY += dy; // DEFINIMOS EL MOVIMIENTO DE BABY YODA
 
+  // HACER QUE NUESTRO BABY YODA DESAPAREZCA CUANDO LLEGUE AL FINAL Y VUELVA A SALIR
   if (metY + 150 < 0) {
-    metY = 1400;
+    metY = mycanvas.height;
   }
 }
 function draw_dcha() {
@@ -141,7 +144,7 @@ function draw_dcha() {
   metY += dy;
 
   if (metY + 150 < 0) {
-    metY = 1400;
+    metY = mycanvas2.height;
   }
 }
 
