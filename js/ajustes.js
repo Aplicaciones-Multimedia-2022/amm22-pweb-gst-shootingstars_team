@@ -1,6 +1,5 @@
 var contador = 0;
-/*const botonmenos = document.getElementById("botonmenos");
-const botonmas = document.getElementById("botonmas");*/
+
 
 const boton1 = document.getElementById("boton1");
 const boton2 = document.getElementById("boton2");
@@ -21,10 +20,8 @@ let sonido2 = new Audio();
 sonido2.src = "../media/cancion1.mp3";
 
 const barra = document.getElementById("mislider");
+const play = document.getElementById("play");
 
-// play.addEventListener("click", function(){
-//   sonido2.play();
-// });
 
 barra.addEventListener(
   "change",
@@ -36,6 +33,27 @@ barra.addEventListener(
   },
   true
 );
+
+var volumenGeneral;
+var volgen;
+let sonido2 = new Audio();
+sonido2.src = "../media/cancion1.mp3";
+
+
+
+play.addEventListener("click", function a() {
+  volumenGeneral = Number(localStorage.getItem("miVolumen"));
+  sonido2.volume = volumenGeneral;
+  if(sonido2.paused){
+    sonido2.play();
+    
+  } else {
+    sonido2.pause();
+   
+  }
+
+});
+
 
 var udateTime = function () {
   let currentDate = new Date(),

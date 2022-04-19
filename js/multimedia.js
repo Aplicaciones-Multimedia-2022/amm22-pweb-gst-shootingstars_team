@@ -59,18 +59,30 @@ function redireccionar8() {
 function redireccionar9() {
   location.replace("../html/prejuego.html");
 }
-/*
-setTimeout("reloj()", 100);
-function reloj() {
-  var tiempo = new Date();
-  var hora = tiempo.getHours();
-  var minuto = tiempo.getMinutes();
-  var segundo = tiempo.getSeconds();
-  var textohora = hora + ":" + minuto + ":" + segundo;
-  document.ti.caja.value = textohora;
-  setTimeout("reloj()", 500);
-}
-*/
+
+
+var volumenGeneral;
+var volgen;
+let sonido2 = new Audio();
+sonido2.src = "../media/cancion1.mp3";
+
+
+
+document.body.addEventListener("click", function a() {
+  volumenGeneral = Number(localStorage.getItem("miVolumen"));
+  sonido2.volume = volumenGeneral;
+  if(sonido2.paused){
+    sonido2.play();
+    
+  } else {
+    sonido2.pause();
+   
+  }
+
+});
+
+
+
 var udateTime = function () {
   let currentDate = new Date(),
     hours = currentDate.getHours(),
