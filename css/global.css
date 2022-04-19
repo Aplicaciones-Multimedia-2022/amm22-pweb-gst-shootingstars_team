@@ -12,7 +12,7 @@ body {
   background-image: url("../img/Webp.net-gifmaker\ \(1\).gif");
   background-size: 1519px 753px;
   margin-bottom: 5%;
-  background-repeat: repeat-y;
+  background-repeat: repeat;
 }
 
 /*Segundos títulos*/
@@ -31,6 +31,7 @@ h3 {
   left: 0;
   width: 100%;
   text-align: center;
+  z-index: 2;
 }
 
 .boton {

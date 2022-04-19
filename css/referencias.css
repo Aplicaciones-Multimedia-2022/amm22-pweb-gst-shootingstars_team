@@ -4,24 +4,7 @@
   border-spacing: 10px;
   margin: auto;
 }
-td {
-  width: 25%;
-  text-align: center;
-  color: rgba(255, 193, 7, 255);
-  background-color: transparent;
-  font-family: retro;
-  padding: 20px;
-  border: solid 3px rgba(255, 193, 7, 255);
-}
-th {
-  width: 25%;
-  text-align: center;
-  color: black;
-  background-color: rgba(255, 193, 7, 255);
-  font-family: retro;
-  padding: 20px;
-  border: solid 3px rgba(255, 193, 7, 255);
-}
+
 .enlaces {
   outline: none;
   text-decoration: none;
@@ -42,4 +25,72 @@ th {
 
 dt {
   padding: 2%;
+}
+
+/*Menú desplegable*/
+.menu {
+  overflow: hidden;
+  background-color: transparent;
+  font-family: retro;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 25px;
+}
+
+.menu a {
+  font-size: 16px;
+  color: rgba(255, 193, 7, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 25px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.menu a:hover,
+.dropdown:hover .dropbtn {
+  background-color: rgba(255, 193, 7, 255);
+  color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  max-width: 250px;
+  max-block-size: 400px;
+  z-index: 1;
+  color: black;
+  margin-bottom: 10%;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(255, 193, 7, 255);
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
