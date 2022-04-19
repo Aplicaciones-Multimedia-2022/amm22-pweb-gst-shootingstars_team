@@ -66,10 +66,11 @@ var volumenGeneral;
 var volgen;
 let sonido2 = new Audio();
 sonido2.src = "../media/cancion1.mp3";
+const suena = document.getElementById("logo_prin");
 
 
 
-document.body.addEventListener("click", function a() {
+suena.addEventListener("click", function a() {
   volumenGeneral = Number(localStorage.getItem("miVolumen"));
   sonido2.volume = volumenGeneral;
   if(sonido2.paused){
