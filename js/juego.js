@@ -237,8 +237,7 @@ function dibujar_fondo() {
 
 //////////////////////////////////////////
 //                                      //
-//    FUNCION PARA DETECTAR CUANDO UNA  //
-//    BALA CHOCA CONTRA UNA NAVE        //
+//    FUNCION PARA CREAR ENEMIGOS       //
 //                                      //
 //////////////////////////////////////////
 
