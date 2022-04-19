@@ -33,7 +33,7 @@ elegir_nave();
 var Nave = new Image();
 Nave.src = ruta_nave;
 var fondo = new Image();
-fondo.src = "../images/FondoCanvas2.png";
+fondo.src = "../img/FondoCanvas2.png";
 /*var dataImage = localStorage.getItem("'imgData'");
 bannerImg = document.getElementById('tableBanner');
 bannerImg.src = "data:image/png;base64," + dataImage;*/
@@ -66,11 +66,11 @@ window.onload = init;
 
 //Funcion para inicializar el programa{}
 function init() {
-  Enemigo.src = "../images/Ship2.png";
+  Enemigo.src = "../img/Ship2.png";
 
-  sonido_disparo.src = "../audio/SonidoDisparos/disparoNave.wav";
-  sonido_gameover.src = "../audio/sonidoGO.wav";
-  sonido_explosion_canvas.src = "../audio/explosion_contra_canvas.wav";
+  sonido_disparo.src = "../media/SonidoDisparos/disparoNave.wav";
+  sonido_gameover.src = "../media/sonidoGO.wav";
+  sonido_explosion_canvas.src = "../media/explosion_contra_canvas.wav";
 
   posEnemigoY = mycanvas.height / 2;
   posEnemigoX = mycanvas.width;
@@ -80,7 +80,7 @@ function init() {
 }
 
 function elegir_nave() {
-  ruta_nave = "../images/" + localStorage.getItem("miNave");
+  ruta_nave = "../img/" + localStorage.getItem("miNave");
 }
 
 //////////////////////////////////////////
@@ -101,7 +101,7 @@ function pintarEst() {
   est2 = new estrella(60, -15);
   est3 = new estrella(130, -15);
 
-  Estrella.src = "../images/estrella.png";
+  Estrella.src = "../img/estrella.png";
 
   ctx_2.drawImage(Estrella, est1.estX, est1.estY, 80, 80);
   ctx_2.drawImage(Estrella, est2.estX, est2.estY, 80, 80);
@@ -178,7 +178,7 @@ function Bala(bol_disparoX, bol_disparoY, imagenBala) {
 function pintarExp(x, y) {
   //PINTAMOS LA EPLOSION QUE APARECE CUANDO UNA BOLA CHOCA CONTRA NAVES ENEMIGAS
   var exp = new Image();
-  exp.src = "../images/explosion_m.png";
+  exp.src = "../img/explosion_m.png";
   ctx.drawImage(exp, x, y);
 }
 
@@ -204,7 +204,7 @@ function pintarNave() {
 
 function pintarBala() {
   // PINTAMOS Y ADEMAS ALMACENAMOS LAS BALAS O BOLAS CON LAS QUE DISPARAMOS
-  imagenBala.src = "../images/bala.png";
+  imagenBala.src = "../img/bala.png";
   for (var i = 0; i < shoots.length; i++) {
     if (shoots[i].bol_disparoX < game.width) {
       ctx.drawImage(imagenBala, shoots[i].bol_disparoX, shoots[i].bol_disparoY);
@@ -267,7 +267,7 @@ function detectarColision() {
         ) {
           // COMPROBAMOS SI COINCIDEN EN EL EJE Y, EL DISPARO ENTRE LA ALTURA DE LA NAVE
           pintarExp(shoots[k].bol_disparoX, enemies[l].posEnemigoY); // SI COINCIBE, ENTONCES PINTAMOS UNA EPLOSION QUE SIMULA LA DESTRUCCION DE LA NAVE
-          sonido_explosion.src = "../audio/sonidoExplosion.wav"; // AÑADIMOS LA RUTRA DEL SONIDO DE LA EPLOSION
+          sonido_explosion.src = "../media/sonidoExplosion.wav"; // AÑADIMOS LA RUTRA DEL SONIDO DE LA EPLOSION
           sonido_explosion.load(); // CARGAMOS EL SONIDO PARA QUE ESTE PUEDA SONAR
           contador++; // CONTADOR QUE SUMA PUNTOS SE INCREMENTA
           contador1 = contador; // CCOPIAMOS EL VALOR DE ESTE
@@ -475,7 +475,7 @@ const boton9 = document.getElementById("bvolver");
 const boton10 = document.getElementById("bportada");
 let sonido1 = new Audio();
 let espera;
-sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
+sonido1.src = "../media/click/39562__the-bizniss__mouse-click.wav";
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();

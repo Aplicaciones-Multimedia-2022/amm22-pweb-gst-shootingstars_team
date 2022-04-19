@@ -1,6 +1,6 @@
 #menu {
   overflow: hidden;
-  background-image: url("../images/FondoGeneral.png");
+  background-image: url("../img/FondoGeneral.png");
   justify-content: space-evenly;
   display: flex;
 }

@@ -7,7 +7,7 @@ const boton8 = document.getElementById("boton8");
 const boton9 = document.getElementById("bprejuego");
 let sonido1 = new Audio();
 let espera;
-sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
+sonido1.src = "../media/click/39562__the-bizniss__mouse-click.wav";
 
 window.onscroll = function () {
   myFunction();

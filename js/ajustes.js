@@ -12,13 +12,13 @@ const boton8 = document.getElementById("boton8");
 
 let sonido1 = new Audio();
 let espera;
-sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
+sonido1.src = "../media/click/39562__the-bizniss__mouse-click.wav";
 
 var ruta;
 var vol;
 var volu;
 let sonido2 = new Audio();
-sonido2.src = "../audio/cancion1.mp3";
+sonido2.src = "../media/cancion1.mp3";
 
 const barra = document.getElementById("mislider");
 
@@ -96,8 +96,6 @@ udateTime();
 
 setInterval(udateTime, 1000);
 
-
-
 //para la parte de personalizacion
 
 var canvas2 = document.getElementById("personalizacion");
@@ -140,7 +138,7 @@ nave4.addEventListener("click", function () {
   localStorage.setItem("miNave", ruta);
 });
 
-// para los botones de las distintas paginas 
+// para los botones de las distintas paginas
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();

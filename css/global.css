@@ -3,13 +3,13 @@
 /*Fuente pixel*/
 @font-face {
   font-family: retro;
-  src: url(../resources/Retro\ Gaming.ttf);
+  src: url(../res/Retro\ Gaming.ttf);
 }
 /*Foto de fondo*/
 
 /* Para el margen inferior de la página*/
 body {
-  background-image: url("../images/Webp.net-gifmaker\ \(1\).gif");
+  background-image: url("../img/Webp.net-gifmaker\ \(1\).gif");
   background-size: 1519px 753px;
   margin-bottom: 5%;
   background-repeat: repeat-y;
