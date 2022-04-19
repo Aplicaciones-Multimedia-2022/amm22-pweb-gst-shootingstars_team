@@ -11,7 +11,7 @@ const boton8 = document.getElementById("boton8");
 
 let sonido1 = new Audio();
 let espera;
-sonido1.src = "../media/click/39562__the-bizniss__mouse-click.wav";
+sonido1.src = "../media/click/mouse-click.wav";
 
 var ruta;
 var vol;

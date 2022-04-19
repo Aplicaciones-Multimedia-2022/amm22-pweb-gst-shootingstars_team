@@ -477,7 +477,7 @@ const boton9 = document.getElementById("bvolver");
 const boton10 = document.getElementById("bportada");
 let sonido1 = new Audio();
 let espera;
-sonido1.src = "../media/click/39562_the-bizniss_mouse-click.wav";
+sonido1.src = "../media/click/mouse-click.wav";
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();
