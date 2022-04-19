@@ -54,7 +54,7 @@ function redireccionar6() {
   location.replace("../html/ajustes.html");
 }
 function redireccionar8() {
-  location.replace("../html/portada.html");
+  location.replace("../html/Comojugar.html");
 }
 function redireccionar9() {
   location.replace("../html/prejuego.html");

@@ -12,7 +12,7 @@ body {
   background-image: url("../images/Webp.net-gifmaker\ \(1\).gif");
   background-size: 1519px 753px;
   margin-bottom: 5%;
-  background-repeat:  repeat-y;
+  background-repeat: repeat-y;
 }
 
 /*Segundos títulos*/
@@ -183,4 +183,25 @@ ul {
 li {
   margin-bottom: 20px;
   margin-left: 20px;
+}
+
+/*fecha y hora*/
+.date {
+  color: rgb(154, 154, 154);
+  font-family: retro;
+  border: transparent;
+  position: absolute;
+  left: 3%;
+  font-size: 15px;
+  margin-top: 3%;
+}
+
+.clock {
+  color: rgb(154, 154, 154);
+  font-family: retro;
+  border: transparent;
+  position: absolute;
+  left: 3%;
+  font-size: 15px;
+  margin-top: 6%;
 }

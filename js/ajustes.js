@@ -20,13 +20,11 @@ var volu;
 let sonido2 = new Audio();
 sonido2.src = "../audio/cancion1.mp3";
 
-const barra= document.getElementById("mislider");
-
+const barra = document.getElementById("mislider");
 
 // play.addEventListener("click", function(){
 //   sonido2.play();
 // });
-
 
 barra.addEventListener(
   "change",
@@ -39,10 +37,64 @@ barra.addEventListener(
   true
 );
 
+var udateTime = function () {
+  let currentDate = new Date(),
+    hours = currentDate.getHours(),
+    minutes = currentDate.getMinutes(),
+    seconds = currentDate.getSeconds(),
+    weekDay = currentDate.getDay(),
+    day = currentDate.getDay(),
+    month = currentDate.getMonth(),
+    year = currentDate.getFullYear();
 
+  const weekDays = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sabado",
+  ];
 
+  document.getElementById("weekDay").textContent = weekDays[weekDay];
+  document.getElementById("day").textContent = day;
 
+  const months = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
 
+  document.getElementById("month").textContent = months[month];
+  document.getElementById("year").textContent = year;
+
+  document.getElementById("hours").textContent = hours;
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+};
+
+udateTime();
+
+setInterval(udateTime, 1000);
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();
@@ -153,4 +205,3 @@ function redireccionar8() {
 function redireccionar7() {
   location.replace("../html/prejuego.html");
 }
-

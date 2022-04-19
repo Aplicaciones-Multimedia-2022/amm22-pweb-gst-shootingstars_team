@@ -5,7 +5,7 @@ var ctx_2 = mycanvas_dos.getContext("2d");
 var naveX = 0; //Coordenada en el eje X de la nave que manejamos
 var naveY = 0; //Coordenada en el eje Y de la nave que manejamos
 var nave_dispara = false;
-var nave_UP = false; 
+var nave_UP = false;
 var nave_DOWN = false;
 const borde = 10;
 var velocidad_nave = 5;
@@ -20,7 +20,7 @@ var puntmax = localStorage.getItem("max"); //Variable donde guardamos la puntuac
 var vidas_nave = 0; //Contador que evalua cuantas veces una nave enemiga choca contra el canvas, para saber las vidas que tenemos
 var overlay_go = document.getElementById("overlay_go"); //Variable para controlar la ventana emergente de GAME OVER
 var sonido_disparo = new Audio(); //Sonido del disparo, es decir, cada vez que disparamos una bala
-sonido_disparo.volume=0.2;
+sonido_disparo.volume = 0.2;
 var tiempo = 0;
 var final_nave;
 var posEnemigoY; //Coordenada en el eje X de la nave enemiga
@@ -45,35 +45,28 @@ var velocidad_enemigos = 5;
 var generar_enemigo = 1500;
 var contador2 = 0;
 var sonido_explosion = new Audio();
-sonido_explosion.volume=0.2;
+sonido_explosion.volume = 0.2;
 var fin_juego = false;
 var sonido_gameover = new Audio();
-sonido_gameover.volume=0.2;
+sonido_gameover.volume = 0.2;
 var sonido_explosion_canvas = new Audio();
-sonido_explosion_canvas.volume=0.2;
+sonido_explosion_canvas.volume = 0.2;
 var estX;
 var estY;
 var Estrella = new Image();
 
-
-
-
-
 var df = localStorage.getItem("dificultad");
-var namep = localStorage.getItem('nombre'); // Variable donde guardamos el nombre que hemos introducido en la pagina anterior
+var namep = localStorage.getItem("nombre"); // Variable donde guardamos el nombre que hemos introducido en la pagina anterior
 
 document.getElementById("usuario").innerHTML = namep; //Llamaremos a el contenido de la variable namep en el html con un id = usuario
 localStorage.removeItem("namep"); //Borramos el contenido de esta variable
-
 
 naveAux = new nave(naveX, naveY, Nave);
 window.onload = init;
 
 //Funcion para inicializar el programa{}
 function init() {
-
   Enemigo.src = "../images/Ship2.png";
-
 
   sonido_disparo.src = "../audio/SonidoDisparos/disparoNave.wav";
   sonido_gameover.src = "../audio/sonidoGO.wav";
@@ -84,14 +77,11 @@ function init() {
   final_nave = game.height - borde - alturanave;
   elegir_dificultad(df);
   //comenzar_fondo();
-
 }
 
 function elegir_nave() {
-  ruta_nave = "../images/" + localStorage.getItem('miNave');
+  ruta_nave = "../images/" + localStorage.getItem("miNave");
 }
-
-
 
 //////////////////////////////////////////
 //                                      //
@@ -99,12 +89,14 @@ function elegir_nave() {
 //                                      //
 //////////////////////////////////////////
 
-function estrella(estX, estY) { //CONSTRUCTOR DE ESTRELLAS
+function estrella(estX, estY) {
+  //CONSTRUCTOR DE ESTRELLAS
   this.estX = estX;
   this.estY = estY;
 }
 
-function pintarEst() { // PINTAMOS LAS TRES ESTRELLAS QUE SIMBOLIZAN LAS VIDAS QUE TENEMOS
+function pintarEst() {
+  // PINTAMOS LAS TRES ESTRELLAS QUE SIMBOLIZAN LAS VIDAS QUE TENEMOS
   est1 = new estrella(-10, -15);
   est2 = new estrella(60, -15);
   est3 = new estrella(130, -15);
@@ -116,7 +108,8 @@ function pintarEst() { // PINTAMOS LAS TRES ESTRELLAS QUE SIMBOLIZAN LAS VIDAS Q
   ctx_2.drawImage(Estrella, est3.estX, est3.estY, 80, 80);
 }
 
-function borrar_estrella() { // SE IRAN BORRANDO LAS ENTRELLAS A MEDIDA QUE LAS NAVES ENEMIGAS CHOQUEN CONTRA EN CANVAS (VIDAS_NAVE SE INCREMENTA CADA VEZ QUE OCURRE)
+function borrar_estrella() {
+  // SE IRAN BORRANDO LAS ENTRELLAS A MEDIDA QUE LAS NAVES ENEMIGAS CHOQUEN CONTRA EN CANVAS (VIDAS_NAVE SE INCREMENTA CADA VEZ QUE OCURRE)
   if (vidas_nave == 1) {
     ctx_2.clearRect(130, 0, vidas.width, vidas.height);
   } else if (vidas_nave == 2) {
@@ -127,7 +120,6 @@ function borrar_estrella() { // SE IRAN BORRANDO LAS ENTRELLAS A MEDIDA QUE LAS 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 //////////////////////////////////////////
 //                                      //
 //    FUNCION PARA CAMBIAR VARIABLES    //
@@ -135,7 +127,8 @@ function borrar_estrella() { // SE IRAN BORRANDO LAS ENTRELLAS A MEDIDA QUE LAS 
 //                                      //
 //////////////////////////////////////////
 
-function elegir_dificultad(dificultad) { //EN ESTA FUNCION SE CAMBIAN LAS VARIABLES VELOCIDAD ENEMIGOS Y EL TIEMPO QUE TARDAN EN GENERARSE DEPENDIENDO DE LA DIFICULTAD QUE HALLAMOS ELEGIDO.
+function elegir_dificultad(dificultad) {
+  //EN ESTA FUNCION SE CAMBIAN LAS VARIABLES VELOCIDAD ENEMIGOS Y EL TIEMPO QUE TARDAN EN GENERARSE DEPENDIENDO DE LA DIFICULTAD QUE HALLAMOS ELEGIDO.
   if (dificultad == 1) {
     velocidad_enemigos = 4;
     generar_enemigo = 1500;
@@ -154,7 +147,6 @@ function elegir_dificultad(dificultad) { //EN ESTA FUNCION SE CAMBIAN LAS VARIAB
 //           CONSTRUCTORES              //
 //                                      //
 //////////////////////////////////////////
-
 
 function enemigo(posEnemigoX, posEnemigoY, imagenEnemigo) {
   this.posEnemigoX = posEnemigoX;
@@ -177,20 +169,21 @@ function Bala(bol_disparoX, bol_disparoY, imagenBala) {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 //////////////////////////////////////////
 //                                      //
 //           PINTAR IMAGENES            //
 //                                      //
 //////////////////////////////////////////
 
-function pintarExp(x, y) { //PINTAMOS LA EPLOSION QUE APARECE CUANDO UNA BOLA CHOCA CONTRA NAVES ENEMIGAS
+function pintarExp(x, y) {
+  //PINTAMOS LA EPLOSION QUE APARECE CUANDO UNA BOLA CHOCA CONTRA NAVES ENEMIGAS
   var exp = new Image();
   exp.src = "../images/explosion_m.png";
   ctx.drawImage(exp, x, y);
 }
 
-function pintarEnemigo() { // PINTAMOS LAS NAVES ENEMIGAS
+function pintarEnemigo() {
+  // PINTAMOS LAS NAVES ENEMIGAS
   for (var j = 0; j < enemies.length; j++) {
     ctx.drawImage(
       enemies[j].imagenEnemigo,
@@ -204,11 +197,13 @@ function pintarEnemigo() { // PINTAMOS LAS NAVES ENEMIGAS
   }
 }
 
-function pintarNave() { // PINTAMOS NUESTRA NAVE, LA QUE MANEJAMOS
+function pintarNave() {
+  // PINTAMOS NUESTRA NAVE, LA QUE MANEJAMOS
   ctx.drawImage(naveAux.imagenNave, naveAux.naveX, naveAux.naveY);
 }
 
-function pintarBala() { // PINTAMOS Y ADEMAS ALMACENAMOS LAS BALAS O BOLAS CON LAS QUE DISPARAMOS
+function pintarBala() {
+  // PINTAMOS Y ADEMAS ALMACENAMOS LAS BALAS O BOLAS CON LAS QUE DISPARAMOS
   imagenBala.src = "../images/bala.png";
   for (var i = 0; i < shoots.length; i++) {
     if (shoots[i].bol_disparoX < game.width) {
@@ -261,14 +256,18 @@ function generarEnemigo() {
 //////////////////////////////////////////
 
 function detectarColision() {
-  for (var k = 0; k < shoots.length; k++) { // RECORREMOS EL ARRAY DE OBJETOS DONDE ESTAN ALMACENADOS LOS DIPAROS
-    for (var l = 0; l < enemies.length; l++) { // RECORREMOS EL ARRAY DE OBJETOS DONDE ESTAN ALMACENADOS LOS ENEMIGOS
-      if (shoots[k].bol_disparoX > enemies[l].posEnemigoX) { // COMPROBAMOS SI COINCIDEN EN EL EJE X LAS COORDENADAS X DE LOS DISPAROS Y ENEMIGOS
-        if ( 
-          shoots[k].bol_disparoY > enemies[l].posEnemigoY && 
+  for (var k = 0; k < shoots.length; k++) {
+    // RECORREMOS EL ARRAY DE OBJETOS DONDE ESTAN ALMACENADOS LOS DIPAROS
+    for (var l = 0; l < enemies.length; l++) {
+      // RECORREMOS EL ARRAY DE OBJETOS DONDE ESTAN ALMACENADOS LOS ENEMIGOS
+      if (shoots[k].bol_disparoX > enemies[l].posEnemigoX) {
+        // COMPROBAMOS SI COINCIDEN EN EL EJE X LAS COORDENADAS X DE LOS DISPAROS Y ENEMIGOS
+        if (
+          shoots[k].bol_disparoY > enemies[l].posEnemigoY &&
           shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74
-        ) { // COMPROBAMOS SI COINCIDEN EN EL EJE Y, EL DISPARO ENTRE LA ALTURA DE LA NAVE
-          pintarExp(shoots[k].bol_disparoX,enemies[l].posEnemigoY); // SI COINCIBE, ENTONCES PINTAMOS UNA EPLOSION QUE SIMULA LA DESTRUCCION DE LA NAVE
+        ) {
+          // COMPROBAMOS SI COINCIDEN EN EL EJE Y, EL DISPARO ENTRE LA ALTURA DE LA NAVE
+          pintarExp(shoots[k].bol_disparoX, enemies[l].posEnemigoY); // SI COINCIBE, ENTONCES PINTAMOS UNA EPLOSION QUE SIMULA LA DESTRUCCION DE LA NAVE
           sonido_explosion.src = "../audio/sonidoExplosion.wav"; // AÑADIMOS LA RUTRA DEL SONIDO DE LA EPLOSION
           sonido_explosion.load(); // CARGAMOS EL SONIDO PARA QUE ESTE PUEDA SONAR
           contador++; // CONTADOR QUE SUMA PUNTOS SE INCREMENTA
@@ -276,7 +275,6 @@ function detectarColision() {
           enemies.splice(l, 1); // BORRAMOS EL ENEMIGO EL CUAL HA SIDO CHOCADO CONTRA EL DISPARO
           shoots.splice(k, 1); // BORRAMOS EL DISPARO EL CUAL HA SIDO CHOCADO CONTRA EL ENEMIGO
           sonido_explosion.play(); // SUENA EL SONIDO DE LA EPLOSION
-
         }
       }
     }
@@ -293,9 +291,7 @@ function detectarColision() {
   document.getElementById("puntmax").innerHTML = puntmax;
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 //////////////////////////////////////////
 //                                      //
@@ -303,11 +299,14 @@ function detectarColision() {
 //                                      //
 //////////////////////////////////////////
 
-function muerte() { //LO QUE HACE ESTA FUNCION ES ALMACENAR EN UN CONTADOR LAS VECES QUE LA NAVE ENEMIGA CHOCA CONTRA EL CANVAS,
-                    //ADEMAS AÑADE SONIDO DE UNA EPLOSION PARA CUANDO ESTO PASE.
-  for (var l = 0; l < enemies.length; l++) {  //RECORREMOS TODO EL ARRAY DE ENEMIGOS
+function muerte() {
+  //LO QUE HACE ESTA FUNCION ES ALMACENAR EN UN CONTADOR LAS VECES QUE LA NAVE ENEMIGA CHOCA CONTRA EL CANVAS,
+  //ADEMAS AÑADE SONIDO DE UNA EPLOSION PARA CUANDO ESTO PASE.
+  for (var l = 0; l < enemies.length; l++) {
+    //RECORREMOS TODO EL ARRAY DE ENEMIGOS
     if (fin_juego == false) {
-      if (enemies[l].posEnemigoX < 1) { //COMPROBAMOS SI ALGUNA NAVE ENEMIGA TOCA EL FONDO DEL CANVAS
+      if (enemies[l].posEnemigoX < 1) {
+        //COMPROBAMOS SI ALGUNA NAVE ENEMIGA TOCA EL FONDO DEL CANVAS
         vidas_nave++; // SI ESTO PASA, PERDEMOS UN AVIDA, POR LO QUE SE INCREMENTA EL CONTADOR DE VIDAS_NAVE
         sonido_explosion_canvas.pause(); //
         sonido_explosion_canvas.load(); // CARGAMOS EL SONIDO DE EXPLOSION CONTRA EL CANVAS PARA QUE SUENE EN ESTA SITUACION
@@ -319,13 +318,10 @@ function muerte() { //LO QUE HACE ESTA FUNCION ES ALMACENAR EN UN CONTADOR LAS V
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 //
 function pausajuego() {
   fin_juego = true;
 }
-
-
 
 //////////////////////////////////////////
 //                                      //
@@ -333,7 +329,8 @@ function pausajuego() {
 //                                      //
 //////////////////////////////////////////
 
-function draw() { //Utilizamos esta funcion para dibujar el movimiento
+function draw() {
+  //Utilizamos esta funcion para dibujar el movimiento
   ctx.clearRect(0, 0, game.width, game.height); // limpiar canvas
   dibujar_fondo();
   pintarNave(); //llamamos a la funcion pintarNave
@@ -356,8 +353,6 @@ function draw() { //Utilizamos esta funcion para dibujar el movimiento
     naveAux.naveY += naveAux.velocidad_nave;
   }
 
-
-
   if (vidas_nave == 3) {
     if (fin_juego == false) {
       sonido_gameover.play();
@@ -371,18 +366,6 @@ function draw() { //Utilizamos esta funcion para dibujar el movimiento
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -420,7 +403,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function(e) {
+  function (e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -469,7 +452,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function(e) {
+  function (e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -482,86 +465,141 @@ if (fin_juego == false) {
   setInterval(generarEnemigo, generar_enemigo);
 }
 
-
-
-
-const boton1= document.getElementById("boton1");
-const boton2= document.getElementById("boton2");
-const boton3= document.getElementById("boton3");
-const boton4= document.getElementById("boton4");
-const boton5= document.getElementById("boton5");
-const boton6= document.getElementById("bajustes");
-const boton8= document.getElementById("boton8");
-const boton9= document.getElementById("bvolver");
-const boton10= document.getElementById("bportada");
+const boton1 = document.getElementById("boton1");
+const boton2 = document.getElementById("boton2");
+const boton3 = document.getElementById("boton3");
+const boton4 = document.getElementById("boton4");
+const boton5 = document.getElementById("boton5");
+const boton6 = document.getElementById("bajustes");
+const boton8 = document.getElementById("boton8");
+const boton9 = document.getElementById("bvolver");
+const boton10 = document.getElementById("bportada");
 let sonido1 = new Audio();
 let espera;
-sonido1.src="../audio/click/39562__the-bizniss__mouse-click.wav";
+sonido1.src = "../audio/click/39562__the-bizniss__mouse-click.wav";
 
-boton1.addEventListener("click",function uno(){
+boton1.addEventListener("click", function uno() {
   sonido1.play();
   espera = setTimeout(redireccionar1, 400);
 });
-boton2.addEventListener("click",function dos(){
-sonido1.play();
-espera = setTimeout(redireccionar2, 400);
+boton2.addEventListener("click", function dos() {
+  sonido1.play();
+  espera = setTimeout(redireccionar2, 400);
 });
-boton3.addEventListener('click',function tres(){
-sonido1.play();
-espera = setTimeout(redireccionar3, 400);
+boton3.addEventListener("click", function tres() {
+  sonido1.play();
+  espera = setTimeout(redireccionar3, 400);
 });
-boton4.addEventListener('click',function cuatro(){
-sonido1.play();
-espera = setTimeout(redireccionar4, 400);
+boton4.addEventListener("click", function cuatro() {
+  sonido1.play();
+  espera = setTimeout(redireccionar4, 400);
 });
-boton5.addEventListener('click',function cinco(){
-sonido1.play();
-espera = setTimeout(redireccionar5, 400);
+boton5.addEventListener("click", function cinco() {
+  sonido1.play();
+  espera = setTimeout(redireccionar5, 400);
 });
-boton6.addEventListener('click',function seis(){
-sonido1.play();
-espera = setTimeout(redireccionar6, 400);
+boton6.addEventListener("click", function seis() {
+  sonido1.play();
+  espera = setTimeout(redireccionar6, 400);
 });
-boton8.addEventListener('click',function ocho(){
-sonido1.play();
-espera = setTimeout(redireccionar8, 400);
+boton8.addEventListener("click", function ocho() {
+  sonido1.play();
+  espera = setTimeout(redireccionar8, 400);
 });
-boton9.addEventListener('click',function nueve(){
-sonido1.play();
-espera = setTimeout(redireccionar9, 400);
+boton9.addEventListener("click", function nueve() {
+  sonido1.play();
+  espera = setTimeout(redireccionar9, 400);
 });
-boton10.addEventListener('click',function diez(){
-sonido1.play();
-espera = setTimeout(redireccionar10, 400);
+boton10.addEventListener("click", function diez() {
+  sonido1.play();
+  espera = setTimeout(redireccionar10, 400);
 });
 
+function redireccionar1() {
+  location.replace("../html/ComoJugar.html");
+}
+function redireccionar2() {
+  location.replace("../html/autores.html");
+}
+function redireccionar3() {
+  location.replace("../html/multimedia.html");
+}
+function redireccionar4() {
+  location.replace("../html/desarrollo.html");
+}
+function redireccionar5() {
+  location.replace("../html/referencias.html");
+}
+function redireccionar6() {
+  location.replace("../html/ajustes.html");
+}
+function redireccionar8() {
+  location.replace("../html/portada.html");
+}
+function redireccionar9() {
+  location.replace("../html/juego.html");
+}
+function redireccionar10() {
+  location.replace("../html/portada.html");
+}
 
+////////// Código para mostrar la hora
 
+var udateTime = function () {
+  let currentDate = new Date(),
+    hours = currentDate.getHours(),
+    minutes = currentDate.getMinutes(),
+    seconds = currentDate.getSeconds(),
+    weekDay = currentDate.getDay(),
+    day = currentDate.getDay(),
+    month = currentDate.getMonth(),
+    year = currentDate.getFullYear();
 
-function redireccionar1(){
-location.replace("../html/ComoJugar.html")
-}
-function redireccionar2(){
-location.replace("../html/autores.html")
-}
-function redireccionar3(){
-location.replace("../html/multimedia.html")
-}
-function redireccionar4(){
-location.replace("../html/desarrollo.html")
-}
-function redireccionar5(){
-location.replace("../html/referencias.html")
-}
-function redireccionar6(){
-location.replace("../html/ajustes.html")
-}
-function redireccionar8(){
-location.replace("../html/portada.html")
-}
-function redireccionar9(){
-location.replace("../html/juego.html")
-}
-function redireccionar10(){
-location.replace("../html/portada.html")
-}
+  const weekDays = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sabado",
+  ];
+
+  document.getElementById("weekDay").textContent = weekDays[weekDay];
+  document.getElementById("day").textContent = day;
+
+  const months = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+
+  document.getElementById("month").textContent = months[month];
+  document.getElementById("year").textContent = year;
+
+  document.getElementById("hours").textContent = hours;
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+};
+
+udateTime();
+
+setInterval(udateTime, 1000);
