@@ -213,6 +213,11 @@ function pintarBala() {
     }
   }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////
+// FUNCION PARA DIBUJAR FONDO ANIMADO //
+////////////////////////////////////////
 
 function dibujar_fondo() {
   ctx.drawImage(fondo, tiempo, 0);
@@ -552,10 +557,10 @@ document.body.addEventListener("click", function a() {
   sonido2.volume = volumenGeneral;
   if(sonido2.paused){
     sonido2.play();
-    
+
   } else {
     sonido2.pause();
-   
+
   }
 
 });
