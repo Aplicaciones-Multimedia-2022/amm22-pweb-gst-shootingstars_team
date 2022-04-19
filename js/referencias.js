@@ -60,32 +60,40 @@ function redireccionar9() {
   location.replace("../html/prejuego.html");
 }
 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function openPage(pageName, elmnt, color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
 
-
-
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+/*Sonidos */
 var volumenGeneral;
 var volgen;
 let sonido2 = new Audio();
 sonido2.src = "../media/cancion1.mp3";
 const suena = document.getElementById("logo_prin");
 
-
-
 suena.addEventListener("click", function a() {
   volumenGeneral = Number(localStorage.getItem("miVolumen"));
   sonido2.volume = volumenGeneral;
-  if(sonido2.paused){
+  if (sonido2.paused) {
     sonido2.play();
-    
   } else {
     sonido2.pause();
-   
   }
-
 });
-
-
-
 
 var udateTime = function () {
   let currentDate = new Date(),
