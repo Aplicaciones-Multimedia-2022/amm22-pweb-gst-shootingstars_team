@@ -98,6 +98,34 @@
   }
 }
 
+/*Mensaje emergente*/
+
+#play .msj {
+  visibility: hidden;
+  width: 110px;
+  background-color: #ffc107;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0;
+  position: absolute;
+  z-index: 1;
+  font-family: retro;
+}
+
+#play .msj::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #ffc107 transparent transparent;
+}
+#play:hover .msj {
+  visibility: visible;
+}
 /*Aunque ya sale, otra configuracion para el slider es esta*/
 /*
 #mislider {
