@@ -1,0 +1,12 @@
+<?php
+session_start();
+    if(!isset($_SESSION['time'])){
+        $_SESSION['time']=array($_GET['hour'],$_GET['minute'],$_GET['segund']);
+    }else{
+        $duree=$_GET['hour']*3600+$_GET['minute']*60+$_GET['segund'];
+        $session=intval($_SESSION['time'][0])*3600+intval($_SESSION['time'][1])*60+intval($_SESSION['time'][2]);
+        if($session<$duree){
+            $_SESSION['time']=array($_GET['hour'],$_GET['minute'],$_GET['segund']);
+        }
+    }
+?>
