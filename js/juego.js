@@ -8,9 +8,9 @@ var nave_dispara = false;
 var nave_UP = false;
 var nave_DOWN = false;
 const borde = 10;
-var velocidad_nave = 5;
+var velocidad_nave = 10;
 var alturanave = 70;
-var bol_disparoX = 20;
+var bol_disparoX = 30;
 var bol_disparoY;
 var bol_disparoY;
 var enemigoLlega = false;
@@ -54,6 +54,8 @@ sonido_explosion_canvas.volume = 0.2;
 var estX;
 var estY;
 var Estrella = new Image();
+var exp = new Image();
+exp.src = "../img/explosion_m.png";
 
 var df = localStorage.getItem("dificultad");
 var namep = localStorage.getItem("nombre"); // Variable donde guardamos el nombre que hemos introducido en la pagina anterior
@@ -130,13 +132,13 @@ function borrar_estrella() {
 function elegir_dificultad(dificultad) {
   //EN ESTA FUNCION SE CAMBIAN LAS VARIABLES VELOCIDAD ENEMIGOS Y EL TIEMPO QUE TARDAN EN GENERARSE DEPENDIENDO DE LA DIFICULTAD QUE HALLAMOS ELEGIDO.
   if (dificultad == 1) {
-    velocidad_enemigos = 4;
+    velocidad_enemigos = 9;
     generar_enemigo = 1500;
   } else if (dificultad == 2) {
-    velocidad_enemigos = 6;
+    velocidad_enemigos = 11;
     generar_enemigo = 1000;
   } else if (dificultad == 3) {
-    velocidad_enemigos = 10;
+    velocidad_enemigos = 15;
     generar_enemigo = 500;
   }
 }
@@ -158,7 +160,7 @@ function nave(naveX, naveY, imagenNave, velocidad_nave) {
   this.naveX = naveX;
   this.naveY = naveY;
   this.imagenNave = imagenNave;
-  this.velocidad_nave = 5;
+  this.velocidad_nave = 10;
 }
 
 function Bala(bol_disparoX, bol_disparoY, imagenBala) {
@@ -175,12 +177,6 @@ function Bala(bol_disparoX, bol_disparoY, imagenBala) {
 //                                      //
 //////////////////////////////////////////
 
-function pintarExp(x, y) {
-  //PINTAMOS LA EPLOSION QUE APARECE CUANDO UNA BOLA CHOCA CONTRA NAVES ENEMIGAS
-  var exp = new Image();
-  exp.src = "../img/explosion_m.png";
-  ctx.drawImage(exp, x, y);
-}
 
 function pintarEnemigo() {
   // PINTAMOS LAS NAVES ENEMIGAS
@@ -208,7 +204,7 @@ function pintarBala() {
   for (var i = 0; i < shoots.length; i++) {
     if (shoots[i].bol_disparoX < game.width) {
       ctx.drawImage(imagenBala, shoots[i].bol_disparoX, shoots[i].bol_disparoY);
-      shoots[i].bol_disparoX += 8;
+      shoots[i].bol_disparoX += 10;
     } else {
       shoots.splice(i, 1);
       if (shoots.length == 0) {
@@ -266,7 +262,8 @@ function detectarColision() {
           shoots[k].bol_disparoY < enemies[l].posEnemigoY + 74
         ) {
           // COMPROBAMOS SI COINCIDEN EN EL EJE Y, EL DISPARO ENTRE LA ALTURA DE LA NAVE
-          pintarExp(shoots[k].bol_disparoX, enemies[l].posEnemigoY); // SI COINCIBE, ENTONCES PINTAMOS UNA EPLOSION QUE SIMULA LA DESTRUCCION DE LA NAVE
+          ctx.drawImage(exp, enemies[l].posEnemigoX, enemies[l].posEnemigoY);
+          //pintarExp(shoots[k].bol_disparoX, enemies[l].posEnemigoY); // SI COINCIBE, ENTONCES PINTAMOS UNA EPLOSION QUE SIMULA LA DESTRUCCION DE LA NAVE
           sonido_explosion.src = "../media/sonidoExplosion.wav"; // AÑADIMOS LA RUTRA DEL SONIDO DE LA EPLOSION
           sonido_explosion.load(); // CARGAMOS EL SONIDO PARA QUE ESTE PUEDA SONAR
           contador++; // CONTADOR QUE SUMA PUNTOS SE INCREMENTA
@@ -459,7 +456,7 @@ window.addEventListener(
   false
 );
 
-setInterval(draw, 10);
+setInterval(draw, 20);
 if (fin_juego == false) {
   setInterval(generarEnemigo, generar_enemigo);
 }
@@ -475,7 +472,7 @@ const boton9 = document.getElementById("bvolver");
 const boton10 = document.getElementById("bportada");
 let sonido1 = new Audio();
 let espera;
-sonido1.src = "../media/click/39562__the-bizniss__mouse-click.wav";
+sonido1.src = "../media/click/39562_the-bizniss_mouse-click.wav";
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();
