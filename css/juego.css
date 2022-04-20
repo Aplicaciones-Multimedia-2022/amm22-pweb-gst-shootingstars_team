@@ -57,6 +57,7 @@ p {
   align-items: center;
   justify-content: center;
   visibility: hidden;
+  margin-bottom: 40px;
 }
 
 .overlay_go.active {
