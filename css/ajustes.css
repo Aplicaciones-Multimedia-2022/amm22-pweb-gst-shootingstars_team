@@ -8,7 +8,7 @@
 
 #personalizacion {
   width: 500;
-  height: 400;
+  height: 420;
   padding-right: 0;
   padding-left: 0;
   display: block;
@@ -118,3 +118,5 @@
 #play:hover .msj {
   visibility: visible;
 }
+
+
