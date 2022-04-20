@@ -1,3 +1,11 @@
+//////////////////////////////////////////
+//                                      //
+//   FUNCIONES PARA BOTONES             //
+//                                      //
+//////////////////////////////////////////
+
+// BOTONES 1,2,3,4,5,6,8 SON LOS BOTONES DE AJUSTES Y LA NAV BAR
+
 const boton1 = document.getElementById("boton1");
 const boton3 = document.getElementById("boton3");
 const boton4 = document.getElementById("boton4");
@@ -8,6 +16,8 @@ const boton9 = document.getElementById("bprejuego");
 let sonido1 = new Audio();
 let espera;
 sonido1.src = "../media/click/mouse-click.wav";
+
+// FUNCIONES PARA HACER QUE SUENE AL PULSAR Y HACER UNA PEQUEÑA ESPERA
 
 boton1.addEventListener("click", function uno() {
   sonido1.play();
@@ -60,6 +70,14 @@ function redireccionar9() {
   location.replace("../html/prejuego.html");
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+//                                      //
+//      VOLUNEN Y MUSICA DEL JUEGO      //
+//                                      //
+//////////////////////////////////////////
+
 var volumenGeneral;
 var volgen;
 let sonido2 = new Audio();
@@ -75,6 +93,14 @@ suena.addEventListener("click", function a() {
     sonido2.pause();
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+//                                      //
+//        FUNCION PARA LA HORA          //
+//                                      //
+//////////////////////////////////////////
 
 var udateTime = function () {
   let currentDate = new Date(),

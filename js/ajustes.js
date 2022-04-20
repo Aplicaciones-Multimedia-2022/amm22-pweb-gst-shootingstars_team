@@ -1,4 +1,10 @@
-var contador = 0;
+//////////////////////////////////////////
+//                                      //
+//   FUNCIONES PARA BOTONES             //
+//                                      //
+//////////////////////////////////////////
+
+// BOTONES 1,2,3,4,5,6,8 SON LOS BOTONES DE AJUSTES Y LA NAV BAR
 
 const boton1 = document.getElementById("boton1");
 const boton2 = document.getElementById("boton2");
@@ -8,9 +14,71 @@ const boton5 = document.getElementById("boton5");
 const boton7 = document.getElementById("bjuego");
 const boton8 = document.getElementById("boton8");
 
+// FUNCIONES PARA HACER QUE SUENE AL PULSAR Y HACER UNA PEQUEÑA ESPERA
+
 let sonido1 = new Audio();
 let espera;
 sonido1.src = "../media/click/mouse-click.wav";
+
+boton1.addEventListener("click", function uno() {
+  sonido1.play();
+  espera = setTimeout(redireccionar1, 400);
+});
+boton2.addEventListener("click", function dos() {
+  sonido1.play();
+  espera = setTimeout(redireccionar2, 400);
+});
+boton3.addEventListener("click", function tres() {
+  sonido1.play();
+  espera = setTimeout(redireccionar3, 400);
+});
+boton4.addEventListener("click", function cuatro() {
+  sonido1.play();
+  espera = setTimeout(redireccionar4, 400);
+});
+boton5.addEventListener("click", function cinco() {
+  sonido1.play();
+  espera = setTimeout(redireccionar5, 400);
+});
+boton8.addEventListener("click", function ocho() {
+  sonido1.play();
+  espera = setTimeout(redireccionar8, 400);
+});
+boton7.addEventListener("click", function siete() {
+  sonido1.play();
+  espera = setTimeout(redireccionar7, 400);
+});
+
+function redireccionar1() {
+  location.replace("../html/ComoJugar.html");
+}
+function redireccionar2() {
+  location.replace("../html/autores.html");
+}
+function redireccionar3() {
+  location.replace("../html/multimedia.html");
+}
+function redireccionar4() {
+  location.replace("../html/desarrollo.html");
+}
+function redireccionar5() {
+  location.replace("../html/referencias.html");
+}
+function redireccionar8() {
+  location.replace("../html/portada.html");
+}
+function redireccionar7() {
+  location.replace("../html/prejuego.html");
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+//                                      //
+//      VOLUNEN Y MUSICA DEL JUEGO      //
+//                                      //
+//////////////////////////////////////////
+
 
 var ruta;
 var vol;
@@ -44,6 +112,14 @@ play.addEventListener("click", function a() {
     sonido2.pause();
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+//                                      //
+//        FUNCION PARA LA HORA          //
+//                                      //
+//////////////////////////////////////////
 
 var udateTime = function () {
   let currentDate = new Date(),
@@ -104,12 +180,18 @@ udateTime();
 
 setInterval(udateTime, 1000);
 
-//para la parte de personalizacion
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+//                                      //
+//     FUNCION PARA ELEGIR NAVES        //
+//                                      //
+//////////////////////////////////////////
 
 var canvas2 = document.getElementById("personalizacion");
 var ctx2 = canvas2.getContext("2d");
 
-//para guardar la eleccion de nave
+//PARA GUARDAR LA ELECCION DE LAS NAVES
 
 nave1.addEventListener("click", function () {
   sonido1.play();
@@ -146,55 +228,3 @@ nave4.addEventListener("click", function () {
   localStorage.setItem("miNave", ruta);
 });
 
-// para los botones de las distintas paginas
-
-boton1.addEventListener("click", function uno() {
-  sonido1.play();
-  espera = setTimeout(redireccionar1, 400);
-});
-boton2.addEventListener("click", function dos() {
-  sonido1.play();
-  espera = setTimeout(redireccionar2, 400);
-});
-boton3.addEventListener("click", function tres() {
-  sonido1.play();
-  espera = setTimeout(redireccionar3, 400);
-});
-boton4.addEventListener("click", function cuatro() {
-  sonido1.play();
-  espera = setTimeout(redireccionar4, 400);
-});
-boton5.addEventListener("click", function cinco() {
-  sonido1.play();
-  espera = setTimeout(redireccionar5, 400);
-});
-boton8.addEventListener("click", function ocho() {
-  sonido1.play();
-  espera = setTimeout(redireccionar8, 400);
-});
-boton7.addEventListener("click", function siete() {
-  sonido1.play();
-  espera = setTimeout(redireccionar7, 400);
-});
-
-function redireccionar1() {
-  location.replace("../html/ComoJugar.html");
-}
-function redireccionar2() {
-  location.replace("../html/autores.html");
-}
-function redireccionar3() {
-  location.replace("../html/multimedia.html");
-}
-function redireccionar4() {
-  location.replace("../html/desarrollo.html");
-}
-function redireccionar5() {
-  location.replace("../html/referencias.html");
-}
-function redireccionar8() {
-  location.replace("../html/portada.html");
-}
-function redireccionar7() {
-  location.replace("../html/prejuego.html");
-}
