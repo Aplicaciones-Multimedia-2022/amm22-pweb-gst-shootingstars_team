@@ -1,3 +1,10 @@
+
+//////////////////////////////////////////
+//                                      //
+//   FUNCIONES PARA BOTONES             //
+//                                      //
+//////////////////////////////////////////
+
 const boton1 = document.getElementById("boton1");
 const boton2 = document.getElementById("boton2");
 const boton3 = document.getElementById("boton3");
@@ -61,7 +68,13 @@ function redireccionar9() {
 }
 
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////
+//                                      //
+//      VOLUNEN Y MUSICA DEL JUEGO      //
+//                                      //
+//////////////////////////////////////////
 
 var volumenGeneral;
 var volgen;

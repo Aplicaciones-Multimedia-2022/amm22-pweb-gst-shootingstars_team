@@ -50,7 +50,7 @@ p {
   visibility: visible;
 }
 .ventana {
-  border: 2px solid rgba(255, 193, 7, 255);
+  border: 17px solid rgba(255, 193, 7, 255);
   width: 1200;
   height: 621;
 }
@@ -175,4 +175,17 @@ p {
 .namee {
   color: white;
   width: 220px;
+}
+
+/*Botones*/
+.divcontroles {
+  text-align: center;
+  /* margin: 10; */
+  padding: 0 40px;
+  margin-top: 50;
+}
+
+
+html{
+  height: 97%;
 }
