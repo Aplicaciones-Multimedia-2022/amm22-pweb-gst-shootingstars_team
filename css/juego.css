@@ -177,6 +177,14 @@ p {
   width: 220px;
 }
 
+/*Botones*/
+.divcontroles {
+  text-align: center;
+  /* margin: 10; */
+  padding: 0 40px;
+  margin-top: 50;
+}
+
 
 html{
   height: 97%;
