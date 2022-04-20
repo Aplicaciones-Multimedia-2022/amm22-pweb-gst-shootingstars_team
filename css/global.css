@@ -271,9 +271,9 @@ th {
 /*Botones*/
 .divcontroles {
   text-align: center;
-  margin: 10;
+  /* margin: 10; */
   padding: 0 40px;
-  margin-top: 150;
+  margin-top: 50;
 }
 /*listas*/
 ul {
@@ -315,5 +315,5 @@ li {
   font-family: retro;
   color: rgb(154, 154, 154);
   text-align: center;
-  
+  float: center;
 }
