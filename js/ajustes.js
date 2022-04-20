@@ -191,7 +191,7 @@ setInterval(udateTime, 1000);
 var canvas2 = document.getElementById("personalizacion");
 var ctx2 = canvas2.getContext("2d");
 
-//para guardar la eleccion de nave
+//PARA GUARDAR LA ELECCION DE LAS NAVES
 
 nave1.addEventListener("click", function () {
   sonido1.play();
