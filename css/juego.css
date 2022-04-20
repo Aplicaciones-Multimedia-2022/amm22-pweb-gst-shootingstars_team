@@ -1,25 +1,35 @@
+/*Canvas juego*/
 #game {
   padding-left: 0;
   padding-right: 0;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  /*background-image: url(../images/FondoCanvas.png);*/
-
   border-top: 10px solid rgba(255, 193, 7, 255);
   border-left: 10px solid rgba(255, 193, 7, 255);
   border-right: 10px solid rgba(255, 193, 7, 255);
   border-bottom: 10px solid rgba(255, 193, 7, 255);
 }
+
 .divJuego {
   float: left;
 }
+
+.jueg0 {
+  height: 450;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/*Puntuaciones*/
 .divpuntuaciones {
   float: right;
   height: 420px;
   width: 220px;
   margin-right: 7%;
 }
+
 .tabla {
   width: 100%;
   border-collapse: separate;
@@ -27,6 +37,7 @@
   margin: auto;
 }
 
+/*Texto*/
 p {
   font-family: retro;
   color: white;
@@ -34,6 +45,7 @@ p {
   font-size: 20px;
 }
 
+/*GAME OVER*/
 .overlay_go {
   background-image: url("../img/Webp.net-gifmaker\ \(1\).gif");
   position: fixed;
@@ -46,32 +58,16 @@ p {
   justify-content: center;
   visibility: hidden;
 }
+
 .overlay_go.active {
   visibility: visible;
 }
+
 .ventana {
   border: 17px solid rgba(255, 193, 7, 255);
   width: 1200;
   height: 621;
 }
-.extra {
-  float: right;
-}
-.estrella {
-  width: 220px;
-  margin-right: 5px;
-}
-#vidas {
-  display: block;
-  background-color: transparent;
-}
-.jueg0 {
-  height: 450;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
 
 .go {
   text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
@@ -98,7 +94,6 @@ p {
   --color-tertiary: #f28b7d;
   --color-quaternary: #f07a6a;
   --color-quinary: #ee6352;
-  
 }
 
 @keyframes shadows {
@@ -165,27 +160,36 @@ p {
   }
 }
 
+/*Vidas*/
+.extra {
+  float: right;
+}
 
+.estrella {
+  width: 220px;
+  margin-right: 5px;
+}
+
+#vidas {
+  display: block;
+  background-color: transparent;
+}
+
+/*Puntuación*/
 #contador1 {
   font-family: retro;
   color: white;
   text-align: center;
   font-size: 50px;
 }
-.namee {
-  color: white;
-  width: 220px;
-}
 
-/*Botones*/
+/*Botones Game Over*/
 .divcontroles {
   text-align: center;
-  /* margin: 10; */
   padding: 0 40px;
   margin-top: 50;
 }
 
-
-html{
+html {
   height: 97%;
 }

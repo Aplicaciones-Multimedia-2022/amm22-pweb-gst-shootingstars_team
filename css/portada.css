@@ -1,3 +1,4 @@
+/*Logo principal*/
 .divlogo {
   background-position: center;
   margin: 10;
@@ -14,15 +15,14 @@
   background-size: 5vh;
 }
 
+/*Botones*/
 .divcontroles {
   text-align: center;
-  margin: 10; 
+  margin: 10;
   padding: 0 40px;
   margin-top: 150;
 }
 
-html{
+html {
   height: 97%;
 }
-
-

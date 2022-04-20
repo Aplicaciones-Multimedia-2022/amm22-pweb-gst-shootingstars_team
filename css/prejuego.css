@@ -1,3 +1,4 @@
+/*Texto*/
 p {
   color: white;
   font-size: 23px;
@@ -9,6 +10,7 @@ p {
   text-align: center;
 }
 
+/*Animaciones laterales*/
 #div_izq {
   padding-left: 0;
   padding-right: 0;
@@ -35,6 +37,7 @@ p {
   border-bottom: 10px transparent;
 }
 
+/*Nombre usuario*/
 .botoncito {
   text-align: center;
   margin-bottom: 40px;
@@ -55,16 +58,19 @@ p {
   padding-right: 40px;
 }
 
+/*Elegir nivel*/
 .botones_jugabilidad {
   text-align: center;
 }
 
+/*Botón información nivel*/
 .btn {
   background: transparent;
   border: transparent;
   background-position: center;
   cursor: pointer;
 }
+
 .mando_ayuda {
   display: flex;
   margin-left: auto;
@@ -83,10 +89,8 @@ p {
   align-items: center;
   justify-content: center;
   visibility: hidden;
-
 }
 
 .overlay.active {
   visibility: visible;
- 
 }

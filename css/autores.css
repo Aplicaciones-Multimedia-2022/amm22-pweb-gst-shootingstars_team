@@ -1,12 +1,17 @@
+/*Tabla autores*/
 .tabla {
   width: 100%;
   border-collapse: separate;
   border-spacing: 10px;
   margin: auto;
 }
+
+/*Imágenes miembros*/
 .imagenes {
   margin-bottom: 20px;
 }
+
+/*Contacto miembros*/
 .contacto {
   outline: none;
   text-decoration: none;

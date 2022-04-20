@@ -1,6 +1,6 @@
+/*Menú Sticky*/
 #menu {
   overflow: hidden;
-  background-image: url("../img/FondoGeneral.png");
   justify-content: space-evenly;
   display: flex;
 }
@@ -31,13 +31,7 @@
   color: black;
 }
 
-.referencias {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 10px;
-  margin: auto;
-}
-
+/*Texto y apartados*/
 p {
   color: rgba(255, 193, 7, 255);
   font-size: 15px;
@@ -57,14 +51,12 @@ p {
   text-align: center;
 }
 
-.tecnicaslistas {
-  list-style-type: none;
-}
-
+/*Texto negrita*/
 b {
   text-decoration: underline;
 }
 
+/*Texto solución*/
 .solucion {
   color: rgb(190, 190, 190);
   font-size: 15px;

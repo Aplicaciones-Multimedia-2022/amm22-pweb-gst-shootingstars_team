@@ -1,28 +1,16 @@
-#ajustes_audio {
-  padding-right: 0;
-  padding-left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  border-bottom: 10px solid #ffc107;
-  border-right: 10px solid #ffc107;
-  border-top: 10px solid #ffc107;
-  border-left: 10px solid #ffc107;
-}
-
+/*Elección de nave*/
 .divpersonalizacion {
   height: 450;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 #personalizacion {
   width: 500;
   height: 400;
   padding-right: 0;
   padding-left: 0;
-  /*margin-left: 25%;
-  margin-right: 30%;*/
   display: block;
   border-bottom: 10px solid #ffc107;
   border-right: 10px solid #ffc107;
@@ -31,6 +19,7 @@
   float: left;
 }
 
+/*Elección nave: botones*/
 .boton2 {
   border: 0px;
   font-family: retro;
@@ -47,6 +36,7 @@
   float: right;
   width: 240px;
 }
+
 .tabla2 {
   width: 100%;
   border-collapse: separate;
@@ -54,6 +44,7 @@
   margin: auto;
 }
 
+/*Control volumen*/
 .control_audio {
   display: flex;
   padding: 14px 16px;
@@ -70,6 +61,7 @@
   margin: auto;
 }
 
+/*Barra de volumen*/
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   #mislider {
     overflow: hidden;
@@ -98,7 +90,7 @@
   }
 }
 
-/*Mensaje emergente*/
+/*Mensaje emergente en icono de sonido*/
 
 #play .msj {
   visibility: hidden;
@@ -123,10 +115,7 @@
   border-style: solid;
   border-color: transparent #ffc107 transparent transparent;
 }
+
 #play:hover .msj {
   visibility: visible;
 }
-
-
-
-

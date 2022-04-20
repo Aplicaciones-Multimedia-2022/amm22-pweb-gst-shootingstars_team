@@ -1,3 +1,4 @@
+/*Texto explicación*/
 .objetivos {
   font-family: retro;
   color: rgba(255, 193, 7, 255);
@@ -8,6 +9,7 @@
   text-align: center;
 }
 
+/*Controles*/
 .up {
   width: 250px;
   height: auto;
@@ -15,21 +17,6 @@
   vertical-align: middle;
 }
 
-p {
-  font-family: retro;
-  color: rgba(255, 193, 7, 255);
-  margin: 2%;
-  font-size: 30px;
-}
-
-.controles {
-  margin-right: 100px;
-  margin-left: 100px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
 .flecha_arriba {
   float: left;
   width: 33%;
@@ -52,7 +39,16 @@ p {
   font-size: 25px;
 }
 
-.ejemplo{
+/*Texto*/
+p {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  margin: 2%;
+  font-size: 30px;
+}
+
+/*División controles*/
+.controles {
   margin-right: 100px;
   margin-left: 100px;
   text-align: center;
@@ -61,16 +57,20 @@ p {
   justify-content: space-evenly;
 }
 
-.gif{
-  margin: 2%;
-  
+/*Demostración controles*/
+.ejemplo {
+  margin-right: 100px;
+  margin-left: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.gif2{
+
+.gif {
+  margin: 2%;
+}
+
+.gif2 {
   text-align: justify;
 }
-
-
-
-
-
-
