@@ -1,21 +1,27 @@
 <html>
   <head>
+    <!--Referencias a otros archivos-->
     <link href="../css/global.css" rel="stylesheet" type="text/css" />
     <link href="../css/prejuego.css" rel="stylesheet" type="text/css" />
+    <!--Icono y título en la pestaña-->
     <link rel="icon" href="../img/icon.png" height="50" weight="50" />
+    <title>Prejuego | Shooting Stars</title>
   </head>
   <div class="warning">
     Para reproducir y pausar la musica de fondo clique en el logo principal
   </div>
   <header>
+    <!--Animaciones laterales-->
     <div class="columnas">
       <canvas id="div_izq" width="150" height="1400"></canvas>
       <canvas id="div_drch" width="150" height="1400"></canvas>
     </div>
+    <!--título de la página-->
     <div class="encabezado">
       <div class="titulo" id="logo_prin">
         <h2 class="Titulo">Bienvenido a <br />SHOOTING STARS</h2>
       </div>
+      <!--Ajustes-->
       <div class="divajustes">
         <button class="ajustes" id="bajustes">
           <img class="ad" src="../img/ajustes.png" width="100px" />
@@ -34,6 +40,7 @@
         espacial?
       </p>
     </div>
+    <!--Nombre-->
     <div class="botoncito">
       <form name="form" method="get">
         <input
@@ -53,17 +60,14 @@
         allá. Solo dale click y que comience la aventura...
       </p>
     </div>
-
+    <!--Apartado información del nivel-->
     <div class="mando_ayuda">
       <button class="btn" id="btn">
         <img class="fotomando" src="../img/manda.png" width="150px" />
       </button>
     </div>
+
     <div class="overlay" id="overlay">
-      <!--para que se difumine toda la pantalla-->
-
-      <!--la ventana en si-->
-
       <button class="btn_cerrar" id="btn_cerrar">X</button>
       <table class="tabla">
         <tr>
@@ -90,6 +94,7 @@
         </tr>
       </table>
     </div>
+    <!--Elección del nivel-->
     <div class="botones_jugabilidad">
       <button class="boton1" id="botonFacil" onclick="elegir(1)">FÁCIL</button>
       <button class="boton1" id="botonMedio" onclick="elegir(2)">MEDIO</button>
@@ -97,6 +102,7 @@
         DIFÍCIL
       </button>
     </div>
+    <!--Barra de navegación inferior-->
     <div class="navbar">
       <a class="boton" id="boton8">Portada</a>
       <a class="boton" id="boton1">Cómo jugar</a>
@@ -104,6 +110,7 @@
       <a class="boton" id="boton3">Multimedia</a>
       <a class="boton" id="boton4">Desarrollo</a>
       <a class="boton" id="boton5">Referencias</a>
+      <!--Icono GitHub-->
       <div class="icono">
         <a
           href="https://github.com/Aplicaciones-Multimedia-2022/amm22-pweb-gst-shootingstars_team"

@@ -1,353 +1,369 @@
-<head>
-  <link href="../css/desarrollo.css" rel="stylesheet" type="text/css" />
-  <link href="../css/global.css" rel="stylesheet" type="text/css" />
-  <link rel="icon" href="../img/icon.png" height="50" weight="50" />
-  <title>Desarrollo | Shooting Stars</title>
-</head>
-<header>
-  <div class="encabezado">
-    <div class="warning">
-      Para reproducir y pausar la musica de fondo clique en el logo principal
+<html>
+  <head>
+    <!--Referencias a otros archivos-->
+    <link href="../css/desarrollo.css" rel="stylesheet" type="text/css" />
+    <link href="../css/global.css" rel="stylesheet" type="text/css" />
+    <!--Icono y título en la pestaña-->
+    <link rel="icon" href="../img/icon.png" height="50" weight="50" />
+    <title>Desarrollo | Shooting Stars</title>
+  </head>
+  <header>
+    <div class="encabezado">
+      <div class="warning">
+        Para reproducir y pausar la musica de fondo clique en el logo principal
+      </div>
+      <!--Fecha y hora-->
+      <div class="date">
+        <span id="weekDay" class="weekDay"></span>,
+        <span id="day" class="day"></span> de
+        <span id="month" class="month"></span> del
+        <span id="year" class="year"></span>
+      </div>
+      <div class="clock">
+        <span id="hours" class="hours"></span> :
+        <span id="minutes" class="minutes"></span> :
+        <span id="seconds" class="seconds"></span>
+      </div>
+      <!--Título de la página-->
+      <div class="titulo" id="logo_prin">
+        <h2 class="Titulo">DESARROLLO</h2>
+      </div>
+      <!--Ajustes-->
+      <div class="divajustes">
+        <button class="ajustes" id="bajustes">
+          <img class="ad" src="../img/ajustes.png" width="100px" />
+        </button>
+      </div>
     </div>
-    <div class="date">
-      <span id="weekDay" class="weekDay"></span>,
-      <span id="day" class="day"></span> de
-      <span id="month" class="month"></span> del
-      <span id="year" class="year"></span>
+  </header>
+  <body>
+    <!--Barra navegación superior-->
+    <div id="menu">
+      <a href="#Responsabilidades">Responsabilidades</a>
+      <a href="#Problemas">Problemas</a>
+      <a href="#Puntos fuertes">Puntos fuertes</a>
+      <a href="#Planificación">Planificación</a>
     </div>
-    <div class="clock">
-      <span id="hours" class="hours"></span> :
-      <span id="minutes" class="minutes"></span> :
-      <span id="seconds" class="seconds"></span>
-    </div>
+    <!--Apartados de desarrollo-->
+    <div class="desarrollo">
+      <div class="tituloapartados">
+        <h3 id="Responsabilidades">Responsabilidades</h3>
+      </div>
+      <div class="apartado">
+        <p>
+          En este apartado vamos a explicar las responsabilidades de cada
+          persona dividido según las diferentes páginas.
+        </p>
+        <ul class="responsabilidadeslista">
+          <li>
+            <b>PORTADA</b><br />
+            Entre todos los componente hemos hecho el boceto de la página de la
+            portada. Nacho se encargó de buscar las imágenes referentes al
+            fondo, naves y a dibujar el logo principal. Irene y Paula se han
+            encargado de la implementación de toda la pantalla, colocando los
+            botones centrados, con sus respectivas interraciones y transiciones,
+            y la colocoación del botón de ajustes, realizado por Alicia.
+          </li>
+          <li>
+            <b>AJUSTES</b><br />Alicia se encargó de la implementación de esta
+            página, con la ayuda de Irene en algunos aspectos de html y css.
+            Tras la división de la página en ajustes de audio y la elección de
+            la nave, Alicia desarrolló un código para que la elección de la nave
+            fuese efectiva, además de configurar los niveles de audio del juego.
+          </li>
+          <li>
+            <b>CÓMO JUGAR</b><br />Nacho e Irene realizaron la implementación de
+            esta página, donde el objetivo era mostrar el objetivo del juego y
+            los controles. Para ello, Nacho dibujó las flechas y la barra
+            espaciadora, con sus indicaciones correspondientes para,
+            posteriormente, Irene realizar una descripción gráfica del uso de
+            los controles.
+          </li>
+          <li>
+            <b>JUEGO</b><br />El diseño de esta página lo hizo Irene, con ayuda
+            de Paula. Una vez colocado el canvas y el recuadro de puntuación,
+            Paula colocó las vidas y desarrolló un código para que se eliminasen
+            cuando una nave no era eliminada. Nacho y Paula se encargaron del
+            desarrollo de todo el juego, implementación de la nave, los
+            enemigos, el fondo, colisiones, puntuación y el correcto
+            funcionamiento de todo. Alicia se encargó del sonido que se produce
+            al colisionar una nave con una bala y al disparar. <br />
+            La página que aparece antes del juego, donde se introduce el nombre
+            y se elige el nivel, fue implementada por Paula e Irene. El
+            desarrollo del código para almacenar el nombre y el nivel, fue
+            realizado por Paula; mientras que el diseño de la página fue
+            realizado también por Irene.
+            <br />
+            La página de 'game over' fue realizada por Irene y por Paula, tanto
+            la aparición de la puntuación como el redireccionamiento a otras
+            páginas.
+          </li>
+          <li>
+            <b>AUTORES</b><br />Esta página la realizó Paula, diseñando las
+            tablas donde cada uno escribió la descripción. Alicia se encargó de
+            realizar los dibujos de cada uno, siguiendo la estética del diseño
+            de la página.
+          </li>
+          <li>
+            <b>DESARROLLO</b><br />
+            Esta página fue implementada por Irene, tras decidir entre todos
+            hacer una StickyBar con el fin de acceder a los apartados más
+            fácilmente. Todos hemos añadido nuestras aportaciones a la página.
+          </li>
+          <li>
+            <b>REFERENCIAS</b><br />Siguiendo el diseño que tenía la página de
+            'autores', esta página la implementó Irene y Paula. A partir de
+            estar hecha la tabla, cada integrante del grupo añadió los enlaces
+            que fueron utilizando a lo largo del proyecto.
+          </li>
+          <li>
+            <b>OTROS</b><br />El menú que aparece en la parte inferior de todas
+            las páginas, para navegar hacia otras páginas fue realizado por
+            Alicia. El símbolo de GitHub con el enlace al repositorio, fue
+            dibujado por Irene e implementado por Irene y Paula. Cada vez que se
+            pulsa un botón, en cualquier página del proyecto, se escucha un
+            sonido, esta funcionalidad la realizó Alicia. La animación del gif
+            de fondo fue realizado por Alicia. El icono que aparece en todas las
+            páginas está realizado por Irene. Las animaciones que aparecen en
+            'game over' y la rueda de 'ajustes', fueron realizadas por Paula y
+            Alicia.
+          </li>
+        </ul>
+      </div>
 
-    <div class="titulo" id="logo_prin">
-      <h2 class="Titulo">DESARROLLO</h2>
-    </div>
-    <div class="divajustes">
-      <button class="ajustes" id="bajustes">
-        <img class="ad" src="../img/ajustes.png" width="100px" />
-      </button>
-    </div>
-  </div>
-</header>
-<body>
-  <div id="menu">
-    <a href="#Responsabilidades">Responsabilidades</a>
-    <a href="#Problemas">Problemas</a>
-    <a href="#Puntos fuertes">Puntos fuertes</a>
-    <a href="#Planificación">Planificación</a>
-  </div>
-  <div class="desarrollo">
-    <div class="tituloapartados">
-      <h3 id="Responsabilidades">Responsabilidades</h3>
-    </div>
-    <div class="apartado">
-      <p>
-        En este apartado vamos a explicar las responsabilidades de cada persona
-        dividido según las diferentes páginas.
-      </p>
-      <ul class="responsabilidadeslista">
-        <li>
-          <b>PORTADA</b><br />
-          Entre todos los componente hemos hecho el boceto de la página de la
-          portada. Nacho se encargó de buscar las imágenes referentes al fondo,
-          naves y a dibujar el logo principal. Irene y Paula se han encargado de
-          la implementación de toda la pantalla, colocando los botones
-          centrados, con sus respectivas interraciones y transiciones, y la
-          colocoación del botón de ajustes, realizado por Alicia.
-        </li>
-        <li>
-          <b>AJUSTES</b><br />Alicia se encargó de la implementación de esta
-          página, con la ayuda de Irene en algunos aspectos de html y css. Tras
-          la división de la página en ajustes de audio y la elección de la nave,
-          Alicia desarrolló un código para que la elección de la nave fuese
-          efectiva, además de configurar los niveles de audio del juego.
-        </li>
-        <li>
-          <b>CÓMO JUGAR</b><br />Nacho e Irene realizaron la implementación de
-          esta página, donde el objetivo era mostrar el objetivo del juego y los
-          controles. Para ello, Nacho dibujó las flechas y la barra espaciadora,
-          con sus indicaciones correspondientes para, posteriormente, Irene
-          realizar una descripción gráfica del uso de los controles.
-        </li>
-        <li>
-          <b>JUEGO</b><br />El diseño de esta página lo hizo Irene, con ayuda de
-          Paula. Una vez colocado el canvas y el recuadro de puntuación, Paula
-          colocó las vidas y desarrolló un código para que se eliminasen cuando
-          una nave no era eliminada. Nacho y Paula se encargaron del desarrollo
-          de todo el juego, implementación de la nave, los enemigos, el fondo,
-          colisiones, puntuación y el correcto funcionamiento de todo. Alicia se
-          encargó del sonido que se produce al colisionar una nave con una bala
-          y al disparar. <br />
-          La página que aparece antes del juego, donde se introduce el nombre y
-          se elige el nivel, fue implementada por Paula e Irene. El desarrollo
-          del código para almacenar el nombre y el nivel, fue realizado por
-          Paula; mientras que el diseño de la página fue realizado también por
-          Irene.
-          <br />
-          La página de 'game over' fue realizada por Irene y por Paula, tanto la
-          aparición de la puntuación como el redireccionamiento a otras páginas.
-        </li>
-        <li>
-          <b>AUTORES</b><br />Esta página la realizó Paula, diseñando las tablas
-          donde cada uno escribió la descripción. Alicia se encargó de realizar
-          los dibujos de cada uno, siguiendo la estética del diseño de la
-          página.
-        </li>
-        <li>
-          <b>DESARROLLO</b><br />
-          Esta página fue implementada por Irene, tras decidir entre todos hacer
-          una StickyBar con el fin de acceder a los apartados más fácilmente.
-          Todos hemos añadido nuestras aportaciones a la página.
-        </li>
-        <li>
-          <b>REFERENCIAS</b><br />Siguiendo el diseño que tenía la página de
-          'autores', esta página la implementó Irene y Paula. A partir de estar
-          hecha la tabla, cada integrante del grupo añadió los enlaces que
-          fueron utilizando a lo largo del proyecto.
-        </li>
-        <li>
-          <b>OTROS</b><br />El menú que aparece en la parte inferior de todas
-          las páginas, para navegar hacia otras páginas fue realizado por
-          Alicia. El símbolo de GitHub con el enlace al repositorio, fue
-          dibujado por Irene e implementado por Irene y Paula. Cada vez que se
-          pulsa un botón, en cualquier página del proyecto, se escucha un
-          sonido, esta funcionalidad la realizó Alicia. La animación del gif de
-          fondo fue realizado por Alicia. El icono que aparece en todas las
-          páginas está realizado por Irene. Las animaciones que aparecen en
-          'game over' y la rueda de 'ajustes', fueron realizadas por Paula y
-          Alicia.
-        </li>
-      </ul>
-    </div>
+      <div class="tituloapartados">
+        <h3 id="Problemas">Problemas</h3>
+      </div>
+      <div class="apartado">
+        <ul class="problemaslista">
+          <li>
+            <b>PROBLEMA 1</b><br />
+            Al colocar la barra de navegación fija en todas las pantallas, parte
+            de la pantalla se quedaba oculta. <br />
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            Añadir un margen extra en el body para que no se quedase oculta
+            ninguna parte de la pantalla.
+          </li>
+          <li>
+            <b>PROBLEMA 2</b> <br />No conseguíamos que saliesen más de una bala
+            ni naves enemigas en el canvas.
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            Mediante la programación orientada a objetos podemos crear objetos
+            bala y objetos naves, meterlos en un array y de ahí que vaya
+            imprimiéndolos uno a uno gracias a un bucle.
+          </li>
+          <li>
+            <b>PROBLEMA 3</b><br />
+            El sonido de las balas y explosiones no se ecuchaba bien, ya que no
+            sonaba cada vez que disparaba ni cada vez que chocabas.
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            La pista de audio era más larga de lo que pensábamos por lo que
+            recargamos el sonido mediante la función load antes de disparar.
+          </li>
+          <li>
+            <b>PROBLEMA 4</b> <br />No éramos capaces de pasar una variable de
+            un JavaScript a otro, en el caso de elegir la nave o la dificultad
+            del nivel.
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            Mediante la herramienta de LocalStorage conseguimos guardar estos
+            datoselegidos. Luego en el juego hemos trabajado con estos datos
+            almacenados.
+          </li>
+          <li>
+            <b>PROBLEMA 6</b> <br />Tuvimos problemas con las colisiones ya que
+            no detectaba correctamente cuando la bala chocaba con una nave.
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            Replantear bien las condiciones que tenía que cumplir para que la
+            bala estuviese en el rango adecuado.
+          </li>
+          <li>
+            <b>PROBLEMA 5</b><br />Hubo problemas con la implementacion de la
+            musica de la pagina, ya que las tecnologias de chrome actuales no
+            permiten el autoplay.
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            Al final nos hemos decidido por sugerir al jugador que clicke en la
+            pantalla para encenderla, dando asi permiso a la pagina.
+          </li>
+          <li>
+            <b>PROBLEMA 6</b><br />Uno de los participantes del grupo, Paula, ha
+            tenido muchos problemas a la hora de subir los conternidos a git
+            hub.
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            Los demás compañeros hemos subido su código y ella ha vuelto a
+            descargar el repositorio cada vez que sucedía.
+          </li>
+          <li>
+            <b>PROBLEMA 7</b><br />La imagen de las explosiones no salía siempre
+            que sucedían.
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            Llamar a la funcion dibujar en un tiempo un poco más prolongado.
+          </li>
+          <li>
+            <b>PROBLEMA 8</b><br />En la página de 'referencias' quisimos añadir
+            un menú desplegable para no utilizar una simple tabla. Al querer que
+            se desplegase mediante un click, no conseguimos que funcionase
+            correctamente.
+            <p class="solucion"><b>SOLUCIÓN</b></p>
+            Realizar otro diseño en el que se desplegase solo con pasar el
+            cursor.
+          </li>
+        </ul>
+      </div>
 
-    <div class="tituloapartados">
-      <h3 id="Problemas">Problemas</h3>
-    </div>
-    <div class="apartado">
-      <ul class="problemaslista">
-        <li>
-          <b>PROBLEMA 1</b><br />
-          Al colocar la barra de navegación fija en todas las pantallas, parte
-          de la pantalla se quedaba oculta. <br />
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          Añadir un margen extra en el body para que no se quedase oculta
-          ninguna parte de la pantalla.
-        </li>
-        <li>
-          <b>PROBLEMA 2</b> <br />No conseguíamos que saliesen más de una bala
-          ni naves enemigas en el canvas.
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          Mediante la programación orientada a objetos podemos crear objetos
-          bala y objetos naves, meterlos en un array y de ahí que vaya
-          imprimiéndolos uno a uno gracias a un bucle.
-        </li>
-        <li>
-          <b>PROBLEMA 3</b><br />
-          El sonido de las balas y explosiones no se ecuchaba bien, ya que no
-          sonaba cada vez que disparaba ni cada vez que chocabas.
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          La pista de audio era más larga de lo que pensábamos por lo que
-          recargamos el sonido mediante la función load antes de disparar.
-        </li>
-        <li>
-          <b>PROBLEMA 4</b> <br />No éramos capaces de pasar una variable de un
-          JavaScript a otro, en el caso de elegir la nave o la dificultad del
-          nivel.
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          Mediante la herramienta de LocalStorage conseguimos guardar estos
-          datoselegidos. Luego en el juego hemos trabajado con estos datos
-          almacenados.
-        </li>
-        <li>
-          <b>PROBLEMA 6</b> <br />Tuvimos problemas con las colisiones ya que no
-          detectaba correctamente cuando la bala chocaba con una nave.
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          Replantear bien las condiciones que tenía que cumplir para que la bala
-          estuviese en el rango adecuado.
-        </li>
-        <li>
-          <b>PROBLEMA 5</b><br />Hubo problemas con la implementacion de la
-          musica de la pagina, ya que las tecnologias de chrome actuales no
-          permiten el autoplay.
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          Al final nos hemos decidido por sugerir al jugador que clicke en la
-          pantalla para encenderla, dando asi permiso a la pagina.
-        </li>
-        <li>
-          <b>PROBLEMA 6</b><br />Uno de los participantes del grupo, Paula, ha
-          tenido muchos problemas a la hora de subir los conternidos a git hub.
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          Los demás compañeros hemos subido su código y ella ha vuelto a
-          descargar el repositorio cada vez que sucedía.
-        </li>
-        <li>
-          <b>PROBLEMA 7</b><br />La imagen de las explosiones no salía siempre
-          que sucedían.
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          Llamar a la funcion dibujar en un tiempo un poco más prolongado.
-        </li>
-        <li>
-          <b>PROBLEMA 8</b><br />En la página de 'referencias' quisimos añadir
-          un menú desplegable para no utilizar una simple tabla. Al querer que
-          se desplegase mediante un click, no conseguimos que funcionase
-          correctamente.
-          <p class="solucion"><b>SOLUCIÓN</b></p>
-          Realizar otro diseño en el que se desplegase solo con pasar el cursor.
-        </li>
-      </ul>
-    </div>
+      <div class="tituloapartados">
+        <h3 id="Puntos fuertes">Puntos fuertes</h3>
+      </div>
+      <div class="apartado">
+        <ul class="puntoslistas">
+          <li>
+            Hemos añadido un Sticky NavBar, que es una barra que se queda fija
+            en la parte superior de la pantalla mientras navegas a través de
+            ella hasta cierto punto. Además hemos implementado un menú
+            desplegable en la página de Referencias.
+          </li>
+          <li>
+            Hemos añadido un sonido para cada vez que se pulse una botón en el
+            juego.
+          </li>
+          <li>
+            Hemos añadido un mensaje emergente en la página de ajustes que
+            aparece cuando el usuario pasa el cursor por encima del icono del
+            volumen.
+          </li>
+          <li>
+            Hemos utilizado el LocalStorage para guardar la información de una
+            página a otra. Se ha utilizado tanto para el volumen como para la
+            selección de naves y de niveles.
+          </li>
+          <li>
+            Hemos conseguido que se modifique el volumen mediante un slider
+            desde la página de ajustes del juego.
+          </li>
+          <li>
+            El diseño es atractivo, hemos buscado hacer algo temática "retro",
+            simple y accesible para todas las personas.
+          </li>
+          <li>
+            En los títulos de cada página hemos añadido animaciones. Además,
+            para hacer más dinámica la página web, hemos añadido otras
+            animaciones como imágenes en movimiento o las estrellas del fondo
+            iluminándose.
+          </li>
+          <li>
+            En cada pantalla, se puede activar el sonido de fondo (modificable
+            en la pantalla 'ajustes') pulsando en cualquier parte del título
+            principal de la página.
+          </li>
+          <li>
+            Hemos añadido en la página de 'autores' enlaces a los mail de cada
+            miembro del grupo.
+          </li>
+          <li>
+            Para ambientar el juego, hemos añadido una música en la página de
+            juego, diferente al resto de páginas.
+          </li>
+        </ul>
+      </div>
 
-    <div class="tituloapartados">
-      <h3 id="Puntos fuertes">Puntos fuertes</h3>
+      <div class="tituloapartados">
+        <h3 id="Planificación">Planificación</h3>
+      </div>
+      <div class="apartado">
+        <p>
+          Para este proyecto, lo primero que hicimos fue una lluvia de ideas
+          sobre la temática y el diseño de nuestra página web. Tras varias ideas
+          de tipos de juego y organización de las páginas, hicimos un boceto
+          sobre nuestra idea principal. Una vez teníamos el esquema de las
+          páginas nos repartimos las tareas y las responsabilidades de cada
+          miembro del grupo y así avanzar a la vez. <br />
+          En primer momento, calculamos que para este trabajo sería necesaria
+          una dedicación de aproximadamente 100 horas. Pero finalmente, cada
+          miembro le ha dedicado alrededor de 135 horas al proyecto. <br />
+          Cada semana nos reuníamos para ver cómo iba la página web, aportar
+          sugerencias, cambios o cosas imprescindibles a realizar para la
+          próxima semana, a parte de estar en contacto constante para solucionar
+          cualquier problema que ocurriese. <br />
+        </p>
+        <ul class="planificacion">
+          <li>
+            <b>SEMANA 1:</b> En primer lugar, tras decidir el nombre, ideas
+            básicas del diseño e implementación del juego, distribuimos las
+            funciones que realizaría cada persona. Para mantener una correcta
+            organización, compartimos los archivos tanto por Drive como por
+            GitHub. A partir de ahí, se decidió empezar por la implementación de
+            la portada y la programación básica del movimiento de la nave
+            principal y la aparición de las navez enemigas. Además, se empezó a
+            investigar sobre cómo integrar el audio en la página web.
+          </li>
+          <li>
+            <b>SEMANA 2:</b> En cuanto al JavaScript de juego, se impletó todo
+            mediante objetos además del fondo del canvas. Referente al diseño de
+            la página web, añadimos una barra de navegación al resto de páginas
+            situada en la parte inferior de cada página. Empezamos con el
+            desarrollo de la página de 'autores'.
+          </li>
+          <li>
+            <b>SEMANA 3:</b> Durante esta semana, tras la reunión y tras marcar
+            los objetivos claves a realizar, incluimos la detección de las
+            colisiones con las naves y guardar en un contador el número de las
+            mismas. Según se iban utilizando diferentes recursos, se fueron
+            añadiendo los links a la página de 'referencias'. En cuanto a la
+            página de 'ajustes', se fue añadiendo apartados para la elección de
+            la nave y para ajustar el sonido.
+          </li>
+          <li>
+            <b>SEMANA 4:</b> Tras cubrir alguno de los objetivos marcados,
+            fuimos completando apartados como el texto que aparece en la página
+            de 'autores', 'cómo jugar' o 'desarrollo'. En cuanto al juego,
+            añadimos que se produjese una explosión cuando se produjese una
+            colisión. También nos informamos de cómo introducir varios niveles
+            al juego. Se realizó la página previa del juego donde se elige el
+            nivel y se introduce el nombre del jugador, además de la página de
+            'game over'.
+          </li>
+          <li>
+            <b>SEMANA 5:</b> Añadimos las imágenes de cada uno de nosotros en la
+            página de 'autores', realizada a partir del programa PixelArt, al
+            igual que la mayoría de imágenes de la página web. Se completó la
+            página de 'cómo jugar', añadiendo un gif para complementar la
+            explicación de los comandos. Se buscaron sonidos sin derechos de
+            autor para las colisiones y para que sonasen cuando se pulsase al
+            botón. También se guardó la puntuación máxima y el nombre del
+            jugador para que apareciese en la página de juego.
+          </li>
+          <li>
+            <b>SEMANA 6:</b> En esta semana, al tener todo casi terminado se
+            dedicó a la mejora de pequeños detalles, a completar la página de
+            desarrollo y a ajustar el audio del juego, además de arreglar
+            cualquier error que surgiese.
+          </li>
+          <li>
+            <b>SEMANA 7:</b> La última semana se dedicó a verificar que
+            cumplíamos los requisitos mínimos y que todo funcionase
+            correctamente. Se añadieron mejoras como el icono en la página, la
+            limpieza del código o widgets.
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="apartado">
-      <ul class="puntoslistas">
-        <li>
-          Hemos añadido un Sticky NavBar, que es una barra que se queda fija en
-          la parte superior de la pantalla mientras navegas a través de ella
-          hasta cierto punto. Además hemos implementado un menú desplegable en
-          la página de Referencias.
-        </li>
-        <li>
-          Hemos añadido un sonido para cada vez que se pulse una botón en el
-          juego.
-        </li>
-        <li>
-          Hemos añadido un mensaje emergente en la página de ajustes que aparece
-          cuando el usuario pasa el cursor por encima del icono del volumen.
-        </li>
-        <li>
-          Hemos utilizado el LocalStorage para guardar la información de una
-          página a otra. Se ha utilizado tanto para el volumen como para la
-          selección de naves y de niveles.
-        </li>
-        <li>
-          Hemos conseguido que se modifique el volumen mediante un slider desde
-          la página de ajustes del juego.
-        </li>
-        <li>
-          El diseño es atractivo, hemos buscado hacer algo temática "retro",
-          simple y accesible para todas las personas.
-        </li>
-        <li>
-          En los títulos de cada página hemos añadido animaciones. Además, para
-          hacer más dinámica la página web, hemos añadido otras animaciones como
-          imágenes en movimiento o las estrellas del fondo iluminándose.
-        </li>
-        <li>
-          En cada pantalla, se puede activar el sonido de fondo (modificable en
-          la pantalla 'ajustes') pulsando en cualquier parte del título
-          principal de la página.
-        </li>
-        <li>
-          Hemos añadido en la página de 'autores' enlaces a los mail de cada
-          miembro del grupo.
-        </li>
-        <li>
-          Para ambientar el juego, hemos añadido una música en la página de
-          juego, diferente al resto de páginas.
-        </li>
-      </ul>
+    <!--Barra de navegación inferior-->
+    <div class="navbar">
+      <a class="boton" id="boton8">Portada</a>
+      <a class="boton" id="bprejuego">Juego</a>
+      <a class="boton" id="boton1">Cómo jugar</a>
+      <a class="boton" id="boton2">Autores</a>
+      <a class="boton" id="boton3">Multimedia</a>
+      <a class="boton" id="boton5">Referencias</a>
+      <!--Icono GitHub-->
+      <div class="icono">
+        <a
+          href="https://github.com/Aplicaciones-Multimedia-2022/amm22-pweb-gst-shootingstars_team"
+          class="github"
+        >
+          <img src="../img/gh.png" width="49px"
+        /></a>
+      </div>
     </div>
-
-    <div class="tituloapartados">
-      <h3 id="Planificación">Planificación</h3>
-    </div>
-    <div class="apartado">
-      <p>
-        Para este proyecto, lo primero que hicimos fue una lluvia de ideas sobre
-        la temática y el diseño de nuestra página web. Tras varias ideas de
-        tipos de juego y organización de las páginas, hicimos un boceto sobre
-        nuestra idea principal. Una vez teníamos el esquema de las páginas nos
-        repartimos las tareas y las responsabilidades de cada miembro del grupo
-        y así avanzar a la vez. <br />
-        En primer momento, calculamos que para este trabajo sería necesaria una
-        dedicación de aproximadamente 100 horas. Pero finalmente, cada miembro
-        le ha dedicado alrededor de 135 horas al proyecto. <br />
-        Cada semana nos reuníamos para ver cómo iba la página web, aportar
-        sugerencias, cambios o cosas imprescindibles a realizar para la próxima
-        semana, a parte de estar en contacto constante para solucionar cualquier
-        problema que ocurriese. <br />
-      </p>
-      <ul class="planificacion">
-        <li>
-          <b>SEMANA 1:</b> En primer lugar, tras decidir el nombre, ideas
-          básicas del diseño e implementación del juego, distribuimos las
-          funciones que realizaría cada persona. Para mantener una correcta
-          organización, compartimos los archivos tanto por Drive como por
-          GitHub. A partir de ahí, se decidió empezar por la implementación de
-          la portada y la programación básica del movimiento de la nave
-          principal y la aparición de las navez enemigas. Además, se empezó a
-          investigar sobre cómo integrar el audio en la página web.
-        </li>
-        <li>
-          <b>SEMANA 2:</b> En cuanto al JavaScript de juego, se impletó todo
-          mediante objetos además del fondo del canvas. Referente al diseño de
-          la página web, añadimos una barra de navegación al resto de páginas
-          situada en la parte inferior de cada página. Empezamos con el
-          desarrollo de la página de 'autores'.
-        </li>
-        <li>
-          <b>SEMANA 3:</b> Durante esta semana, tras la reunión y tras marcar
-          los objetivos claves a realizar, incluimos la detección de las
-          colisiones con las naves y guardar en un contador el número de las
-          mismas. Según se iban utilizando diferentes recursos, se fueron
-          añadiendo los links a la página de 'referencias'. En cuanto a la
-          página de 'ajustes', se fue añadiendo apartados para la elección de la
-          nave y para ajustar el sonido.
-        </li>
-        <li>
-          <b>SEMANA 4:</b> Tras cubrir alguno de los objetivos marcados, fuimos
-          completando apartados como el texto que aparece en la página de
-          'autores', 'cómo jugar' o 'desarrollo'. En cuanto al juego, añadimos
-          que se produjese una explosión cuando se produjese una colisión.
-          También nos informamos de cómo introducir varios niveles al juego. Se
-          realizó la página previa del juego donde se elige el nivel y se
-          introduce el nombre del jugador, además de la página de 'game over'.
-        </li>
-        <li>
-          <b>SEMANA 5:</b> Añadimos las imágenes de cada uno de nosotros en la
-          página de 'autores', realizada a partir del programa PixelArt, al
-          igual que la mayoría de imágenes de la página web. Se completó la
-          página de 'cómo jugar', añadiendo un gif para complementar la
-          explicación de los comandos. Se buscaron sonidos sin derechos de autor
-          para las colisiones y para que sonasen cuando se pulsase al botón.
-          También se guardó la puntuación máxima y el nombre del jugador para
-          que apareciese en la página de juego.
-        </li>
-        <li>
-          <b>SEMANA 6:</b> En esta semana, al tener todo casi terminado se
-          dedicó a la mejora de pequeños detalles, a completar la página de
-          desarrollo y a ajustar el audio del juego, además de arreglar
-          cualquier error que surgiese.
-        </li>
-        <li>
-          <b>SEMANA 7:</b> La última semana se dedicó a verificar que cumplíamos
-          los requisitos mínimos y que todo funcionase correctamente. Se
-          añadieron mejoras como el icono en la página, la limpieza del código o
-          widgets.
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="navbar">
-    <a class="boton" id="boton8">Portada</a>
-    <a class="boton" id="bprejuego">Juego</a>
-    <a class="boton" id="boton1">Cómo jugar</a>
-    <a class="boton" id="boton2">Autores</a>
-    <a class="boton" id="boton3">Multimedia</a>
-    <a class="boton" id="boton5">Referencias</a>
-
-    <div class="icono">
-      <a
-        href="https://github.com/Aplicaciones-Multimedia-2022/amm22-pweb-gst-shootingstars_team"
-        class="github"
-      >
-        <img src="../img/gh.png" width="49px"
-      /></a>
-    </div>
-  </div>
-</body>
-<script src="../js/desarrollo.js"></script>
+  </body>
+  <script src="../js/desarrollo.js"></script>
+</html>
