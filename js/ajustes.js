@@ -75,7 +75,7 @@ function redireccionar7() {
 
 //////////////////////////////////////////
 //                                      //
-//      VOLUNEN Y MUSICA DEL JUEGO      //
+//      VOLUMEN Y MUSICA DEL JUEGO      //
 //                                      //
 //////////////////////////////////////////
 
