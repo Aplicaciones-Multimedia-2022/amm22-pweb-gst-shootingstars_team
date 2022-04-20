@@ -74,20 +74,6 @@ h3 {
 
 
 
-
-/* .go {
-  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
-    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
-  text-align: center;
-  font-family: retro;
-  color: rgba(255, 193, 7, 255);
-  font-size: 12vh;
-  position: relative;
-  animation-name: shadows;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
-} */
-
 *,
 *::before,
 *::after {
