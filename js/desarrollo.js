@@ -129,7 +129,7 @@ var udateTime = function () {
     "Domingo",
     "Lunes",
     "Martes",
-    "Miércoles",
+    "Mi\u00E9rcoles",
     "Jueves",
     "Viernes",
     "Sabado",

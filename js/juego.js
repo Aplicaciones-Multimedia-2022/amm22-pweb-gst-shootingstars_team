@@ -34,9 +34,6 @@ var Nave = new Image();
 Nave.src = ruta_nave;
 var fondo = new Image();
 fondo.src = "../img/FondoCanvas2.png";
-/*var dataImage = localStorage.getItem("'imgData'");
-bannerImg = document.getElementById('tableBanner');
-bannerImg.src = "data:image/png;base64," + dataImage;*/
 var stop;
 var imagenBala = new Image();
 var shoots = [];
@@ -407,7 +404,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -456,7 +453,7 @@ function keyUpHandler(event) {
 //Funcion para que no haga scroll cuando se pulsa tecla de arriba, abajo, izquierda y derecha
 window.addEventListener(
   "keydown",
-  function (e) {
+  function(e) {
     if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();
     }
@@ -522,27 +519,35 @@ boton10.addEventListener("click", function diez() {
 function redireccionar1() {
   location.replace("../html/ComoJugar.html");
 }
+
 function redireccionar2() {
   location.replace("../html/autores.html");
 }
+
 function redireccionar3() {
   location.replace("../html/multimedia.html");
 }
+
 function redireccionar4() {
   location.replace("../html/desarrollo.html");
 }
+
 function redireccionar5() {
   location.replace("../html/referencias.html");
 }
+
 function redireccionar6() {
   location.replace("../html/ajustes.html");
 }
+
 function redireccionar8() {
   location.replace("../html/portada.html");
 }
+
 function redireccionar9() {
   location.replace("../html/juego.html");
 }
+
 function redireccionar10() {
   location.replace("../html/portada.html");
 }
@@ -566,7 +571,7 @@ suena.addEventListener("click", function a() {
 
 ////////// Código para mostrar la hora
 
-var udateTime = function () {
+var udateTime = function() {
   let currentDate = new Date(),
     hours = currentDate.getHours(),
     minutes = currentDate.getMinutes(),
@@ -580,7 +585,7 @@ var udateTime = function () {
     "Domingo",
     "Lunes",
     "Martes",
-    "Miércoles",
+    "Mi\u00E9rcoles",
     "Jueves",
     "Viernes",
     "Sabado",
