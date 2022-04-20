@@ -1,11 +1,8 @@
-/*Formatear texto: Alt + F*/
-
 /*Fuente pixel*/
 @font-face {
   font-family: retro;
   src: url(../res/Retro\ Gaming.ttf);
 }
-/*Foto de fondo*/
 
 /* Para el margen inferior de la página*/
 body {
@@ -23,6 +20,7 @@ h3 {
   text-align: center;
   font-size: 30px;
 }
+
 /* Esta es la configuración para la barra de menú de abajo*/
 .navbar {
   overflow: hidden;
@@ -58,7 +56,7 @@ h3 {
 
 .Titulo {
   text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
-  9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
   text-align: center;
   font-family: retro;
   color: rgba(255, 193, 7, 255);
@@ -69,10 +67,6 @@ h3 {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-
-
-
-
 
 *,
 *::before,
@@ -86,7 +80,6 @@ h3 {
   --color-tertiary: #f28b7d;
   --color-quaternary: #f07a6a;
   --color-quinary: #ee6352;
-  
 }
 
 @keyframes shadows {
@@ -154,18 +147,28 @@ h3 {
 }
 
 /*Para el boton de ajustes*/
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
 
-@keyframes rotate {from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}}
-@-webkit-keyframes rotate {from {-webkit-transform: rotate(0deg);}
-  to {-webkit-transform: rotate(360deg);}}
-
-.ad{
+.ad {
   -webkit-animation: 3s rotate linear infinite;
-    animation: 3s rotate linear infinite;
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-
+  animation: 3s rotate linear infinite;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
 }
 
 .divajustes {
@@ -174,6 +177,7 @@ h3 {
   top: 0%;
   margin-left: 85%;
 }
+
 .ajustes {
   background-color: transparent;
   border: transparent;
@@ -181,9 +185,7 @@ h3 {
   cursor: pointer;
 }
 
-
 /*Para las tablas de las páginas autores y referencias*/
-
 td {
   width: 25%;
   text-align: center;
@@ -193,6 +195,7 @@ td {
   padding: 20px;
   border: solid 3px rgba(255, 193, 7, 255);
 }
+
 th {
   width: 25%;
   text-align: center;
@@ -216,7 +219,6 @@ th {
 }
 
 /*Botones*/
-
 .boton1 {
   font-family: retro;
   color: rgba(255, 193, 7, 255);
@@ -242,13 +244,13 @@ th {
 }
 
 /*Botón play*/
-
 .divplay {
   background-position: center;
   margin: 10;
   padding: 0 40px;
   margin-top: 165;
 }
+
 .play {
   background-repeat: no-repeat;
   background-color: transparent;
@@ -268,8 +270,6 @@ th {
     0 0px 20px 0 rgba(255, 193, 7, 255);
 }
 
-
-
 /*listas*/
 ul {
   color: rgba(255, 193, 7, 255);
@@ -279,6 +279,7 @@ ul {
   padding: 14px 16px;
   text-decoration: none;
 }
+
 li {
   margin-bottom: 20px;
   margin-left: 20px;
@@ -305,8 +306,7 @@ li {
   margin-top: 6%;
 }
 
-
-.warning{
+.warning {
   font-family: retro;
   color: rgb(154, 154, 154);
   text-align: center;
