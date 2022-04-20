@@ -14,7 +14,12 @@
   background-size: 5vh;
 }
 
-
+.divcontroles {
+  text-align: center;
+  margin: 10; 
+  padding: 0 40px;
+  margin-top: 150;
+}
 
 html{
   height: 97%;
