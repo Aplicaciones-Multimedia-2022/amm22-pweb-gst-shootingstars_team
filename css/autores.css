@@ -7,3 +7,20 @@
 .imagenes {
   margin-bottom: 20px;
 }
+.contacto {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+.contacto:link {
+  color: black;
+}
+
+.contacto:visited {
+  color: black;
+}
+
+.contacto:hover {
+  text-decoration: underline;
+}
