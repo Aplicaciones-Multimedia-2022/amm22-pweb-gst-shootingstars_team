@@ -91,7 +91,6 @@
 }
 
 /*Mensaje emergente en icono de sonido*/
-
 #play .msj {
   visibility: hidden;
   width: 110px;
