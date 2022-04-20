@@ -1,3 +1,9 @@
+//////////////////////////////////////////
+//                                      //
+//   FUNCIONES PARA BOTONES             //
+//                                      //
+//////////////////////////////////////////
+
 const boton2 = document.getElementById("boton2");
 const boton3 = document.getElementById("boton3");
 const boton4 = document.getElementById("boton4");
@@ -59,6 +65,13 @@ function redireccionar8() {
 function redireccionar9() {
   location.replace("../html/prejuego.html");
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+//                                      //
+//      VOLUNEN Y MUSICA DEL JUEGO      //
+//                                      //
+//////////////////////////////////////////
 
 var volumenGeneral;
 var volgen;
@@ -75,6 +88,15 @@ suena.addEventListener("click", function a() {
     sonido2.pause();
   }
 });
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////
+//                                      //
+//        FUNCION PARA LA HORA          //
+//                                      //
+//////////////////////////////////////////
+
 
 var udateTime = function () {
   let currentDate = new Date(),
