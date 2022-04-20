@@ -135,7 +135,7 @@ var udateTime = function () {
     "Domingo",
     "Lunes",
     "Martes",
-    "Miércoles",
+    "Mi\u00E9rcoles",
     "Jueves",
     "Viernes",
     "Sabado",
@@ -227,4 +227,3 @@ nave4.addEventListener("click", function () {
 
   localStorage.setItem("miNave", ruta);
 });
-
