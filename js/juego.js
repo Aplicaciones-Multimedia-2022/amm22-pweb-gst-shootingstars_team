@@ -564,6 +564,7 @@ suena.addEventListener("click", function a() {
   sonido2.volume = volumenGeneral;
   if (sonido2.paused) {
     sonido2.play();
+    sonido2.loop = true;
   } else {
     sonido2.pause();
   }
