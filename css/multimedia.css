@@ -1,1 +1,43 @@
+.divcontroles {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5%;
+}
 
+.boton1 {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  bottom: 100%;
+  border: 3px solid rgba(255, 193, 7, 255);
+  display: inline-block;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 50px;
+  width: 500px;
+  height: 200px;
+  margin: 50;
+  padding-top: 55px;
+}
+
+.boton1:hover {
+  background-color: rgba(255, 193, 7, 255);
+  color: black;
+}
+
+.video {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.gst {
+  color: aliceblue;
+  font-family: retro;
+  text-align: justify;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: small;
+}

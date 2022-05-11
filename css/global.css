@@ -218,8 +218,16 @@ th {
   float: right;
 }
 
+/*Div volver*/
+.divvolver {
+  margin: 2%;
+  position: absolute;
+  bottom: 5%;
+  margin-left: 85%;
+}
+
 /*Botones*/
-.boton1 {
+.botonv {
   font-family: retro;
   color: rgba(255, 193, 7, 255);
   background-repeat: no-repeat;
@@ -238,7 +246,7 @@ th {
   text-decoration: none;
 }
 
-.boton1:hover {
+.botonv:hover {
   background-color: rgba(255, 193, 7, 255);
   color: black;
 }
