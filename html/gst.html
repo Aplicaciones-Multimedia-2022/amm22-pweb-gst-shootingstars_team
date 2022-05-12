@@ -28,6 +28,7 @@
   </header>
   <body>
     <p class="gst">
+      Insertar la linea pipeline desde la carpeta media, ya que ahí esta contenido el video.
       gst-launch-1.0 filesrc location="videogv.ogv" ! oggdemux ! theoradec !
       videoconvert ! videobalance saturation=0.0 ! textoverlay font-desc="Sans
       bold 30" text="Video en blanco y negro" color=4294967040 ! queue !
