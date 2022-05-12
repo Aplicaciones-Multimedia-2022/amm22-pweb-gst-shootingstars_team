@@ -1,3 +1,375 @@
+<<<<<<< HEAD
+/*Fuente pixel*/
+@font-face {
+  font-family: retro;
+  src: url(../res/Retro\ Gaming.ttf);
+}
+
+/* Para el margen inferior de la página*/
+body {
+  background-image: url("../img/Webp.net-gifmaker\ \(1\).gif");
+  background-size: 1519px 753px;
+  margin-bottom: 5%;
+  background-repeat: repeat;
+  z-index: 1;
+}
+
+/*Segundos títulos*/
+h3 {
+  font-family: retro;
+  color: white;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Esta es la configuración para la barra de menú de abajo*/
+.navbar {
+  overflow: hidden;
+  background-color: #ffc107;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.boton {
+  border: 0px;
+  font-family: retro;
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  text-decoration: none;
+  background-color: #ffc107;
+  cursor: pointer;
+}
+.boton:hover {
+  background: black;
+  color: #ffc107;
+}
+/*Para los títulos de las páginas*/
+.encabezado {
+  text-align: center;
+}
+
+.Titulo {
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  text-align: center;
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  font-size: 10vh;
+  position: relative;
+  display: inline-block;
+  animation-name: shadows;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #f6aca2;
+  --color-secondary: #f49b90;
+  --color-tertiary: #f28b7d;
+  --color-quaternary: #f07a6a;
+  --color-quinary: #ee6352;
+}
+
+@keyframes shadows {
+  0% {
+    text-shadow: none;
+  }
+  10% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  20% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  30% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  40% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  50% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  60% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary),
+      12px 12px 0 var(--color-quinary);
+  }
+  70% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary), 9px 9px var(--color-quaternary);
+  }
+  80% {
+    text-shadow: 3px 3px 0 var(--color-secondary),
+      6px 6px 0 var(--color-tertiary);
+  }
+  90% {
+    text-shadow: 3px 3px 0 var(--color-secondary);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(-12px, -12px);
+  }
+  50% {
+    transform: translate(-12px, -12px);
+  }
+  60% {
+    transform: translate(-12px, -12px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/*Para el boton de ajustes*/
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.ad {
+  -webkit-animation: 3s rotate linear infinite;
+  animation: 3s rotate linear infinite;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+.divajustes {
+  margin: 2%;
+  position: absolute;
+  top: 0%;
+  margin-left: 85%;
+}
+
+.ajustes {
+  background-color: transparent;
+  border: transparent;
+  display: block;
+  cursor: pointer;
+}
+
+/*Para las tablas de las páginas autores y referencias*/
+td {
+  width: 25%;
+  text-align: center;
+  color: rgba(255, 193, 7, 255);
+  background-color: transparent;
+  font-family: retro;
+  padding: 20px;
+  border: solid 3px rgba(255, 193, 7, 255);
+}
+
+th {
+  width: 25%;
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 193, 7, 255);
+  font-family: retro;
+  padding: 20px;
+  border: solid 3px rgba(255, 193, 7, 255);
+}
+
+.github {
+  background-color: transparent;
+  border: transparent;
+  position: absolute;
+  right: 0%;
+  cursor: pointer;
+}
+
+.icono {
+  float: right;
+}
+
+/*Div volver*/
+.divvolver {
+  margin: 2%;
+  position: absolute;
+  bottom: 5%;
+  margin-left: 85%;
+}
+
+/*Botones*/
+.botonv {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  bottom: 100%;
+  margin-left: 30;
+  margin-right: 30;
+  margin: 20;
+  border: 3px solid rgba(255, 193, 7, 255);
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  transition-duration: 0.4s;
+  text-decoration: none;
+}
+
+.botonv:hover {
+  background-color: rgba(255, 193, 7, 255);
+  color: black;
+}
+
+.boton1 {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  bottom: 100%;
+  margin-left: 30;
+  margin-right: 30;
+  margin: 20;
+  border: 3px solid rgba(255, 193, 7, 255);
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  transition-duration: 0.4s;
+  text-decoration: none;
+}
+
+.boton1:hover {
+  background-color: rgba(255, 193, 7, 255);
+  color: black;
+}
+
+.boton3 {
+  font-family: retro;
+  color: rgba(255, 193, 7, 255);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+  bottom: 100%;
+  border: 3px solid rgba(255, 193, 7, 255);
+  display: inline-block;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 50px;
+  width: 500px;
+  height: 200px;
+  margin: 50;
+  padding-top: 55px;
+}
+
+.boton3:hover {
+  background-color: rgba(255, 193, 7, 255);
+  color: black;
+}
+
+/*Botón play*/
+.divplay {
+  background-position: center;
+  margin: 10;
+  padding: 0 40px;
+  margin-top: 165;
+}
+
+.play {
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: 90px 45px;
+  background-position: center;
+  border: 5px solid rgba(255, 193, 7, 255);
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 70%;
+  margin-top: -150;
+}
+
+.play:hover {
+  box-shadow: 0 0px 20px 0 rgba(255, 193, 7, 255),
+    0 0px 20px 0 rgba(255, 193, 7, 255);
+}
+
+/*listas*/
+ul {
+  color: rgba(255, 193, 7, 255);
+  font-size: 15px;
+  text-align: justify;
+  font-family: retro;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+/*fecha y hora*/
+.date {
+  color: rgb(154, 154, 154);
+  font-family: retro;
+  border: transparent;
+  position: absolute;
+  left: 3%;
+  font-size: 15px;
+  margin-top: 3%;
+}
+
+.clock {
+  color: rgb(154, 154, 154);
+  font-family: retro;
+  border: transparent;
+  position: absolute;
+  left: 3%;
+  font-size: 15px;
+  margin-top: 6%;
+}
+
+.warning {
+  font-family: retro;
+  color: rgb(154, 154, 154);
+  text-align: center;
+  float: center;
+}
+=======
 /*Fuente pixel*/
 @font-face {
   font-family: retro;
@@ -320,3 +692,4 @@ li {
   text-align: center;
   float: center;
 }
+>>>>>>> 661f9c5a8fdf69b9f5e6d524751b9f0cef5a1309
